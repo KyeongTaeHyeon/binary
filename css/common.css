@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream1.woff2') format('woff2'),
+        url('../fonts/SCDream1.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream2.woff2') format('woff2'),
+        url('../fonts/SCDream2.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream3.woff2') format('woff2'),
+        url('../fonts/SCDream3.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream4.woff2') format('woff2'),
+        url('../fonts/SCDream4.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream5.woff2') format('woff2'),
+        url('../fonts/SCDream5.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream6.woff2') format('woff2'),
+        url('../fonts/SCDream6.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream7.woff2') format('woff2'),
+        url('../fonts/SCDream7.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream8.woff2') format('woff2'),
+        url('../fonts/SCDream8.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream9.woff2') format('woff2'),
+        url('../fonts/SCDream9.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
+}
