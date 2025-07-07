@@ -1,157 +1,175 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream1.woff2') format('woff2'),
-    url('../fonts/SCDream1.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream1.woff2') format('woff2'),
+        url('../fonts/SCDream1.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream2.woff2') format('woff2'),
-    url('../fonts/SCDream2.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream2.woff2') format('woff2'),
+        url('../fonts/SCDream2.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream3.woff2') format('woff2'),
-    url('../fonts/SCDream3.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream3.woff2') format('woff2'),
+        url('../fonts/SCDream3.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream4.woff2') format('woff2'),
-    url('../fonts/SCDream4.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream4.woff2') format('woff2'),
+        url('../fonts/SCDream4.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream5.woff2') format('woff2'),
-    url('../fonts/SCDream5.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream5.woff2') format('woff2'),
+        url('../fonts/SCDream5.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream6.woff2') format('woff2'),
-    url('../fonts/SCDream6.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream6.woff2') format('woff2'),
+        url('../fonts/SCDream6.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream7.woff2') format('woff2'),
-    url('../fonts/SCDream7.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream7.woff2') format('woff2'),
+        url('../fonts/SCDream7.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream8.woff2') format('woff2'),
-    url('../fonts/SCDream8.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream8.woff2') format('woff2'),
+        url('../fonts/SCDream8.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'SCoreDream';
-  src: url('../fonts/SCDream9.woff2') format('woff2'),
-    url('../fonts/SCDream9.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
+    font-family: 'SCoreDream';
+    src: url('../fonts/SCDream9.woff2') format('woff2'),
+        url('../fonts/SCDream9.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
 }
 
 body {
-  font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
+    font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
 }
 
 /* main */
 #main {
-  margin-top: 35px;
+    margin-top: 35px;
 }
 
 /* 헤더 css */
 
 #header {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
-  top: 0px;
-  z-index: 99999999;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 99999999;
+    background-color: white;
 }
 
 #logo {
-  width: 140px;
-  height: 140px;
+    width: 140px;
+    height: 100px;
 }
 
 #logo img {
-  width: 140px;
-  height: 100%;
+    width: 140px;
+    height: 100%;
+}
+
+#logo a {
+    width: 140px;
+    height: 100%;
+    display: inline-block;
 }
 
 .headerContent {
-  width: 40%;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    width: 40%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .navMenu {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 #search-button {
-  width: 2vw;
+    width: 2vw;
 }
 
 #search-button img {
-  background-color: gray;
-  background-repeat: no-repeat;
+    background-color: gray;
+    background-repeat: no-repeat;
+    height: 24px;
 }
 
 .searchWrap {
-  padding: 20px;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 #search {
-  line-height: 1.8vw;
-  width: 100%;
-  border: 1px solid rgb(240, 236, 236);
+    line-height: 1.8vw;
+    width: 100%;
+    border: 1px solid rgb(240, 236, 236);
 }
 
 #user {
-  display: flex;
-  width: 18%;
-  height: 100px;
-  align-items: center;
+    display: flex;
+    width: 18%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
 }
 
+.loginMypage {
+    display: none;
+}
+
+.loginMypage.active {
+    display: block;
+}
+/* header end */
 
 /* footer */
 
 #footer {
-    color: aliceblue;
-    background-color: rgb(185, 189, 228);
+    color: #222222;
+    background-color: #d6eefc;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
