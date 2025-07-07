@@ -92,7 +92,7 @@ body {
   position: sticky;
   top: 0px;
   z-index: 99999999;
-  background-color: white;
+  background-color: #d6eefc;
 }
 
 #logo {
@@ -130,20 +130,21 @@ body {
 }
 
 #search-button img {
+  width: 100%;
   background-color: gray;
   background-repeat: no-repeat;
   height: 24px;
 }
 
 .searchWrap {
-  padding: 20px;
+  padding: 10px;
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
 #search {
-  line-height: 1.8vw;
+  line-height: 100%;
   width: 100%;
   border: 1px solid rgb(240, 236, 236);
 }
