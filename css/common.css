@@ -76,7 +76,6 @@ body {
   font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
 }
 
-<<<<<<< HEAD
 /* main */
 #main {
   margin-top: 35px;
@@ -97,17 +96,17 @@ body {
 }
 
 #logo {
-  width: 140px;
+  width: 100px;
   height: 100px;
 }
 
 #logo img {
-  width: 140px;
+  width: 100px;
   height: 100%;
 }
 
 #logo a {
-  width: 140px;
+  width: 100px;
   height: 100%;
   display: inline-block;
 }
