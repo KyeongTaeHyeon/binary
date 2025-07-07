@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RaFeed</title>
+        <!-- 공통사용 -->
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <!-- 각화면 css 생성하여 사용 -->
+        <link rel="stylesheet" href="../css/boardList.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- header(공통사용) -->
+            <header id="header"></header>
+            <!-- 작업영역 -->
+            <main id="main">
+                <div id="boardMain">
+                    <!-- 필터 -->
+                    <div class="filter">
+                        <a href=""><span>전체</span></a>
+                        <a href=""><span>자유게시판</span></a>
+                        <a href=""><span>식당인증</span></a>
+                        <a href=""><span>식당신청</span></a>
+                    </div>
+
+                    <!-- 게시글 리스트 -->
+                    <div id="postNumber">
+                        <article class="post">
+                            <div class="name"><a href="">게시글</a></div>
+                            <div class="user">작성자</div>
+                            <div class="userTime">작성시간</div>
+                        </article>
+
+                        <article class="post">
+                            <div class="name"><a href="">게시글</a></div>
+                            <div class="user">작성자</div>
+                            <div class="userTime">작성시간</div>
+                        </article>
+
+                        <article class="post">
+                            <div class="name"><a href="">게시글</a></div>
+                            <div class="user">작성자</div>
+                            <div class="userTime">작성시간</div>
+                        </article>
+                    </div>
+
+                    <!-- 페이징 + 글쓰기 -->
+                    <div class="number">
+                        <div class="numberList">
+                            <a class="prev" href="">◀</a>
+                            <a class="number" href="">1</a>
+                            <a class="number" href="">2</a>
+                            <a class="number" href="">3</a>
+                            <a class="number" href="">4</a>
+                            <a class="number" href="">5</a>
+                            <a class="number" href="">6</a>
+                            <a class="next" href="">▶</a>
+                        </div>
+                        <a class="writing" href="">글쓰기</a>
+                    </div>
+                </div>
+            </main>
+            <!-- footer영역(공통사용) -->
+            <footer id="footer"></footer>
+        </div>
+
+        <!-- 공통사용 -->
+        <script src="../js/common.js"></script>
+        <!-- 각화면 js생성하여 사용 -->
+        <script src="../js/boardList.js"></script>
+    </body>
+</html>
