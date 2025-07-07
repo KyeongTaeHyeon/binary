@@ -150,7 +150,7 @@ body{
 }
 /* 섹션1 */
 .section1{
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
 }
 .section1 .contentsBox{
@@ -161,6 +161,7 @@ body{
 }
 .section1 .contentsInfo{
     width: 50%;
+    padding: 100px 150px;
 }
 .section1 .contentsImg{
     width: 50%;
@@ -174,14 +175,28 @@ body{
     font-size: 27px;
     font-weight: 700;
 }
-.section1 .ramenImg{
-    position: absolute;
-    bottom: 50px;
-    right: 50%;
+.section1 .btnLinks{
+    margin-top: 55px;
+    justify-content: start;
 }
+.section1 .btnLinks .btnPopup{
+    cursor: pointer;
+    margin-right: 10px;
+}
+.section1 .btnLinks .btnPopup .btnIcons{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #c59c5c;
+    position: relative;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    padding: 6px 0 0 13px;
+}
+    
 /* 섹션2 */
 .section2{
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
 }
 .section2 .feature{
@@ -206,7 +221,7 @@ body{
 }
 /* 섹션3 */
 .section4{
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
 }
 .section4 .boardWrap{
