@@ -76,6 +76,7 @@ body {
   font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 /* main */
 #main {
   margin-top: 35px;
@@ -168,8 +169,8 @@ body {
 /* footer */
 
 #footer {
-  color: aliceblue;
-  background-color: rgb(185, 189, 228);
+  color: #222222;
+  background-color: #d6eefc;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
 }
