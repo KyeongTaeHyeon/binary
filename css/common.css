@@ -96,6 +96,12 @@ body {
   height: 100%;
 }
 
+#logo a {
+  width: 140px;
+  height: 100%;
+  display: inline-block;
+}
+
 .headerContent {
   width: 40%;
   height: 100px;
@@ -107,6 +113,7 @@ body {
 .navMenu {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 #search-button {
@@ -116,6 +123,7 @@ body {
 #search-button img {
   background-color: gray;
   background-repeat: no-repeat;
+  height: 24px;
 }
 
 .searchWrap {
@@ -136,4 +144,13 @@ body {
   width: 18%;
   height: 100px;
   align-items: center;
+  justify-content: center;
+}
+
+.loginMypage {
+  display: none;
+}
+
+.loginMypage.active {
+  display: block;
 }
