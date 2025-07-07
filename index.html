@@ -1,246 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RaFeed</title>
+        <!-- 공통사용 -->
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <!-- 각화면 css 생성하여 사용 -->
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RaFeed</title>
-    <!-- 공통사용 -->
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <!-- 각화면 css 생성하여 사용 -->
-    <link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body>
-    <div id="wrapper">
-        <!-- header(공통사용) -->
-        <header id="header"></header>
-        <!-- 작업영역 -->
-        <main id="main">
-            <!-- 라멘이미지영역(정보탭 : 육수) -->
-            <section class="section1">
-                <div class="contentsBox1">
-                    <div class="contentsInfo">
-                        <p class="shopTtl">시오 라멘</p>
-                        <p class="ttlLine"></p>
-                        <p class="subTtl">소금의 감칠맛을 최대로 끌어올린<br>정수같은 시오 라멘</p>
-                        <p class="shop-text">기존 양념에 재료를 더해 만드는 츠기다시 방식의 특제 양념에 절인 차슈는 부드럽고 깊은 맛이 일품입니다.</p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop1-ramendata"
-                                    data-modaal-scope="modaal_17516175940812f8e0ebfa1e1">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop1-point"
-                                    data-modaal-scope="modaal_1751617594082e325ab7da5b67">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <div class="btn-shop-link"><a
-                                href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f" target="_blank">
-                                <p>매장 정보 보기</p>
-                                <p class="arrow"><span class="arrow-icon"></span></p>
-                            </a></div>
-                    </div>
-                    <div class="contents-img">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 특제 도로리 소바</span></div>
-                    </div>
-                    <p class="ramen-img"><img src="" alt="시오라멘"></p>
-                </div>
-                <div class="contentsBox2">
-                    <div class="contentsImg">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 소라노이로특제간장 라멘</span></div>
-                    </div>
-                    <div class="contentsInfo">
-                        <p class="shop-ttl">쇼유 라멘</p>
-                        <p class="ttl-line"></p>
-                        <p class="sub-ttl">돼지뼈를 장시간 푹 고아 만드는<br>주옥같은 돈코츠 라멘</p>
-                        <p class="shop-text">.<br></p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop2-ramendata"
-                                    data-modaal-scope="modaal_1751617594082944676b1db6a38">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop2-point"
-                                    data-modaal-scope="modaal_175161759408230bf908fb8eda8">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <p class="ramen-img"><img src="" alt="쇼유라멘"></p>
-                    </div>
-                </div>
-                <div class="contentsBox3">
-                    <div class="contentsInfo">
-                        <p class="shopTtl">미소 라멘</p>
-                        <p class="ttlLine"></p>
-                        <p class="subTtl">소금의 감칠맛을 최대로 끌어올린<br>정수같은 시오 라멘</p>
-                        <p class="shop-text">기존 양념에 재료를 더해 만드는 츠기다시 방식의 특제 양념에 절인 차슈는 부드럽고 깊은 맛이 일품입니다.</p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop1-ramendata"
-                                    data-modaal-scope="modaal_17516175940812f8e0ebfa1e1">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop1-point"
-                                    data-modaal-scope="modaal_1751617594082e325ab7da5b67">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <div class="btn-shop-link"><a
-                                href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f" target="_blank">
-                                <p>매장 정보 보기</p>
-                                <p class="arrow"><span class="arrow-icon"></span></p>
-                            </a></div>
-                    </div>
-                    <div class="contents-img">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 특제 도로리 소바</span></div>
-                    </div>
-                    <p class="ramen-img"><img src="" alt="미소라멘"></p>
-                </div>
-                <div class="contentsBox4">
-                    <div class="contentsImg">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 소라노이로특제간장 라멘</span></div>
-                    </div>
-                    <div class="contentsInfo">
-                        <p class="shop-ttl">돈코츠 라멘</p>
-                        <p class="ttl-line"></p>
-                        <p class="sub-ttl">돼지뼈를 장시간 푹 고아 만드는<br>주옥같은 돈코츠 라멘</p>
-                        <p class="shop-text">.<br></p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop2-ramendata"
-                                    data-modaal-scope="modaal_1751617594082944676b1db6a38">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop2-point"
-                                    data-modaal-scope="modaal_175161759408230bf908fb8eda8">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <p class="ramen-img"><img src="" alt="돈코츠라멘"></p>
-                    </div>
-                </div>
-                <div class="contentsBox5">
-                    <div class="contentsInfo">
-                        <p class="shopTtl">교카이 라멘</p>
-                        <p class="ttlLine"></p>
-                        <p class="subTtl">소금의 감칠맛을 최대로 끌어올린<br>정수같은 시오 라멘</p>
-                        <p class="shop-text">기존 양념에 재료를 더해 만드는 츠기다시 방식의 특제 양념에 절인 차슈는 부드럽고 깊은 맛이 일품입니다.</p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop1-ramendata"
-                                    data-modaal-scope="modaal_17516175940812f8e0ebfa1e1">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop1-point"
-                                    data-modaal-scope="modaal_1751617594082e325ab7da5b67">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <div class="btn-shop-link"><a
-                                href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f" target="_blank">
-                                <p>매장 정보 보기</p>
-                                <p class="arrow"><span class="arrow-icon"></span></p>
-                            </a></div>
-                    </div>
-                    <div class="contents-img">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 특제 도로리 소바</span></div>
-                    </div>
-                    <p class="ramen-img"><img src="" alt="교카이라멘"></p>
-                </div>
-                <div class="contentsBox6">
-                    <div class="contentsImg">
-                        <p class="shop-icon"><img src="" alt=""></p>
-                        <div class="ramen-price"><span class="price">▲ 소라노이로특제간장 라멘</span></div>
-                    </div>
-                    <div class="contentsInfo">
-                        <p class="shop-ttl">니보시 라멘</p>
-                        <p class="ttl-line"></p>
-                        <p class="sub-ttl">돼지뼈를 장시간 푹 고아 만드는<br>주옥같은 돈코츠 라멘</p>
-                        <p class="shop-text">.<br></p>
-                        <div class="btn-links">
-                            <div class="btn-popup"><a class="modal" href="#shop2-ramendata"
-                                    data-modaal-scope="modaal_1751617594082944676b1db6a38">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">라멘 데이터</span>
-                                </a></div>
-                            <div class="btn-popup"><a class="modal" href="#shop2-point"
-                                    data-modaal-scope="modaal_175161759408230bf908fb8eda8">
-                                    <div class="btn-icon">
-                                        <p class="icon-parts"></p>
-                                    </div><span class="btn-text">추천 맛집</span>
-                                </a></div>
-                        </div>
-                        <p class="ramen-img"><img src="" alt="니보시라멘"></p>
-                    </div>
-                </div>
-            </section>
-            <!-- 라멘의 기타요소 영역(정보탭 : 고명, 면, 향미유) -->
-            <section class="section2">
-                <div class="lps_parts lps_parts--img_text">
-                    <div class="lps_parts">
-                        <div class="lps_parts--child pos-rel home_feature--cont">
-                            <div class="inner flex flex-col2 flex-sp-block flex-j-between pos-rel">
-                                <img src="/wp/wp-content/themes/standard_sass/images/home/feature01-img02.png" alt="">
-                                <div class="img_text--child img_text--img txt-ctr-sp">
-                                    <img src="/wp/wp-content/themes/standard_sass/images/home/feature01-img01.png" alt="">
+    <body>
+        <div id="wrapper">
+            <!-- header(공통사용) -->
+            <header id="header"></header>
+            <!-- 작업영역 -->
+            <main id="main">
+                <!-- 라멘이미지영역(정보탭 : 육수) -->
+                <section class="section1">
+                    <div class="contentsBox1">
+                        <div class="contentsInfo">
+                            <p class="shopTtl">시오 라멘</p>
+                            <p class="ttlLine"></p>
+                            <p class="subTtl">
+                                소금의 감칠맛을 최대로 끌어올린<br />정수같은
+                                시오 라멘
+                            </p>
+                            <p class="shop-text">
+                                기존 양념에 재료를 더해 만드는 츠기다시 방식의
+                                특제 양념에 절인 차슈는 부드럽고 깊은 맛이
+                                일품입니다.
+                            </p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-ramendata"
+                                        data-modaal-scope="modaal_17516175940812f8e0ebfa1e1"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
                                 </div>
-                                <div class="img_text--child img_text--txt">
-                                    <div class="text">
-                                        <h2 class="home-title mgn-btm40">
-                                            <span class="subtitle font-en">FEATURES<span
-                                                    class="feature-num">01</span></span>
-                                            <span class="ttl-03">岐阜市北部に開院する<br>在宅医療専門クリニック</span>
-                                        </h2>
-                                        <p>2025年4月開院。岐阜市北部を中心とした近隣の市町村の皆さまに、在宅医療をお届けします。</p>
-                                        <p>有料老人ホームなどの施設への訪問診療も行い、地域に密着した医療の選択肢を広げています。「この地域に住んでいてよかった」と感じていただける存在を目指し、日々診療に取り組んでいます。
-                                        </p>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-point"
+                                        data-modaal-scope="modaal_1751617594082e325ab7da5b67"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="btn-shop-link">
+                                <a
+                                    href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f"
+                                    target="_blank"
+                                >
+                                    <p>매장 정보 보기</p>
+                                    <p class="arrow">
+                                        <span class="arrow-icon"></span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contents-img">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price">▲ 특제 도로리 소바</span>
+                            </div>
+                        </div>
+                        <p class="ramen-img"><img src="" alt="시오라멘" /></p>
+                    </div>
+                    <div class="contentsBox2">
+                        <div class="contentsImg">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price"
+                                    >▲ 소라노이로특제간장 라멘</span
+                                >
+                            </div>
+                        </div>
+                        <div class="contentsInfo">
+                            <p class="shop-ttl">쇼유 라멘</p>
+                            <p class="ttl-line"></p>
+                            <p class="sub-ttl">
+                                돼지뼈를 장시간 푹 고아 만드는<br />주옥같은
+                                돈코츠 라멘
+                            </p>
+                            <p class="shop-text">.<br /></p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-ramendata"
+                                        data-modaal-scope="modaal_1751617594082944676b1db6a38"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
+                                </div>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-point"
+                                        data-modaal-scope="modaal_175161759408230bf908fb8eda8"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="ramen-img">
+                                <img src="" alt="쇼유라멘" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contentsBox3">
+                        <div class="contentsInfo">
+                            <p class="shopTtl">미소 라멘</p>
+                            <p class="ttlLine"></p>
+                            <p class="subTtl">
+                                소금의 감칠맛을 최대로 끌어올린<br />정수같은
+                                시오 라멘
+                            </p>
+                            <p class="shop-text">
+                                기존 양념에 재료를 더해 만드는 츠기다시 방식의
+                                특제 양념에 절인 차슈는 부드럽고 깊은 맛이
+                                일품입니다.
+                            </p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-ramendata"
+                                        data-modaal-scope="modaal_17516175940812f8e0ebfa1e1"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
+                                </div>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-point"
+                                        data-modaal-scope="modaal_1751617594082e325ab7da5b67"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="btn-shop-link">
+                                <a
+                                    href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f"
+                                    target="_blank"
+                                >
+                                    <p>매장 정보 보기</p>
+                                    <p class="arrow">
+                                        <span class="arrow-icon"></span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contents-img">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price">▲ 특제 도로리 소바</span>
+                            </div>
+                        </div>
+                        <p class="ramen-img"><img src="" alt="미소라멘" /></p>
+                    </div>
+                    <div class="contentsBox4">
+                        <div class="contentsImg">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price"
+                                    >▲ 소라노이로특제간장 라멘</span
+                                >
+                            </div>
+                        </div>
+                        <div class="contentsInfo">
+                            <p class="shop-ttl">돈코츠 라멘</p>
+                            <p class="ttl-line"></p>
+                            <p class="sub-ttl">
+                                돼지뼈를 장시간 푹 고아 만드는<br />주옥같은
+                                돈코츠 라멘
+                            </p>
+                            <p class="shop-text">.<br /></p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-ramendata"
+                                        data-modaal-scope="modaal_1751617594082944676b1db6a38"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
+                                </div>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-point"
+                                        data-modaal-scope="modaal_175161759408230bf908fb8eda8"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="ramen-img">
+                                <img src="" alt="돈코츠라멘" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contentsBox5">
+                        <div class="contentsInfo">
+                            <p class="shopTtl">교카이 라멘</p>
+                            <p class="ttlLine"></p>
+                            <p class="subTtl">
+                                소금의 감칠맛을 최대로 끌어올린<br />정수같은
+                                시오 라멘
+                            </p>
+                            <p class="shop-text">
+                                기존 양념에 재료를 더해 만드는 츠기다시 방식의
+                                특제 양념에 절인 차슈는 부드럽고 깊은 맛이
+                                일품입니다.
+                            </p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-ramendata"
+                                        data-modaal-scope="modaal_17516175940812f8e0ebfa1e1"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
+                                </div>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop1-point"
+                                        data-modaal-scope="modaal_1751617594082e325ab7da5b67"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="btn-shop-link">
+                                <a
+                                    href="https://www.tokyoeki-1bangai.co.jp/ko/?area=area3&amp;floor=b1f"
+                                    target="_blank"
+                                >
+                                    <p>매장 정보 보기</p>
+                                    <p class="arrow">
+                                        <span class="arrow-icon"></span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contents-img">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price">▲ 특제 도로리 소바</span>
+                            </div>
+                        </div>
+                        <p class="ramen-img"><img src="" alt="교카이라멘" /></p>
+                    </div>
+                    <div class="contentsBox6">
+                        <div class="contentsImg">
+                            <p class="shop-icon"><img src="" alt="" /></p>
+                            <div class="ramen-price">
+                                <span class="price"
+                                    >▲ 소라노이로특제간장 라멘</span
+                                >
+                            </div>
+                        </div>
+                        <div class="contentsInfo">
+                            <p class="shop-ttl">니보시 라멘</p>
+                            <p class="ttl-line"></p>
+                            <p class="sub-ttl">
+                                돼지뼈를 장시간 푹 고아 만드는<br />주옥같은
+                                돈코츠 라멘
+                            </p>
+                            <p class="shop-text">.<br /></p>
+                            <div class="btn-links">
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-ramendata"
+                                        data-modaal-scope="modaal_1751617594082944676b1db6a38"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text"
+                                            >라멘 데이터</span
+                                        >
+                                    </a>
+                                </div>
+                                <div class="btn-popup">
+                                    <a
+                                        class="modal"
+                                        href="#shop2-point"
+                                        data-modaal-scope="modaal_175161759408230bf908fb8eda8"
+                                    >
+                                        <div class="btn-icon">
+                                            <p class="icon-parts"></p>
+                                        </div>
+                                        <span class="btn-text">추천 맛집</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="ramen-img">
+                                <img src="" alt="니보시라멘" />
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 라멘의 기타요소 영역(정보탭 : 고명, 면, 향미유) -->
+                <section class="section2">
+                    <div class="lps_parts lps_parts--img_text">
+                        <div class="lps_parts">
+                            <div
+                                class="lps_parts--child pos-rel home_feature--cont"
+                            >
+                                <div
+                                    class="inner flex flex-col2 flex-sp-block flex-j-between pos-rel"
+                                >
+                                    <img
+                                        src="/wp/wp-content/themes/standard_sass/images/home/feature01-img02.png"
+                                        alt=""
+                                    />
+                                    <div
+                                        class="img_text--child img_text--img txt-ctr-sp"
+                                    >
+                                        <img
+                                            src="/wp/wp-content/themes/standard_sass/images/home/feature01-img01.png"
+                                            alt=""
+                                        />
                                     </div>
-                                </div>
-                                <div class="current-flower flex gap20 flex-a-ctr flex-column gap-sp10">
-                                    <img src="/wp/wp-content/themes/standard_sass/images/home/feature_flower.svg"
-                                        width="24" height="26" alt="特徴１" loading="lazy" style="width: 1.5rem;">
-                                    <span class="current-circle"></span>
-                                    <span class="current-circle"></span>
+                                    <div class="img_text--child img_text--txt">
+                                        <div class="text">
+                                            <h2 class="home-title mgn-btm40">
+                                                <span class="subtitle font-en"
+                                                    >FEATURES<span
+                                                        class="feature-num"
+                                                        >01</span
+                                                    ></span
+                                                >
+                                                <span class="ttl-03"
+                                                    >岐阜市北部に開院する<br />在宅医療専門クリニック</span
+                                                >
+                                            </h2>
+                                            <p>
+                                                2025年4月開院。岐阜市北部を中心とした近隣の市町村の皆さまに、在宅医療をお届けします。
+                                            </p>
+                                            <p>
+                                                有料老人ホームなどの施設への訪問診療も行い、地域に密着した医療の選択肢を広げています。「この地域に住んでいてよかった」と感じていただける存在を目指し、日々診療に取り組んでいます。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-flower flex gap20 flex-a-ctr flex-column gap-sp10"
+                                    >
+                                        <img
+                                            src="/wp/wp-content/themes/standard_sass/images/home/feature_flower.svg"
+                                            width="24"
+                                            height="26"
+                                            alt="特徴１"
+                                            loading="lazy"
+                                            style="width: 1.5rem"
+                                        />
+                                        <span class="current-circle"></span>
+                                        <span class="current-circle"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- 요즘 유행하는 계열 -->
-        </main>
-        <!-- footer영역(공통사용) -->
-        <footer id="footer"></footer>
-    </div>
+                </section>
+                <!-- 요즘 유행하는 계열 -->
+            </main>
+            <!-- footer영역(공통사용) -->
+            <footer id="footer"></footer>
+        </div>
 
-    <!-- 공통사용 -->
-    <script src="js/common.js"></script>
-    <!-- 각화면 js생성하여 사용 -->
-    <script src="js/main.js"></script>
-</body>
-
+        <!-- 공통사용 -->
+        <script src="js/common.js"></script>
+        <!-- 각화면 js생성하여 사용 -->
+        <script src="js/main.js"></script>
+    </body>
 </html>
