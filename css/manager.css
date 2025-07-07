@@ -3,3 +3,37 @@
 #main {
   background-color: antiquewhite;
 }
+
+#inner {
+  max-width: 75vw;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#managerLeft {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+}
+#managerRight {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#managerRight table {
+  width: 100%;
+  border-spacing: 30px;
+  border-collapse: separate;
+  text-align: center;
+}
+
+#managerSearch {
+  display: flex;
+}
