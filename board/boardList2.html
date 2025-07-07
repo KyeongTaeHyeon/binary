@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RaFeed</title>
+        <!-- 공통사용 -->
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <!-- 각화면 css 생성하여 사용 -->
+        <link rel="stylesheet" href="../css/boardList.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- header(공통사용) -->
+            <header id="header"></header>
+            <!-- 작업영역 -->
+           <main id="main">
+  <div id="boardcreat">
+    
+  
+    <div class="filter">
+      <a href="" class="active"><span>전체</span></a>
+      <a href=""><span>자유게시판</span></a>
+      <a href=""><span>식당인증</span></a>
+      <a href=""><span>식당신청</span></a>
+    </div>
+
+    <!-- 게시글 리스트 -->
+     <div class="id creatPost">
+        <div id="postNumber">
+         <article class="post ">
+         <div class="name"><a href="">게시물 제목</a></div>
+         <span class="tage"><a href="">태그</a></span>
+         <div class="user">작성자</div>
+         <div class="userTime">작성시간</div>
+        </article>
+        </div>
+    <!--버튼-->    
+    <div id="bTn">
+    <button>목록</button>
+    <button>수정</button>
+    <button>삭제</button>
+    </div>
+    <!--게시글작성-->
+    <div class="contentPost">
+        <input type="text">내용을 입력해주세요..
+    </div>
+    <!--댓글작성-->
+    <div class="comment">
+        <div class="commentText"><input type="text" placeholder="댓글을 입력하시오"></div>
+        <div class="commentBtn"><button>댓글등록</button></div>
+    </div>
+    <!--답글입력,수정-->
+      <div class="commentList">
+      <!-- 댓글 1 -->
+      <div class="commentItem">
+        <div class="commentTop">
+          <span class="commentUser">작성자1</span> :
+          <span class="commentContent">댓글 내용입니다.</span>
+          <span class="commentDate">작성일자</span>
+          <button class="editBtn">수정</button>
+          <button class="deleteBtn">삭제</button>
+        </div>
+
+        <!-- 대댓글 -->
+        <div class="replyItem">
+          <span class="arrow">ㄴ</span>
+          <span class="commentUser">작성자2</span> :
+          <span class="commentContent">대댓글 내용입니다.</span>
+          <span class="commentDate">작성일자</span>
+          <button class="editBtn">수정</button>
+          <button class="deleteBtn">삭제</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</main>
+ 
+   
+
+            <!-- footer영역(공통사용) -->
+            <footer id="footer"></footer>
+        </div>
+
+        <!-- 공통사용 -->
+        <script src="../js/common.js"></script>
+        <!-- 각화면 js생성하여 사용 -->
+        <script src="../js/boardList.js"></script>
+    </body>
+</html>
