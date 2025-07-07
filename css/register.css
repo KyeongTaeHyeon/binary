@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.button {
+    width: 150px;
+    height: 50px;
+    background-color: #5ac3f5;
+    color: #fff;
+    border: none;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+.checkbutton {
+    width: 100px !important;
+    height: 40px !important;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#regiterWrapper {
+    min-width: 480px;
+    width: 50vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d6eefc;
+    border-radius: 5vh;
+    padding: 3rem;
+}
+
+#regiterWrapper h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#regiterWrapper #registerForm {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputWrapper {
+    width: 100%;
+}
+
+.inputWrapper .inputGroup {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#registerForm .inputGroup label {
+    width: 120px;
+    font-size: 1.2rem;
+    text-align: right;
+    margin-right: 15px;
+    padding: 2px;
+    line-height: 40px;
+}
+
+#registerForm .inputGroup input {
+    width: 40%;
+    border: 2px solid #dedede;
+    margin-right: 10px;
+    line-height: 30px;
+    padding: 5px;
+}
+
+#registerForm .inputGroup button {
+    width: 120px;
+}
+
+#registerForm .inputGroup select {
+    width: 120px;
+}
+
+#loginForm .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
