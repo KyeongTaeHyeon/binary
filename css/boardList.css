@@ -211,6 +211,9 @@
     justify-content: center;
 }
 
+
+
+
 /* 댓글 작성 */
 /* 댓글 작성 섹션 (comment 클래스) */
 .comment {
@@ -256,7 +259,7 @@
 }
 
 /* 대댓글 영역 (선택적) */
-.reply {
+.replyit{
     padding-left: 24px;
     margin-top: 8px;
     font-size: 14px;
