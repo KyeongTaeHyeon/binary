@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>RaFeed</title>
         <!-- 공통사용 -->
-        <link rel="stylesheet" href="../css/common.css" />
         <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/common.css" />
+
         <!-- 각화면 css 생성하여 사용 -->
         <link rel="stylesheet" href="../css/boardList.css" />
     </head>
@@ -19,7 +20,7 @@
                 <div id="boardMain">
                     <!-- 필터 -->
                     <div class="filter">
-                        <a href=""><span>전체</span></a>
+                        <a href="" class="active"><span>전체</span></a>
                         <a href=""><span>자유게시판</span></a>
                         <a href=""><span>식당인증</span></a>
                         <a href=""><span>식당신청</span></a>
@@ -29,10 +30,10 @@
                     <div id="postNumber">
                         <article class="post">
                             <div class="name">
-                                <a href=""
-                                    ><span class="tageone">자유게시판</span
-                                    >게시글</a
-                                >
+                                <a href="">
+                                    <span class="tageone">자유게시판</span>
+                                    게시글
+                                </a>
                             </div>
                             <div class="user">작성자</div>
                             <div class="userTime">작성시간</div>
@@ -40,9 +41,10 @@
 
                         <article class="post">
                             <div class="name">
-                                <a href=""
-                                    ><span class="tage">식당인증</span>게시글</a
-                                >
+                                <a href="">
+                                    <span class="tage"> 식당인증 </span>
+                                    게시글
+                                </a>
                             </div>
                             <div class="user">작성자</div>
                             <div class="userTime">작성시간</div>
@@ -50,9 +52,10 @@
 
                         <article class="post">
                             <div class="name">
-                                <a href=""
-                                    ><span class="tage">식당신청</span>게시글</a
-                                >
+                                <a href="">
+                                    <span class="tage">식당신청</span>
+                                    게시글
+                                </a>
                             </div>
                             <div class="user">작성자</div>
                             <div class="userTime">작성시간</div>
@@ -62,11 +65,16 @@
                     <!-- 페이징 + 글쓰기 -->
                     <div id="contentNav">
                         <nav class="pagination">
-                            <button class="page-btn prev" aria-label="이전 페이지">
+                            <button
+                                class="page-btn prev"
+                                aria-label="이전 페이지"
+                            >
                                 &lt;
                             </button>
                             <ul class="page-list">
-                                <li class="page-item active"><button>1</button></li>
+                                <li class="page-item active">
+                                    <button>1</button>
+                                </li>
                                 <li class="page-item"><button>2</button></li>
                                 <li class="page-item"><button>3</button></li>
                                 <li class="page-item"><button>4</button></li>
@@ -77,7 +85,10 @@
                                 <li class="page-item"><button>9</button></li>
                                 <li class="page-item"><button>10</button></li>
                             </ul>
-                            <button class="page-btn next" aria-label="다음 페이지">
+                            <button
+                                class="page-btn next"
+                                aria-label="다음 페이지"
+                            >
                                 &gt;
                             </button>
                         </nav>
