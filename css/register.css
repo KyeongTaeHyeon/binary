@@ -73,7 +73,7 @@
 }
 
 #registerForm .inputGroup input {
-    width: 40%;
+    width: 70%;
     border: 2px solid #dedede;
     margin-right: 10px;
     line-height: 30px;
@@ -85,7 +85,7 @@
 }
 
 #registerForm .inputGroup select {
-    width: 120px;
+    width: 50%;
 }
 
 #loginForm .buttonWrapper {
