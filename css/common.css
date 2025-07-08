@@ -158,6 +158,10 @@ body {
     justify-content: center;
 }
 
+#user .active {
+    display: flex;
+}
+
 .loginMypage {
     display: none;
 }
