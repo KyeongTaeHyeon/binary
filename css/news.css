@@ -1,8 +1,13 @@
 @charset "utf-8";
 /* 안전사이즈 */
-#main{
-  min-width: 1440px;
+#boardcreat {
+    width: 90%;
+    max-width: 75vw;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
+
 /* 필터 */
 .filter {
     display: flex;
@@ -57,7 +62,6 @@
     margin-right: 15px;
 }
 
-
 .post .name {
     flex: 2;
     font-size: 16px;
@@ -85,15 +89,15 @@
     display: flex;
     justify-content: center;
     margin: 40px 0;
-  }
-  
-  .pagination {
+}
+
+.pagination {
     display: flex;
     align-items: center;
     gap: 12px;
-  }
-  
-  .page-btn {
+}
+
+.page-btn {
     background: #d6eefc;
     border: 1px solid #d6eefc;
     color: #5ac3f5;
@@ -103,22 +107,22 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-  }
-  .page-btn:hover {
+}
+.page-btn:hover {
     background: #d6eefc;
     color: #5ac3f5;
     border-color: #d6eefc;
-  }
-  
-  .page-list {
+}
+
+.page-list {
     display: flex;
     gap: 8px;
     padding: 0;
     margin: 0;
     list-style: none;
-  }
-  
-  .page-item button {
+}
+
+.page-item button {
     background: none;
     border: none;
     color: #5ac3f5;
@@ -128,27 +132,26 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-  }
-  
-  .page-item.active button,
-  .page-item button:hover {
+}
+
+.page-item.active button,
+.page-item button:hover {
     background: #d6eefc;
     color: #5ac3f5;
     font-weight: bold;
-  }
-  
-  
-  .writing {
-      background-color: #5ac3f5;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 700;
-      padding: 12px 24px;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-  }
-  
-  .writing:hover {
-      background-color: #47aee4;
-  }
+}
+
+.writing {
+    background-color: #5ac3f5;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.writing:hover {
+    background-color: #47aee4;
+}
