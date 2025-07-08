@@ -19,56 +19,37 @@
             <main id="main">
                 <div id="container">
                     <!-- 히어로 영역 : 최신 유행 라멘  -->
-                    <div class="mainslideWrap">
-                        <div class="mainslide">
-                            <div class="slideImg">
-                                <img
-                                    src="img/KakaoTalk_20250707_165055026_05.png"
-                                    alt="“사람” 중심 AI 융합교육 로보토리에듀가 합니다."
-                                />
-                            </div>
-                            <div class="slideText">
-                                <div class="left">
-                                    <p class="stl">
-                                        인재와 기술로 세상을 밝고 따뜻하게
-                                        변화시키는 교육<br />
-                                        모두 행복해지는 기술의 가치를
-                                        전하겠습니다.
-                                    </p>
+                    <div class="mainHero">
+                        <div class="mainSlides">
+                            <div class="slide">
+                                <div class="slideImg">
+                                    <img
+                                        src="img/heroimg1.png"
+                                        alt="Pink Blossom"
+                                    />
                                 </div>
-                                <div class="right">
-                                    <p><a href="">라멘 데이터</a></p>
-                                    <p><a href="">원조집 보기</a></p>
+                                <div class="slideText">
+                                    <p class="slideTitle">이에케 라멘</p>
+                                    <a href="">라멘 데이터</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="mainslideController">
-                            <div class="pager">
-                                <span class="current">1</span>
-                                <p class="progress">
-                                    <span class="active"></span>
-                                </p>
-                                <span class="total">3</span>
+                        <div class="mainSlideController">
+                            <div class="mainPager">
+                                <ul>
+                                    <li>
+                                        <button><span>1</span></button>
+                                    </li>
+                                    <li class="active">
+                                        <button><span>2</span></button>
+                                    </li>
+                                    <li>
+                                        <button><span>3</span></button>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="autoplay">
-                                <p class="pause">
-                                    <button>
-                                        <span class="hide">자동재생 멈춤</span>
-                                    </button>
-                                </p>
-                            </div>
-                            <div class="arrowBtn">
-                                <p class="prev">
-                                    <button>
-                                        <span class="hide">이전으로</span>
-                                    </button>
-                                </p>
-                                <p class="next">
-                                    <button>
-                                        <span class="hide">다음으로</span>
-                                    </button>
-                                </p>
-                            </div>
+                            <p class="btnPrev"><button>이전으로</button></p>
+                            <p class="btnNext"><button>다음으로</button></p>
                         </div>
                     </div>
                     <!-- 라멘이미지영역(정보탭 : 육수) -->
@@ -111,7 +92,6 @@
                             <div class="contentsImg">
                                 <p class="shopIcon">
                                     <img
-                                        class="ramenOver"
                                         src="img/ramen01.png"
                                         alt="시오라멘"
                                     />
@@ -125,7 +105,6 @@
                             <div class="contentsImg">
                                 <p class="shopIcon">
                                     <img
-                                        class="ramenOver"
                                         src="img/ramen02.png"
                                         alt=""
                                     />
@@ -210,7 +189,6 @@
                             <div class="contentsImg">
                                 <p class="shopIcon">
                                     <img
-                                        class="ramenOver"
                                         src="img/ramen03.png"
                                         alt="미소라멘"
                                     />
@@ -224,7 +202,6 @@
                             <div class="contentsImg">
                                 <p class="shopIcon">
                                     <img
-                                        class="ramenOver"
                                         src="img/ramen04.png"
                                         alt="돈코츠라멘"
                                     />
@@ -306,7 +283,6 @@
                             <div class="contentsImg">
                                 <p class="shopIcon">
                                     <img
-                                        class="ramenOver"
                                         src="img/ramen05.png"
                                         alt="교카이라멘"
                                     />
@@ -319,8 +295,7 @@
                         <div class="contentsBox 06">
                             <div class="contentsImg">
                                 <p class="shopIcon">
-                                    <img
-                                        class="ramenOver"
+                                    <img class="ramenOver"
                                         src="img/ramen06.png"
                                         alt="니보시라멘"
                                     />
@@ -364,22 +339,21 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- content box 1,2영역 묶어서 2번 복사 : 총 6개-->
                     </section>
-                    <!-- 라멘의 기타요소 영역(정보탭 : 고명, 면, 향미유) -->
+                    <!-- 라멘의 기타요소 영역(정보탭 : 고명, 면) -->
                     <section class="section2">
                         <div class="etcWrap">
                             <div class="etcList">
                                 <div class="feature 01">
                                     <div class="etcInner">
-                                        <p class="leftImg"></p>
+                                        <p class="topImg"></p>
                                         <div class="etcLeft">
                                             <p class="cirImg1"></p>
                                         </div>
                                         <div class="etcRight">
                                             <div class="etcText">
                                                 <h2 class="etcTitle">
-                                                    <span class="feature"
+                                                    <span class="features"
                                                         >FEATURES<span
                                                             class="featureNum"
                                                             >01</span
@@ -389,7 +363,6 @@
                                                         >향미유</span
                                                     >
                                                 </h2>
-                                                <p>향미유에 대한 내용</p>
                                                 <p>
                                                     향미유는 라멘의 맛을
                                                     더해주는 중요한 요소이다.<br />
@@ -404,7 +377,113 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- feature 기타 요소 수만큼 복사 -->
+                                <div class="feature 02">
+                                    <div class="etcInner">
+                                        <p class="topImg"></p>
+                                        <div class="etcLeft">
+                                            <p class="cirImg1"></p>
+                                        </div>
+                                        <div class="etcRight">
+                                            <div class="etcText">
+                                                <h2 class="etcTitle">
+                                                    <span class="feature"
+                                                        >FEATURES<span
+                                                            class="featureNum"
+                                                            >02</span
+                                                        ></span
+                                                    >
+                                                    <br /><span class="subTitle"
+                                                        >소스</span
+                                                    >
+                                                </h2>
+                                                <p>
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature 03">
+                                    <div class="etcInner">
+                                        <p class="topImg"></p>
+                                        <div class="etcLeft">
+                                            <p class="cirImg1"></p>
+                                        </div>
+                                        <div class="etcRight">
+                                            <div class="etcText">
+                                                <h2 class="etcTitle">
+                                                    <span class="feature"
+                                                        >FEATURES<span
+                                                            class="featureNum"
+                                                            >03</span
+                                                        ></span
+                                                    >
+                                                    <br /><span class="subTitle"
+                                                        >고명</span
+                                                    >
+                                                </h2>
+                                                <p>
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="feature 04">
+                                    <div class="etcInner">
+                                        <p class="topImg"></p>
+                                        <div class="etcLeft">
+                                            <p class="cirImg1"></p>
+                                        </div>
+                                        <div class="etcRight">
+                                            <div class="etcText">
+                                                <h2 class="etcTitle">
+                                                    <span class="feature"
+                                                        >FEATURES<span
+                                                            class="featureNum"
+                                                            >04</span
+                                                        ></span
+                                                    >
+                                                    <br /><span class="subTitle"
+                                                        >면</span
+                                                    >
+                                                </h2>
+                                                <p>
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                    향미유는 라멘의 맛을
+                                                    더해주는 중요한 요소이다.<br />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>

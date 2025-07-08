@@ -4,150 +4,107 @@ body {
     font-weight: 500;
     color: #5ac3f5;
     line-height: 1.8;
+    min-width: 1440px;
 }
 .hide {
     display: block;
     text-indent: -99999999999px;
 }
-.ramenOver {
-    height: 597px;
-}
 /* 메인히어로 */
-.mainslideWrap {
+.mainHero{
     position: relative;
-    margin-bottom: 100px;
-    overflow: hidden;
 }
-.mainSlide {
+.mainHero .slide{
     position: relative;
     overflow: hidden;
 }
-.mainSlide .slideImg {
-    width: 1520px;
+.mainHero .slideImg{
+    width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
-.mainSlide .slideImg img {
-    margin-left: -170px;
+.mainHero .slideImg img{
+    margin-left: -240px;
 }
-.mainSlide .slideText {
+.mainHero .slideText{
     position: absolute;
-    top: 164px;
+    bottom: 169px;
     left: 50%;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1860px;
-    min-width: 1520px;
-    transform: translateX(-50%);
+    margin-left: -720px;
 }
-.mainSlide .slideText .left {
-    padding-left: 96px;
+.mainHero .slideText .slideTitle{
+    margin-bottom: 8px;
+    font-size: 48px;
+    font-weight: 700;
     color: #fff;
 }
-
-.mainSlide .slideText .left .stl {
-    font-size: 24px;
-    font-weight: 500;
-}
-.mainSlide .slideText .right {
-    padding-right: 96px;
-}
-.mainSlide .slideText .right p {
-    margin-bottom: 16px;
-}
-.mainSlide .slideText .right p a {
-    display: block;
-    box-sizing: border-box;
-    width: 300px;
-    padding-left: 44px;
+.mainHero .slideText a{
+    display: inline-block;
+    padding: 0 40px;
     border: 1px solid #fff;
-    border-radius: 45px;
-    line-height: 88px;
-    font-size: 20px;
+    border-radius: 25px;
+    font-size: 16px;
     color: #fff;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
-    background-repeat: no-repeat;
-    background-position: right 28px center;
+    line-height: 48px;
 }
-.mainslideController {
+.mainHero .mainSlideController{
     position: absolute;
-    bottom: 0;
-    right: 50%;
+    left: 50%;
+    bottom: 80px;
     display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 28px;
-    width: 365px;
-    height: 60px;
-    padding-top: 30px;
-    margin-right: -930px;
+    width: 1440px;
+    margin-left: -720px;
+}
+.mainHero .mainPager{
+    flex: 1;
+    margin-right: 23px;
+}
+.mainHero .mainPager ul{
+    display: flex;
+}
+.mainHero .mainPager li{
+    width: 33.33%;
+    opacity: 0.2;
+}
+.mainHero .mainPager .active{
+    opacity: 0.8;
+}
+.mainHero .mainPager li button{
+    width: 100%;
+    height: 40px;
+}
+.mainHero .mainPager li button span{
+    display: block;
+    width: 100%;
+    height: 2px;
     background-color: #fff;
+    text-indent: -999999px;
 }
-.mainslideController::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -55px;
-    display: block;
-    width: 55px;
-    height: 90px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_03.png);
+.mainHero .btnPrev{
+    width: 40px;
+    margin-right: 2px;
 }
-.mainslideController::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -31px;
-    display: block;
-    width: 26px;
-    height: 31px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_04.png);
+.mainHero .btnNext{
+    width: 40px;
 }
-.mainslideController .pager {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    font-size: 18px;
+.mainHero .btnPrev button, .mainHero .btnNext button{
+    width: 40px;
+    height: 40px;
+    text-indent: -999999px;
+    display: inline-block;
+    border-radius: 50%;
 }
-.mainslideController .pager .progress {
-    width: 39px;
-    height: 2px;
-    background-color: #e6e6e6;
+.mainHero .btnPrev button{
+    background-image: url(../img/ico-btnprev-bl.png);
+    background-position: center;
 }
-.mainslideController .pager .progress .active {
-    display: block;
-    width: 13px;
-    height: 2px;
-    background-color: #737373;
-}
-.mainslideController .pager .total {
-    opacity: 0.5;
-}
-.mainslideController .autoplay p button {
-    width: 24px;
-    height: 24px;
-}
-.mainslideController .autoplay .pause button {
-    background-image: url(../img/KakaoTalk_20250707_165055026_01.png);
-}
-.mainslideController .arrowBtn {
-    display: flex;
-    gap: 10px;
-}
-.mainslideController .arrowBtn p button {
-    width: 60px;
-    height: 60px;
-}
-.mainslideController .arrowBtn .prev button {
-    background-image: url(../images/btn_prev_bk.png);
-}
-.mainslideController .arrowBtn .next button {
-    background-image: url(../images/btn_next_bk.png);
+.mainHero .btnNext button{
+    background-image: url(../img/ico-btnnext-bl.png);
+    background-position: center;
 }
 /* 섹션1 */
 .section1 {
-    width: 70%;
+    width: 1440px;
     margin: 0 auto;
 }
 .section1 .contentsBox {
@@ -226,7 +183,6 @@ body {
 .section1 .btnShop {
     margin-top: 35px;
     width: 250px;
-    height: 60px;
     border-radius: 30px;
     overflow: hidden;
 }
@@ -246,30 +202,37 @@ body {
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
+    background-image: url(../img/ico-arrowright-wh.png);
     position: absolute;
     right: 20px;
     top: 18px;
 }
+.section1 .ramenOver{
+    height: 597px;
+}
 
 /* 섹션2 */
 .section2 {
-    width: 70%;
+    width: 1440px;
     margin: 0 auto;
 }
+.etcTitle{
+    margin-bottom: 30px;
+}
 .section2 .feature {
-    padding: 84px 0;
+    padding: 150px 0;
 }
 .section2 .etcInner {
     display: flex;
     justify-content: space-between;
     position: relative;
+    width: 1440px;
+    margin: 0 auto;
 }
-
 .section2 .etcLeft {
     width: 50%;
 }
-.section2 .etcInner .leftImg {
+.section2 .etcInner .topImg {
     position: absolute;
     top: -100px;
     right: 50%;
@@ -280,8 +243,8 @@ body {
     background-image: url(../img/sect03_oil1.jpg);
 }
 .section2 .etcLeft .cirImg1 {
-    width: 600px;
-    height: 580px;
+    width: 680px;
+    height: 620px;
     border-radius: 50%;
     background-image: url(../img/sect3_oil.jpg);
 }
@@ -290,7 +253,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .section2 .etcRight .etcText .featureNum {
     font-size: 37.625px;
@@ -303,13 +266,13 @@ body {
 }
 /* 섹션3 */
 .section3 {
-    width: 70%;
+    width: 1440px;
     margin: 0 auto;
 }
 .section3 .boardWrap {
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 100px 300px;
 }
 .section3 .boardList {
     width: 50%;
@@ -319,6 +282,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    text-align: center;
 }
 .section3 .boardTitle {
     font-size: 37.625px;
@@ -337,12 +301,13 @@ body {
     color: white;
     background-color: #407ff0;
     text-decoration: none;
+    margin: 0 auto;
 }
 .section3 .boardBtn a::after {
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
+    background-image: url(../img/ico-arrowright-wh.png);
     position: absolute;
     right: 20px;
     top: 20px;
