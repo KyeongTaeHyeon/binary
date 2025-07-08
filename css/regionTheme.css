@@ -125,7 +125,7 @@
     cursor: pointer;
 }
 
-/* 페이지 네비게이션 디자인 */
+/* 페이지 네비게이션 디자인 - 색상 구분 및 자연스러운 효과 */
 #contentNav {
     width: 100%;
     display: flex;
@@ -139,24 +139,25 @@
     gap: 12px;
 }
 
-.page-btn {
-    background: #d6eefc;
-    border: 1px solid #d6eefc;
+.pageBtn {
+    background: #fff;
+    border: 1.5px solid #5ac3f5;
     color: #5ac3f5;
     font-size: 1.4rem;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(90, 195, 245, 0.08);
 }
-.page-btn:hover {
-    background: #d6eefc;
-    color: #5ac3f5;
-    border-color: #d6eefc;
+.pageBtn:hover {
+    background: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
 }
 
-.page-list {
+.pageList {
     display: flex;
     gap: 8px;
     padding: 0;
@@ -164,21 +165,23 @@
     list-style: none;
 }
 
-.page-item button {
-    background: none;
-    border: none;
+.pageItem button {
+    background: #f0f8ff;
+    border: 1px solid #b2e4fa;
     color: #5ac3f5;
     font-size: 1.1rem;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 1px 4px rgba(90, 195, 245, 0.06);
 }
 
-.page-item.active button,
-.page-item button:hover {
-    background: #d6eefc;
-    color: #5ac3f5;
+.pageItem.active button,
+.pageItem button:hover {
+    background: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
     font-weight: bold;
 }
