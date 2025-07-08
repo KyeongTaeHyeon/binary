@@ -1,4 +1,8 @@
 @charset "utf-8";
+/* 안전사이즈 */
+#main{
+  min-width: 1440px;
+}
 /* 필터 */
 .filter {
     display: flex;
