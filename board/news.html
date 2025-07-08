@@ -16,23 +16,28 @@
             <header id="header"></header>
             <!-- 작업영역 -->
             <main id="main">
-                <div id="boardMain">
-                    <!-- 필터 -->
+                <div id="boardcreat">
+                    <h1 id="news">뉴스</h1>
                     <div class="filter">
-                        <a href=""><span>전체</span></a>
-                        <a href=""><span>자유게시판</span></a>
-                        <a href=""><span>식당인증</span></a>
-                        <a href=""><span>식당신청</span></a>
+                        <a href="" class="active"><span>전체</span></a>
+                        <a href=""><span>라면 관련 이슈</span></a>
+                        <a href=""><span>올해의 라멘</span></a>
+                      
                     </div>
 
-                    <!-- 게시글 리스트 -->
-                    <div id="postNumber">
+                     <!-- 게시글 리스트 -->
+                     <div id="postNumber">
+                        <article class="post">                         
+                                <div class="name">
+                                    <a href="">글번호</a><div><a href="">제목</a></div>
+                                </div>
+                            <div class="user">작성자</div>
+                            <div class="userTime">작성시간</div>
+                        </article>
+
                         <article class="post">
                             <div class="name">
-                                <a href=""
-                                    ><span class="tageone">자유게시판</span
-                                    >게시글</a
-                                >
+                                <a href="">글번호</a><div><a href="">제목</a></div>
                             </div>
                             <div class="user">작성자</div>
                             <div class="userTime">작성시간</div>
@@ -40,20 +45,9 @@
 
                         <article class="post">
                             <div class="name">
-                                <a href=""
-                                    ><span class="tage">식당인증</span>게시글</a
-                                >
+                                <a href="">글번호</a><div><a href="">제목</a></div>
                             </div>
-                            <div class="user">작성자</div>
-                            <div class="userTime">작성시간</div>
-                        </article>
-
-                        <article class="post">
-                            <div class="name">
-                                <a href=""
-                                    ><span class="tage">식당신청</span>게시글</a
-                                >
-                            </div>
+                            
                             <div class="user">작성자</div>
                             <div class="userTime">작성시간</div>
                         </article>
@@ -85,6 +79,7 @@
                     </div>
                 </div>
             </main>
+
             <!-- footer영역(공통사용) -->
             <footer id="footer"></footer>
         </div>
