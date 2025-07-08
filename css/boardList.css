@@ -1,292 +1,316 @@
 @charset "UTF-8";
 
-
 /* 전체 게시판 스타일 */
 #boardMain {
-  width: 1440px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #D6EEFC;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #d6eefc;
 }
 /* h역역 */
 
 
 /* 필터 */
 .filter {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
 .filter span {
-  display: inline-block;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  background-color: #fff;
-  color: #5AC3F5;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 12px 24px;
-
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #5ac3f5;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px 24px;
 }
 
 .filter span:hover,
 .filter a.active span {
-  background-color: #5AC3F5;
-  color: #fff;
-  border-color: #5AC3F5;
+    background-color: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
 }
 
 /* 게시글 행 */
 .post {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  padding: 16px 24px;
-  margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-bottom: 12px;
 }
-.post .tageone{
-  font-size: 10px;
-  color: #fff;
+.post .tageone {
+    font-size: 10px;
+    color: #fff;
 }
-.post .tage{
-  font-size: 12px;
-  color: #fff;
+.post .tage {
+    font-size: 12px;
+    color: #fff;
 }
-.post .tageone{
-  border-radius: 20%;
-  background-color: #5AC3F5;
-  padding: 6px 8px;
-  margin-right: 15px;
+.post .tageone {
+    border-radius: 20%;
+    background-color: #5ac3f5;
+    padding: 6px 8px;
+    margin-right: 15px;
 }
-.post .tage{
-  border-radius: 20%;
-  background-color: #5AC3F5;
-  padding: 6px 8px;
-  margin-right: 15px;
+.post .tage {
+    border-radius: 20%;
+    background-color: #5ac3f5;
+    padding: 6px 8px;
+    margin-right: 15px;
 }
-
 
 .post .name {
-  flex: 2;
-  font-size: 16px;
-  color: #222;
-  text-align: left;
+    flex: 2;
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    color: #222;
+    text-align: left;
 }
 
 .post .user {
-  flex: 1;
-  font-size: 16px;
-  color: #555;
-  text-align: center;
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
 }
 
 .post .userTime {
-  flex: 1;
-  font-size: 16px;
-  color: #555;
-  text-align: right;
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: right;
 }
 
-
-.number {
-  margin-top: 40px;
+#contentNav {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.pagination {
+  display: flex;
   align-items: center;
-}
-
-.numberList {
-  display: flex;
   gap: 12px;
 }
 
-.numberList {
-  line-height: 29px;
-  height: 28px;
-  min-width: 28px;
-  padding: 0 8px;
-  font-size: 15px;
-  color: #888;
-  border: 1px solid #dedede;
-  border-radius: 4px;
-  text-align: center;
+.page-btn {
+  background: #d6eefc;
+  border: 1px solid #d6eefc;
+  color: #5ac3f5;
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.page-btn:hover {
+  background: #d6eefc;
+  color: #5ac3f5;
+  border-color: #d6eefc;
 }
 
-.numberList .numberOne,
-.numberList a:hover {
-  background-color: #5AC3F5;
-  color: white;
-  border-color: #5AC3F5;
+.page-list {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
+
+.page-item button {
+  background: none;
+  border: none;
+  color: #5ac3f5;
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.page-item.active button,
+.page-item button:hover {
+  background: #d6eefc;
+  color: #5ac3f5;
+  font-weight: bold;
+}
+
 
 .writing {
-  background-color: #5AC3F5;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 12px 24px;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+    background-color: #5ac3f5;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .writing:hover {
-  background-color: #47aee4;
+    background-color: #47aee4;
 }
 /* 버튼 그룹 */
 #bTn {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin: 20px 0;
 }
 
 #bTn button {
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #fff;
-  color: #5AC3F5;
-  border: 1px solid #5AC3F5;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #5ac3f5;
+    border: 1px solid #5ac3f5;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 #bTn button:hover {
-  background-color: #5AC3F5;
-  color: #fff;
+    background-color: #5ac3f5;
+    color: #fff;
 }
 
 /* 게시글 본문 */
 .contentPost {
-  width: 100%;
-  height: 200px;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 댓글 작성 */
 /* 댓글 작성 섹션 (comment 클래스) */
 .comment {
-  display: flex; /* 자식 요소들을 가로로 정렬 */
-  align-items: center; /* 자식 요소들을 세로 중앙 정렬 */
-  gap: 10px; /* 입력창과 버튼 사이의 간격 */
-  background-color: #fff;
-  padding: 12px 16px;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  margin-bottom: 20px;
+    display: flex; /* 자식 요소들을 가로로 정렬 */
+    align-items: center; /* 자식 요소들을 세로 중앙 정렬 */
+    gap: 10px; /* 입력창과 버튼 사이의 간격 */
+    background-color: #fff;
+    padding: 12px 16px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* 댓글 입력 필드 (commentText input) */
 .commentText {
-  flex-grow: 1; /* 이 요소가 사용 가능한 공간을 최대한 채우도록 함 (입력창을 크게 만듦) */
+    flex-grow: 1; /* 이 요소가 사용 가능한 공간을 최대한 채우도록 함 (입력창을 크게 만듦) */
 }
 
 .commentText input {
-  width: 100%; /* 부모 요소인 .commentText의 전체 너비를 사용 */
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* 패딩과 보더를 너비에 포함시켜 요소가 삐져나가지 않게 함 */
+    width: 100%; /* 부모 요소인 .commentText의 전체 너비를 사용 */
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* 패딩과 보더를 너비에 포함시켜 요소가 삐져나가지 않게 함 */
 }
 
 /* 댓글등록 버튼 (commentBtn button) */
 .commentBtn button {
-  /* 현재 스타일 유지 (크게 변경할 필요 없음) */
-  padding: 10px 16px;
-  font-size: 14px;
-  background-color: #5ac3f5;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  white-space: nowrap; /* 버튼 텍스트가 줄 바꿈되지 않도록 함 */
+    /* 현재 스타일 유지 (크게 변경할 필요 없음) */
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: #5ac3f5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap; /* 버튼 텍스트가 줄 바꿈되지 않도록 함 */
 }
 
 .commentBtn button:hover {
-  background-color: #47aee4;
+    background-color: #47aee4;
 }
-
 
 /* 대댓글 영역 (선택적) */
 .reply {
-  padding-left: 24px;
-  margin-top: 8px;
-  font-size: 14px;
-  color: #444;
+    padding-left: 24px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
 }
 .store-form {
-  width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+    width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .store-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .form-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form-row label {
-  width: 120px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #999;
+    width: 120px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #999;
 }
 
 .form-row input,
 .form-row select {
-  width: 380px;
-  padding: 10px;
-  border: 1px solid #999;
-  border-radius: 4px;
-  background-color: #fff;
-  font-size: 14px;
+    width: 380px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
 }
 
 .form-button {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .form-button button {
-  padding: 10px 50px;
-  background-color: #d6e1ff;
-  border: 1px solid #999;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+    padding: 10px 50px;
+    background-color: #d6e1ff;
+    border: 1px solid #999;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .form-button button:hover {
-  background-color: #b3caff;
+    background-color: #b3caff;
 }
