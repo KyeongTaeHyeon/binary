@@ -2,12 +2,20 @@
 
 /* 전체 게시판 스타일 */
 #boardMain {
-    width: 1440px;
+    width: 90%;
+    max-width: 75vw;
     margin: 0 auto;
     padding: 30px;
     background-color: #d6eefc;
+    margin-bottom: 35px;
 }
+/* h역역 */
 
+#boardcreat {
+    width: 90%;
+    max-width: 75vw;
+    margin: 0 auto;
+}
 /* 필터 */
 .filter {
     display: flex;
@@ -71,6 +79,8 @@
 .post .name {
     flex: 2;
     font-size: 16px;
+    display: flex;
+    gap: 10px;
     color: #222;
     text-align: left;
 }
@@ -89,35 +99,61 @@
     text-align: right;
 }
 
-.number {
-    margin-top: 40px;
+#contentNav {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
 }
 
-.numberList {
+.pagination {
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
-.numberList {
-    line-height: 29px;
-    height: 28px;
-    min-width: 28px;
-    padding: 0 8px;
-    font-size: 15px;
-    color: #888;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    text-align: center;
+.page-btn {
+    background: #d6eefc;
+    border: 1px solid #d6eefc;
+    color: #5ac3f5;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.page-btn:hover {
+    background: #d6eefc;
+    color: #5ac3f5;
+    border-color: #d6eefc;
 }
 
-.numberList .numberOne,
-.numberList a:hover {
-    background-color: #5ac3f5;
-    color: white;
-    border-color: #5ac3f5;
+.page-list {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.page-item button {
+    background: none;
+    border: none;
+    color: #5ac3f5;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.page-item.active button,
+.page-item button:hover {
+    background: #d6eefc;
+    color: #5ac3f5;
+    font-weight: bold;
 }
 
 .writing {
@@ -230,7 +266,7 @@
     width: 600px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #f7f7f7;
+    background-color: #d6eefc;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
@@ -252,8 +288,7 @@
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #999;
+    background-color: #d6eefc;
 }
 
 .form-row input,
@@ -273,13 +308,14 @@
 
 .form-button button {
     padding: 10px 50px;
-    background-color: #d6e1ff;
+    background-color: #212694;
     border: 1px solid #999;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
 }
 
 .form-button button:hover {
-    background-color: #b3caff;
+    background-color: #5864b5;
 }

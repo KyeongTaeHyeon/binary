@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* 필터 */
+.filter {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter span {
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #5ac3f5;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px 24px;
+}
+
+.filter span:hover,
+.filter a.active span {
+    background-color: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
+}
+
+/* 게시글 행 */
+.post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-bottom: 12px;
+}
+.post .tageone {
+    font-size: 10px;
+    color: #fff;
+}
+.post .tage {
+    font-size: 12px;
+    color: #fff;
+}
+.post .tageone {
+    border-radius: 20%;
+    background-color: #5ac3f5;
+    padding: 6px 8px;
+    margin-right: 15px;
+}
+
+
+.post .name {
+    flex: 2;
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    color: #222;
+    text-align: left;
+}
+
+.post .user {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.post .userTime {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    text-align: right;
+}
+#contentNav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .page-btn {
+    background: #d6eefc;
+    border: 1px solid #d6eefc;
+    color: #5ac3f5;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .page-btn:hover {
+    background: #d6eefc;
+    color: #5ac3f5;
+    border-color: #d6eefc;
+  }
+  
+  .page-list {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .page-item button {
+    background: none;
+    border: none;
+    color: #5ac3f5;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .page-item.active button,
+  .page-item button:hover {
+    background: #d6eefc;
+    color: #5ac3f5;
+    font-weight: bold;
+  }
+  
+  
+  .writing {
+      background-color: #5ac3f5;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+  }
+  
+  .writing:hover {
+      background-color: #47aee4;
+  }
