@@ -12,7 +12,7 @@
 /* h역역 */
 
 #boardcreat {
-    width: 90%;
+    width: 1440px;
     max-width: 75vw;
     margin: 0 auto;
 }
@@ -211,6 +211,9 @@
     justify-content: center;
 }
 
+
+
+
 /* 댓글 작성 */
 /* 댓글 작성 섹션 (comment 클래스) */
 .comment {
@@ -256,7 +259,7 @@
 }
 
 /* 대댓글 영역 (선택적) */
-.reply {
+.replyit{
     padding-left: 24px;
     margin-top: 8px;
     font-size: 14px;
@@ -318,4 +321,18 @@
 
 .form-button button:hover {
     background-color: #5864b5;
+}
+/*댓글 답글 영역*/
+
+.commentList{
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+.commentItem{
+    border: 1px solid #dedede;
+    padding: 10px;
+}
+.editBtn,.deleteBtn{
+    border: 1px solid #999;
 }
