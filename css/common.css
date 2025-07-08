@@ -179,7 +179,7 @@ body {
 #footerInner {
     height: 650px;
     margin: 0 54px;
-    padding: 70px;
+    padding: 70px 0;
     max-width: 100vw;
 }
 
