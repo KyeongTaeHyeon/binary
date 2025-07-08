@@ -187,9 +187,16 @@ body {
     margin: 0 54px;
     padding: 40px 0;
     max-width: 100vw;
+    height: 450px;
+    margin: 0 54px;
+    padding: 40px 0;
+    max-width: 100vw;
 }
 
 #footerLogo {
+    margin-bottom: 10px;
+    width: 130px;
+    height: 130px;
     margin-bottom: 10px;
     width: 130px;
     height: 130px;
@@ -198,9 +205,15 @@ body {
 #footerLogo img {
     width: 130px;
     height: 130px;
+    width: 130px;
+    height: 130px;
 }
 
 #footerAdress {
+    height: 130px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
     height: 130px;
     padding: 20px 0;
     box-sizing: border-box;
@@ -211,6 +224,9 @@ body {
     line-height: 1.7;
     font-size: max(13px, 0.8rem);
     font-weight: 700;
+    line-height: 1.7;
+    font-size: max(13px, 0.8rem);
+    font-weight: 700;
 }
 
 #footerTopEnd {
@@ -218,9 +234,18 @@ body {
     font-size: max(13px, 0.8rem);
     font-weight: 700;
     margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: max(13px, 0.8rem);
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 #footerMiddle {
+    display: flex;
+    gap: 30px;
+    font-size: max(18px, 1rem);
+    line-height: 1.7;
+    font-weight: 700;
     display: flex;
     gap: 30px;
     font-size: max(18px, 1rem);
