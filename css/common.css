@@ -7,29 +7,38 @@ body {
     line-height: 1.8;
 }
 
+#wrapper {
+    width: 100%;
+    min-width: 1440px;
+}
+
+.outline {
+    box-shadow: #5ac3f5 0px 0px 5px 0px;
+}
+
 /* main */
 #main {
     margin-top: 35px;
 }
 
 /* 헤더 css */
-
 #header {
     width: 100%;
     height: 100px;
+    background-color: #d6eefc;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: sticky;
     top: 0px;
     z-index: 99999999;
-    background-color: #d6eefc;
 }
 
 #header .inner {
     display: flex;
     width: 1440px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 #logo {
@@ -118,10 +127,8 @@ body {
 
 #footer .inner {
     color: #222222;
-    background-color: #d6eefc;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
     display: flex;
+    box-shadow: #5ac3f5 0px 0px 5px 0px;
 }
 
 #footerInner {
