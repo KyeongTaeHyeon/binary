@@ -24,7 +24,7 @@ body {
     margin-right: auto;
 }
 .mainHero .slideImg img{
-    margin-left: -240px;
+    margin-left: -210px;
 }
 .mainHero .slideText{
     position: absolute;
@@ -116,6 +116,7 @@ body {
 .section1 .contentsInfo {
     width: 50%;
     padding: 50px 100px;
+    box-sizing: border-box;
 }
 .section1 .contentsInfo > p {
     margin-bottom: 20px;
@@ -123,8 +124,12 @@ body {
 .section1 .contentsImg {
     width: 50%;
 }
+.section1 .contentsImg img{
+    width: 100%;
+   height: auto;
+}
 .section1 .contentsInfo .ramenTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
 }
@@ -216,12 +221,15 @@ body {
     width: 1440px;
     margin: 0 auto;
 }
-.etcTitle{
+
+.etcTitle {
     margin-bottom: 30px;
 }
+
 .section2 .feature {
     padding: 150px 0;
 }
+
 .section2 .etcInner {
     display: flex;
     justify-content: space-between;
@@ -229,25 +237,33 @@ body {
     width: 1440px;
     margin: 0 auto;
 }
+
 .section2 .etcLeft {
     width: 50%;
 }
+
 .section2 .etcInner .topImg {
     position: absolute;
     top: -100px;
     right: 50%;
-    margin-right: -400px;
+    margin-right: -400px; 
     width: 288px;
     height: 262px;
     border-radius: 50%;
-    background-image: url(../img/sect03_oil1.jpg);
+    background-image: url('../img/sect03_oil1.jpg'); 
+    background-size: cover;
+    background-position: center;
 }
+
 .section2 .etcLeft .cirImg1 {
     width: 680px;
     height: 620px;
     border-radius: 50%;
-    background-image: url(../img/sect3_oil.jpg);
+    background-image: url('../img/sect3_oil.jpg'); 
+    background-size: cover;
+    background-position: center;
 }
+
 .section2 .etcRight {
     width: 50%;
     display: flex;
@@ -255,14 +271,30 @@ body {
     justify-content: end;
     margin-bottom: 50px;
 }
-.section2 .etcRight .etcText .featureNum {
-    font-size: 37.625px;
+
+.section2 .etcRight .etcText .features {
+    font-size: 24px; 
     font-weight: 700;
 }
+
+.section2 .etcRight .etcText .featureNum {
+    font-size: 38px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
 .section2 .etcRight .etcText .subTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
+    line-height: 1.3;
+}
+
+.section2 .etcRight .etcText p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-top: 20px;
 }
 /* 섹션3 */
 .section3 {
@@ -285,7 +317,7 @@ body {
     text-align: center;
 }
 .section3 .boardTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
 }
