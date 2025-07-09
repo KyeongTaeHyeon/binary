@@ -1,76 +1,5 @@
 @charset "UTF-8";
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream1.woff2') format('woff2'),
-        url('../fonts/SCDream1.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream2.woff2') format('woff2'),
-        url('../fonts/SCDream2.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream3.woff2') format('woff2'),
-        url('../fonts/SCDream3.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream4.woff2') format('woff2'),
-        url('../fonts/SCDream4.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream5.woff2') format('woff2'),
-        url('../fonts/SCDream5.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream6.woff2') format('woff2'),
-        url('../fonts/SCDream6.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream7.woff2') format('woff2'),
-        url('../fonts/SCDream7.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream8.woff2') format('woff2'),
-        url('../fonts/SCDream8.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream9.woff2') format('woff2'),
-        url('../fonts/SCDream9.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
+@import url('https://cdn.jsdelivr.net/gh/webfontworld/sCoreDream/sCoreDream.css');
 
 body {
     font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
@@ -97,10 +26,13 @@ body {
     background-color: #d6eefc;
 }
 
+#header .inner {
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+}
+
 #logo {
-    position: absolute;
-    top: 0;
-    left: 54px;
     width: 100px;
     height: 100px;
 }
@@ -117,8 +49,7 @@ body {
 }
 
 .headerContent {
-    width: 90%;
-    max-width: 50vw;
+    width: 850px;
     margin-left: auto;
     margin-right: auto;
     height: 100px;
@@ -133,8 +64,13 @@ body {
     padding: 0 20px;
 }
 
+.navMenu li {
+    width: 200px;
+    text-align: center;
+}
+
 #search-button {
-    width: 2vw;
+    width: 40px;
 }
 
 #search-button img {
@@ -159,13 +95,10 @@ body {
 
 #user {
     display: flex;
-    width: 18%;
+    width: 150px;
     height: 100px;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 #user .active {
@@ -183,22 +116,19 @@ body {
 
 /* footer */
 
-#footer {
+#footer .inner {
     color: #222222;
     background-color: #d6eefc;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+    display: flex;
 }
 
 #footerInner {
+    width: 1440px;
+    margin: 0 auto;
     height: 450px;
-    margin: 0 54px;
     padding: 40px 0;
-    max-width: 100vw;
-    height: 450px;
-    margin: 0 54px;
-    padding: 40px 0;
-    max-width: 100vw;
 }
 
 #footerLogo {
@@ -230,20 +160,20 @@ body {
 
 #footerTopFirst {
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
 }
 
 #footerTopEnd {
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -251,12 +181,12 @@ body {
 #footerMiddle {
     display: flex;
     gap: 30px;
-    font-size: max(18px, 1rem);
+    font-size: 18px;
     line-height: 1.7;
     font-weight: 700;
     display: flex;
     gap: 30px;
-    font-size: max(18px, 1rem);
+    font-size: 18px;
     line-height: 1.7;
     font-weight: 700;
 }
@@ -283,7 +213,7 @@ body {
 }
 
 #footerExternalLink {
-    font-size: max(5px, 0.7rem);
+    font-size: 5px;
     font-weight: 100;
 }
 
