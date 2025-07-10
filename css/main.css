@@ -377,12 +377,22 @@ body {
     margin: 0 auto;
     text-align: center;
     line-height: 2;
+    color: white;
 }
 #ramenPopup .tempText .tempList .right li {
     display: flex;
+    justify-content: space-between;
     gap: 5px;
 }
-#ramenPopup .tempText .tempList .right p {
+#ramenPopup .tempText .tempList .right .leftText {
+    margin-right: 10px;
+}
+
+#ramenPopup .tempText .tempList .right .rightText {
+    margin-left: 10px;
+}
+
+#ramenPopup .tempText .tempList .right div {
     text-align: center;
 }
 #ramenPopup .tempText .tempList .right .tempMeasure {
@@ -402,8 +412,8 @@ body {
     justify-content: space-between;
 }
 #ramenPopup .tempText .tempList .right .tempMeasure .tempCircle > div {
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: white;
     z-index: 1;
