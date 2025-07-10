@@ -354,14 +354,20 @@
                                             >
                                         </h2>
                                         <p>
-                                            향미유는 라멘의 맛을 더해주는 중요한
-                                            요소이다.<br />
-                                            향미유는 라멘의 맛을 더해주는 중요한
-                                            요소이다.<br />
-                                            향미유는 라멘의 맛을 더해주는 중요한
-                                            요소이다.<br />
-                                            향미유는 라멘의 맛을 더해주는 중요한
-                                            요소이다.<br />
+                                            보통은 아부라(油)라는 표현을 자주
+                                            쓴다. 라드나 구운 라드, 돼지 등기름,
+                                            닭기름 등이 주로 쓰이며,
+                                            새우기름이나 참깨, 식물유, 올리브유
+                                            등을 사용하거나 파기름, 마늘기름,
+                                            허브를 재운 기름 등 다른 재료를 통해
+                                            향을 내어 사용하기도 하는 등
+                                            활용하는 방식이 다양하다. 쿠마모토
+                                            지방에서는 쿠로마유라고 불리는
+                                            흑마늘을 볶은 기름을 향미유로 내어
+                                            라멘을 만들기도 한다. 간혹 탄탄멘
+                                            같은 일본식 중화요리와 가까운
+                                            라멘장르에는 고추기름이 쓰이기도
+                                            한다.
                                         </p>
                                     </div>
                                 </div>
@@ -496,51 +502,95 @@
                     </section>
                 </div>
             </main>
-            <div id="ramenPopup">
-                <div class="tempWrap">
-                    <div class="tempTitle">
-                        <div class="left">
-                            <div>돈코츠라멘</div>
-                            <h2 class="tempRamenData">라멘데이터</h2>
-                        </div>
-                        <div class="right">라피드</div>
-                    </div>
-                    <div class="tempText">
-                        <div class="tempList">
-                            <div class="left">면의 굵기</div>
-                            <div class="rightbox">돼지뼈</div>
-                        </div>
-                        <div class="tempList">
-                            <div class="left">면의 굵기</div>
-                            <div class="right">
-                                <ul>
-                                    <li>
-                                        <div class="leftText">가는면</div>
-                                        <div class="tempMeasure">
-                                            <div class="tempLine">
-                                                <span class="hide">직선</span>
-                                            </div>
-                                            <div class="tempCircle">
-                                                <div></div>
-                                                <div></div>
-                                                <div class="active"></div>
-                                                <div></div>
-                                                <div></div>
-                                            </div>
-                                        </div>
-                                        <div class="rightText">굵은면</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- footer영역(공통사용) -->
             <footer id="footer"></footer>
         </div>
         <!-- 팝업영역 -->
-
+        <template id="ramenPopup">
+            <div class="tempWrap">
+                <button class="closeBtn"></button>
+                <div class="tempTitle">
+                    <div class="left">
+                        <div class="tempRamenName">돈코츠라멘</div>
+                        <h2 class="tempRamenData">라멘데이터</h2>
+                    </div>
+                    <div class="right">라피드 로고 영역</div>
+                </div>
+                <div class="tempText">
+                    <div class="tempList">
+                        <div class="left">스프 베이스</div>
+                        <div class="rightbox">돼지뼈</div>
+                    </div>
+                    <div class="tempList">
+                        <div class="left">스프 농도</div>
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <div class="leftText">연 함</div>
+                                    <div class="tempMeasure">
+                                        <div class="tempLine">
+                                            <span class="hide">직선</span>
+                                        </div>
+                                        <div class="tempCircle">
+                                            <div></div>
+                                            <div></div>
+                                            <div class="active"></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="rightText">진 함</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tempList">
+                        <div class="left">기름진 정도</div>
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <div class="leftText">담백함</div>
+                                    <div class="tempMeasure">
+                                        <div class="tempLine">
+                                            <span class="hide">직선</span>
+                                        </div>
+                                        <div class="tempCircle">
+                                            <div class="active"></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="rightText">진 함</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tempList">
+                        <div class="left">면의 굵기</div>
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <div class="leftText">가는면</div>
+                                    <div class="tempMeasure">
+                                        <div class="tempLine">
+                                            <span class="hide">직선</span>
+                                        </div>
+                                        <div class="tempCircle">
+                                            <div></div>
+                                            <div></div>
+                                            <div class="active"></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="rightText">굵은면</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
         <!-- 공통사용 -->
         <script src="js/common.js"></script>
         <!-- 각화면 js생성하여 사용 -->
