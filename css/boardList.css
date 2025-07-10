@@ -46,6 +46,18 @@
     color: #fff;
     border-color: #5ac3f5;
 }
+.title{
+    font-size: 20px;
+    margin-bottom: 24px;
+    min-width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 50px;
+    color: #000;
+}
 
 /* 게시글 행 */
 .post {
@@ -110,10 +122,11 @@
     margin: 40px 0;
 }
 
-.pagination {
+.pgitagination {
     display: flex;
     align-items: center;
     gap: 12px;
+
 }
 
 .page-btn {
