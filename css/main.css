@@ -347,3 +347,80 @@ body {
 .section3 .boardImg {
     width: 50%;
 }
+/* 팝업영역 */
+#ramenPopup{
+    width: 720px;
+    height: 720px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+.tempWrap{
+    background-color: antiquewhite;
+    padding: 20px;
+    width: 100%;
+}
+#ramenPopup .tempTitle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#ramenPopup .tempText{
+    width: 100%;
+}
+
+#ramenPopup .tempText .tempList{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#ramenPopup .tempText .tempList .left{
+    width: 20%;
+    margin: 0 auto;
+}
+#ramenPopup .tempText .tempList .right{
+    width: 70%;
+    margin: 0 auto;
+}
+#ramenPopup .tempText .tempList .rightbox{
+    background-color: #333;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2;
+}
+#ramenPopup .tempText .tempList .right li{
+    display: flex;
+    gap: 5px;
+}
+#ramenPopup .tempText .tempList .right p{
+    text-align: center;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure{
+    width: 70%;
+    margin: auto 0;
+    position: relative;
+}
+#ramenPopup .tempText .tempList .right .tempLine{
+    height: 2px;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle{
+    display: flex;
+    justify-content: space-between;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle>div{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active{
+    background-color: #407ff0;
+}
+
+
