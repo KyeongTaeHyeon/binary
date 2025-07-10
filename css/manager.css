@@ -28,10 +28,11 @@ body {
 
 #managerLeft {
   width: 200px;
-  height: 690px;
-  background-color: #f4faff;
+  height: 735px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  border: 1px solid #5ac3f5;
+  border-radius: 45px;
 
   /* ✅ 높이를 managerRight에 맞춰서 stretch 하도록 */
 }
@@ -43,11 +44,11 @@ body {
 }
 
 #managerLeftInner span {
-  background-color: #e9e6e9;
   display: flex;
   height: 80px;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #5ac3f5;
 }
 
 #managerLeft ul {
@@ -57,10 +58,12 @@ body {
 
 #managerRight {
   flex: 1;
-  background-color: #f4faff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border: 1px solid #5ac3f5;
+  border-radius: 45px;
+  padding: 20px;
 }
 
 #managerRight h2 {
@@ -68,7 +71,6 @@ body {
   align-items: center;
   justify-content: space-around;
   height: 10%;
-  background-color: #e9e6e9;
 }
 
 #managerRight table {
@@ -83,7 +85,7 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  background-color: #e9e6e9;
+  border-bottom: 1px solid #5ac3f5;
 }
 
 .searchWrapper {
