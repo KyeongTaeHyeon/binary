@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url('https://cdn.jsdelivr.net/gh/webfontworld/sCoreDream/sCoreDream.css');
 
 body {
     font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
@@ -9,7 +8,8 @@ body {
 
 #wrapper {
     width: 100%;
-    min-width: 1440px;
+    min-width: 1480px;
+    padding-top: 120px;
 }
 
 .outline {
@@ -17,29 +17,23 @@ body {
     color: #000;
 }
 
-/* main */
-#main {
-    margin-top: 35px;
-}
-
 /* 헤더 css */
 #header {
     width: 100%;
-    height: 100px;
-    background-color: #d6eefc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: sticky;
+    background-color: #f1fcff;
+    position: fixed;
     top: 0px;
+    left: 0;
     z-index: 99999999;
 }
 
 #header .inner {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 1440px;
+    height: 120px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 #logo {
@@ -58,57 +52,55 @@ body {
     display: inline-block;
 }
 
-.headerContent {
-    width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
+.navMenu{
+    display: flex;
+    gap: 100px;
+}
+
+.navMenu li a{
+    font-size: 18px;
+    font-weight: 600;
+    color: #121212;
+}
+
+.navMenu li a:hover{
+    font-size: 18px;
+    font-weight: 600;
+    color: #5ac3f5;
+}
+
+.headerContent{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-end;
+    gap: 16px;
 }
 
-.navMenu {
+.searchWrap {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
 }
 
-.navMenu li {
-    width: 200px;
-    text-align: center;
+.searchWrap input{
+    height: 36px;
+    padding: 0 12px;
+    background-color: #fff;
+    border: 1px solid #5ac3f5;
 }
 
 #search-button {
-    width: 40px;
+    width: 36px;
+    background-color: #5ac3f5;
 }
 
 #search-button img {
     width: 100%;
-    background-color: gray;
-    background-repeat: no-repeat;
-    height: 24px;
-}
-
-.searchWrap {
-    padding: 10px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-#search {
-    line-height: 100%;
-    width: 100%;
-    border: 1px solid rgb(240, 236, 236);
+    height: auto;
 }
 
 #user {
     display: flex;
-    width: 150px;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
 }
 
 #user .active {
@@ -122,6 +114,20 @@ body {
 .loginMypage.active {
     display: block;
 }
+
+#user a{
+    font-size: 14px;
+    color: #6a7375;
+}
+
+#user span{
+    display: inline-block;
+    vertical-align: top;
+    color: #afbabd;
+    font-size: 10px;
+    margin: 5px 10px 0 10px;
+}
+
 /* header end */
 
 /* footer */
@@ -129,7 +135,8 @@ body {
 #footer .inner {
     color: #222222;
     display: flex;
-    box-shadow: #5ac3f5 0px 0px 5px 0px;
+    border-top: 1px solid #ddd;
+    padding-bottom: 40px;
 }
 
 #footerInner {
@@ -215,13 +222,13 @@ body {
 
 #footerBottomEnd {
     display: flex;
-    height: 60px;
     padding-top: 40px;
     gap: 30px;
+    align-items: center;
 }
 
 #footerExternalLink {
-    font-size: 5px;
+    font-size: 11px;
     font-weight: 100;
 }
 

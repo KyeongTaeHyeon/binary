@@ -5,11 +5,9 @@
 }
 
 #originContainer {
-    background: #d6eefc;
     padding: 20px;
     margin: 30px auto;
-    width: 90%;
-    max-width: 75vw;
+    width: 1440px;
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
@@ -45,4 +43,93 @@
     font-size: 20px;
     font-weight: 400;
     color: #222;
+}
+
+.container {
+    width: 1440px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+h1 {
+    text-align: center;
+    color: #d9534f;
+    border-bottom: 2px solid #d9534f;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+h2 {
+    font-size: 1.6em;
+    color: #333;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #d9534f;
+    font-weight: bold;
+}
+ul ul li::before {
+    content: '▪';
+    color: #555;
+}
+strong {
+    color: #0275d8;
+}
+
+.tabWrapper {
+    margin: 40px 0;
+}
+
+.tabBtns {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: space-between;
+}
+
+.tabBtn {
+    width: 100%;
+    padding: 12px 32px;
+    border: none;
+    background: #e6f6fd;
+    color: #222;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tabBtn.active {
+    background: #5ac3f5;
+    color: #fff;
+}
+.tabContents {
+    border: 2px solid #5ac3f5;
+    border-radius: 0 0 16px 16px;
+    background: #fff;
+    padding: 32px 24px;
+}
+.tabContent {
+    display: none;
+}
+.tabContent.active {
+    display: block;
 }
