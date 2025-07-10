@@ -2,9 +2,9 @@
 body {
     font-size: 16px;
     font-weight: 500;
-    color: #5ac3f5;
-    line-height: 1.8;
-    min-width: 1440px;
+    color: #121212;
+    line-height: 1.6;
+    min-width: 1480px;
 }
 .hide {
     display: block;
@@ -13,6 +13,7 @@ body {
 /* 메인히어로 */
 .mainHero{
     position: relative;
+    padding-top: 20px;
 }
 .mainHero .slide{
     position: relative;
@@ -153,37 +154,25 @@ body {
 }
 .section1 .btnLinks .btnPopup a {
     display: flex;
+    align-items: center;
 }
 .section1 .btnLinks .btnPopup .btnIcon {
-    width: 28px;
-    height: 28px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: #407ff0;
     position: relative;
 }
 .section1 .btnLinks .btnPopup .btnText {
+    display: inline-block;
+    vertical-align: top;
     margin-left: 10px;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.1em;
-    color: #407ff0;
+    color: #121212;
     transition: 0.2s linear;
-    position: relative;
-    display: inline-block;
     text-decoration: none;
-    line-height: 1.3;
-}
-.section1 .btnLinks .btnPopup .btnText::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #407ff0;
-    transform: scale(1, 1);
-    transform-origin: right top;
-    transition: transform 0.3s;
+    line-height: 1.8;
 }
 .section1 .btnShop {
     margin-top: 35px;
@@ -298,23 +287,18 @@ body {
 }
 /* 섹션3 */
 .section3 {
-    width: 1440px;
+    width: 800px;
     margin: 0 auto;
+    padding-bottom: 200px;
 }
 .section3 .boardWrap {
     display: flex;
-    justify-content: space-between;
-    padding: 100px 300px;
 }
 .section3 .boardList {
     width: 50%;
-}
-.section3 .boardList .text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    text-align: center;
 }
 .section3 .boardTitle {
     font-size: 38px;
@@ -333,7 +317,6 @@ body {
     color: white;
     background-color: #407ff0;
     text-decoration: none;
-    margin: 0 auto;
 }
 .section3 .boardBtn a::after {
     content: '';
@@ -346,4 +329,9 @@ body {
 }
 .section3 .boardImg {
     width: 50%;
+    height: 200px;
+    overflow: hidden;
+}
+.section3 .boardImg img{
+    margin-top: -50px;
 }
