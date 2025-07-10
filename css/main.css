@@ -11,35 +11,35 @@ body {
     text-indent: -99999999999px;
 }
 /* 메인히어로 */
-.mainHero{
+.mainHero {
     position: relative;
     padding-top: 20px;
 }
-.mainHero .slide{
+.mainHero .slide {
     position: relative;
     overflow: hidden;
 }
-.mainHero .slideImg{
+.mainHero .slideImg {
     width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
-.mainHero .slideImg img{
+.mainHero .slideImg img {
     margin-left: -210px;
 }
-.mainHero .slideText{
+.mainHero .slideText {
     position: absolute;
     bottom: 169px;
     left: 50%;
     margin-left: -720px;
 }
-.mainHero .slideText .slideTitle{
+.mainHero .slideText .slideTitle {
     margin-bottom: 8px;
     font-size: 48px;
     font-weight: 700;
     color: #fff;
 }
-.mainHero .slideText a{
+.mainHero .slideText a {
     display: inline-block;
     padding: 0 40px;
     border: 1px solid #fff;
@@ -48,7 +48,7 @@ body {
     color: #fff;
     line-height: 48px;
 }
-.mainHero .mainSlideController{
+.mainHero .mainSlideController {
     position: absolute;
     left: 50%;
     bottom: 80px;
@@ -56,50 +56,51 @@ body {
     width: 1440px;
     margin-left: -720px;
 }
-.mainHero .mainPager{
+.mainHero .mainPager {
     flex: 1;
     margin-right: 23px;
 }
-.mainHero .mainPager ul{
+.mainHero .mainPager ul {
     display: flex;
 }
-.mainHero .mainPager li{
+.mainHero .mainPager li {
     width: 33.33%;
     opacity: 0.2;
 }
-.mainHero .mainPager .active{
+.mainHero .mainPager .active {
     opacity: 0.8;
 }
-.mainHero .mainPager li button{
+.mainHero .mainPager li button {
     width: 100%;
     height: 40px;
 }
-.mainHero .mainPager li button span{
+.mainHero .mainPager li button span {
     display: block;
     width: 100%;
     height: 2px;
     background-color: #fff;
     text-indent: -999999px;
 }
-.mainHero .btnPrev{
+.mainHero .btnPrev {
     width: 40px;
     margin-right: 2px;
 }
-.mainHero .btnNext{
+.mainHero .btnNext {
     width: 40px;
 }
-.mainHero .btnPrev button, .mainHero .btnNext button{
+.mainHero .btnPrev button,
+.mainHero .btnNext button {
     width: 40px;
     height: 40px;
     text-indent: -999999px;
     display: inline-block;
     border-radius: 50%;
 }
-.mainHero .btnPrev button{
+.mainHero .btnPrev button {
     background-image: url(../img/ico-btnprev-bl.png);
     background-position: center;
 }
-.mainHero .btnNext button{
+.mainHero .btnNext button {
     background-image: url(../img/ico-btnnext-bl.png);
     background-position: center;
 }
@@ -125,9 +126,9 @@ body {
 .section1 .contentsImg {
     width: 50%;
 }
-.section1 .contentsImg img{
+.section1 .contentsImg img {
     width: 100%;
-   height: auto;
+    height: auto;
 }
 .section1 .contentsInfo .ramenTitle {
     font-size: 38px;
@@ -201,7 +202,7 @@ body {
     right: 20px;
     top: 18px;
 }
-.section1 .ramenOver{
+.section1 .ramenOver {
     height: 597px;
 }
 
@@ -235,11 +236,11 @@ body {
     position: absolute;
     top: -100px;
     right: 50%;
-    margin-right: -400px; 
+    margin-right: -400px;
     width: 288px;
     height: 262px;
     border-radius: 50%;
-    background-image: url('../img/sect03_oil1.jpg'); 
+    background-image: url('../img/sect03_oil1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -248,7 +249,7 @@ body {
     width: 680px;
     height: 620px;
     border-radius: 50%;
-    background-image: url('../img/sect3_oil.jpg'); 
+    background-image: url('../img/sect3_oil.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -262,7 +263,7 @@ body {
 }
 
 .section2 .etcRight .etcText .features {
-    font-size: 24px; 
+    font-size: 24px;
     font-weight: 700;
 }
 
@@ -332,6 +333,91 @@ body {
     height: 200px;
     overflow: hidden;
 }
-.section3 .boardImg img{
+.section3 .boardImg img {
     margin-top: -50px;
+}
+/* 팝업영역 */
+#ramenPopup {
+    width: 720px;
+    height: 720px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+.tempWrap {
+    background-color: antiquewhite;
+    padding: 20px;
+    width: 100%;
+}
+#ramenPopup .tempTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#ramenPopup .tempText {
+    width: 100%;
+}
+
+#ramenPopup .tempText .tempList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#ramenPopup .tempText .tempList .left {
+    width: 20%;
+    margin: 0 auto;
+}
+#ramenPopup .tempText .tempList .right {
+    width: 70%;
+    margin: 0 auto;
+}
+#ramenPopup .tempText .tempList .rightbox {
+    background-color: #333;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2;
+    color: white;
+}
+#ramenPopup .tempText .tempList .right li {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+#ramenPopup .tempText .tempList .right .leftText {
+    margin-right: 10px;
+}
+
+#ramenPopup .tempText .tempList .right .rightText {
+    margin-left: 10px;
+}
+
+#ramenPopup .tempText .tempList .right div {
+    text-align: center;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure {
+    width: 70%;
+    margin: auto 0;
+    position: relative;
+}
+#ramenPopup .tempText .tempList .right .tempLine {
+    height: 2px;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle {
+    display: flex;
+    justify-content: space-between;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle > div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active {
+    background-color: #407ff0;
 }

@@ -2,18 +2,23 @@
 
 /* 전체 게시판 스타일 */
 #boardMain {
-    width: 1400px;
+    width: 1440px;
     margin: 0 auto;
     padding: 30px;
     background-color: #d6eefc;
     margin-bottom: 35px;
+    
 }
 /* h역역 */
 
 #boardcreat {
-    width: 1440px;
+    width: fit-content;
     margin: 0 auto;
-    padding-bottom: 100px;
+    padding: 100px;
+    border: 1px solid #dedede;
+    border-radius: 45px;
+    margin-bottom: 50px;
+    
 }
 /* 필터 */
 .filter {
@@ -40,6 +45,18 @@
     background-color: #5ac3f5;
     color: #fff;
     border-color: #5ac3f5;
+}
+.title{
+    font-size: 20px;
+    margin-bottom: 24px;
+    min-width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 50px;
+    color: #000;
 }
 
 /* 게시글 행 */
@@ -105,10 +122,11 @@
     margin: 40px 0;
 }
 
-.pagination {
+.pgitagination {
     display: flex;
     align-items: center;
     gap: 12px;
+
 }
 
 .page-btn {
@@ -255,7 +273,7 @@
 }
 
 /* 대댓글 영역 (선택적) */
-.replyit {
+.replyItem, .commentTop {
     padding-left: 24px;
     margin-top: 8px;
     font-size: 14px;
@@ -265,7 +283,7 @@
     width: 600px;
     margin: 40px auto;
     padding: 30px;
-    background-color: #d6eefc;
+    
     border: 1px solid #ccc;
     border-radius: 8px;
 }
@@ -287,7 +305,7 @@
     font-weight: bold;
     text-align: center;
     padding: 10px;
-    background-color: #d6eefc;
+   
 }
 
 .form-row input,
