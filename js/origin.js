@@ -65,6 +65,7 @@ let showTabContents = () => {
                         .join('')}
                 </ul>
             `;
+            contentsWrapper.appendChild(existingContent);
         } else {
             const tabContent = document.createElement('div');
             tabContent.id = `tab${content.id}`;
@@ -81,6 +82,7 @@ let showTabContents = () => {
                     .join('')}
             </ul>
         `;
+            contentsWrapper.appendChild(tabContent);
         }
     });
 };
