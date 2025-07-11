@@ -107,7 +107,7 @@ body {
 /* 섹션1 */
 .section1 {
     width: 1440px;
-    margin: 0 auto;
+    margin: 150px auto;
 }
 .section1 .contentsBox {
     display: flex;
@@ -144,6 +144,10 @@ body {
 .section1 .subTitle {
     font-size: 27px;
     font-weight: 700;
+    padding-right: 170px;
+}
+.section1 .ramenText{
+    padding-right: 70px;
 }
 .section1 .btnLinks {
     margin-top: 55px;
@@ -209,7 +213,7 @@ body {
 /* 섹션2 */
 .section2 {
     width: 1440px;
-    margin: 0 auto;
+    margin: 150px auto;
 }
 
 .etcTitle {
@@ -217,7 +221,7 @@ body {
 }
 
 .section2 .feature {
-    padding: 150px 0;
+    padding: 120px 0;
 }
 
 .section2 .etcInner {
@@ -232,7 +236,7 @@ body {
     width: 50%;
 }
 
-.section2 .etcInner .topImg {
+/*.section2 .etcInner .topImg {
     position: absolute;
     top: -100px;
     right: 50%;
@@ -243,13 +247,13 @@ body {
     background-image: url('../img/sect03_oil1.jpg');
     background-size: cover;
     background-position: center;
-}
+}*/
 
-.section2 .etcLeft .cirImg1 {
-    width: 680px;
-    height: 620px;
+.section2 .etcLeft img {
+    display: block;
+    width: 630px;
+    height: 600px;
     border-radius: 50%;
-    background-image: url('../img/sect3_oil.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -258,8 +262,8 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    margin-bottom: 50px;
+    justify-content: center;
+    margin-left: 50px;
 }
 
 .section2 .etcRight .etcText .features {
@@ -282,9 +286,10 @@ body {
 
 .section2 .etcRight .etcText p {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 2;
     color: #333;
-    margin-top: 20px;
+    padding-right: 160px;
+    font-weight: 500;
 }
 /* 섹션3 */
 .section3 {
