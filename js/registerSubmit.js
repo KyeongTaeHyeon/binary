@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       // 로컬 스토리지에 저장
-      localStorage.setItem('formData', JSON.stringify(formData));
+      localStorage.setItem('userRegistForm', JSON.stringify(formData));
 
-      console.log('formData', formData);
+      console.log('userRegistForm', formData);
       console.log('폼 데이터가 로컬 스토리지에 저장되었습니다.');
 
       // 폼을 제출하도록 허용
