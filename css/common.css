@@ -1,106 +1,44 @@
 @charset "UTF-8";
 
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream1.woff2') format('woff2'),
-        url('../fonts/SCDream1.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream2.woff2') format('woff2'),
-        url('../fonts/SCDream2.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream3.woff2') format('woff2'),
-        url('../fonts/SCDream3.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream4.woff2') format('woff2'),
-        url('../fonts/SCDream4.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream5.woff2') format('woff2'),
-        url('../fonts/SCDream5.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream6.woff2') format('woff2'),
-        url('../fonts/SCDream6.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream7.woff2') format('woff2'),
-        url('../fonts/SCDream7.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream8.woff2') format('woff2'),
-        url('../fonts/SCDream8.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SCoreDream';
-    src: url('../fonts/SCDream9.woff2') format('woff2'),
-        url('../fonts/SCDream9.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
 body {
     font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
     color: #5ac3f5;
     line-height: 1.8;
 }
 
-/* main */
-#main {
-    margin-top: 35px;
+#wrapper {
+    width: 100%;
+    min-width: 1480px;
+    padding-top: 120px;
+}
+
+.outline {
+    box-shadow: #5ac3f5 0px 0px 5px 0px;
+    color: #000;
 }
 
 /* 헤더 css */
-
 #header {
     width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: sticky;
+    background-color: #f1fcff;
+    position: fixed;
     top: 0px;
+    left: 0;
     z-index: 99999999;
-    background-color: #d6eefc;
+}
+
+#header .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1440px;
+    height: 120px;
+    margin: 0 auto;
 }
 
 #logo {
     width: 100px;
     height: 100px;
-    margin-left: 54px;
 }
 
 #logo img {
@@ -114,50 +52,55 @@ body {
     display: inline-block;
 }
 
-.headerContent {
-    width: 40%;
-    height: 100px;
+.navMenu{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    gap: 100px;
 }
 
-.navMenu {
+.navMenu li a{
+    font-size: 18px;
+    font-weight: 600;
+    color: #121212;
+}
+
+.navMenu li a:hover{
+    font-size: 18px;
+    font-weight: 600;
+    color: #5ac3f5;
+}
+
+.headerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.searchWrap {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+}
+
+.searchWrap input{
+    height: 36px;
+    padding: 0 12px;
+    background-color: #fff;
+    border: 1px solid #5ac3f5;
 }
 
 #search-button {
-    width: 2vw;
+    width: 36px;
+    background-color: #5ac3f5;
 }
 
 #search-button img {
     width: 100%;
-    background-color: gray;
-    background-repeat: no-repeat;
-    height: 24px;
-}
-
-.searchWrap {
-    padding: 10px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-#search {
-    line-height: 100%;
-    width: 100%;
-    border: 1px solid rgb(240, 236, 236);
+    height: auto;
 }
 
 #user {
     display: flex;
-    width: 18%;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
 }
 
 #user .active {
@@ -171,26 +114,36 @@ body {
 .loginMypage.active {
     display: block;
 }
+
+#user a{
+    font-size: 14px;
+    color: #6a7375;
+}
+
+#user span{
+    display: inline-block;
+    vertical-align: top;
+    color: #afbabd;
+    font-size: 10px;
+    margin: 5px 10px 0 10px;
+}
+
 /* header end */
 
 /* footer */
 
-#footer {
+#footer .inner {
     color: #222222;
-    background-color: #d6eefc;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-bottom: 40px;
 }
 
 #footerInner {
+    width: 1440px;
+    margin: 0 auto;
     height: 450px;
-    margin: 0 54px;
     padding: 40px 0;
-    max-width: 100vw;
-    height: 450px;
-    margin: 0 54px;
-    padding: 40px 0;
-    max-width: 100vw;
 }
 
 #footerLogo {
@@ -222,20 +175,20 @@ body {
 
 #footerTopFirst {
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
 }
 
 #footerTopEnd {
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.7;
-    font-size: max(13px, 0.8rem);
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -243,12 +196,12 @@ body {
 #footerMiddle {
     display: flex;
     gap: 30px;
-    font-size: max(18px, 1rem);
+    font-size: 18px;
     line-height: 1.7;
     font-weight: 700;
     display: flex;
     gap: 30px;
-    font-size: max(18px, 1rem);
+    font-size: 18px;
     line-height: 1.7;
     font-weight: 700;
 }
@@ -269,13 +222,13 @@ body {
 
 #footerBottomEnd {
     display: flex;
-    height: 60px;
     padding-top: 40px;
     gap: 30px;
+    align-items: center;
 }
 
 #footerExternalLink {
-    font-size: max(5px, 0.7rem);
+    font-size: 11px;
     font-weight: 100;
 }
 

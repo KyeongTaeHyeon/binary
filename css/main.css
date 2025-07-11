@@ -2,153 +2,112 @@
 body {
     font-size: 16px;
     font-weight: 500;
-    color: #5ac3f5;
-    line-height: 1.8;
+    color: #121212;
+    line-height: 1.6;
+    min-width: 1480px;
 }
 .hide {
     display: block;
     text-indent: -99999999999px;
 }
-.ramenOver {
-    height: 597px;
-}
 /* 메인히어로 */
-.mainslideWrap {
+.mainHero {
     position: relative;
-    margin-bottom: 100px;
+    padding-top: 20px;
+}
+.mainHero .slide {
+    position: relative;
     overflow: hidden;
 }
-.mainSlide {
-    position: relative;
-    overflow: hidden;
-}
-.mainSlide .slideImg {
-    width: 1520px;
+.mainHero .slideImg {
+    width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
-.mainSlide .slideImg img {
-    margin-left: -170px;
+.mainHero .slideImg img {
+    margin-left: -210px;
 }
-.mainSlide .slideText {
+.mainHero .slideText {
     position: absolute;
-    top: 164px;
+    bottom: 169px;
     left: 50%;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1860px;
-    min-width: 1520px;
-    transform: translateX(-50%);
+    margin-left: -720px;
 }
-.mainSlide .slideText .left {
-    padding-left: 96px;
+.mainHero .slideText .slideTitle {
+    margin-bottom: 8px;
+    font-size: 48px;
+    font-weight: 700;
     color: #fff;
 }
-
-.mainSlide .slideText .left .stl {
-    font-size: 24px;
-    font-weight: 500;
-}
-.mainSlide .slideText .right {
-    padding-right: 96px;
-}
-.mainSlide .slideText .right p {
-    margin-bottom: 16px;
-}
-.mainSlide .slideText .right p a {
-    display: block;
-    box-sizing: border-box;
-    width: 300px;
-    padding-left: 44px;
+.mainHero .slideText a {
+    display: inline-block;
+    padding: 0 40px;
     border: 1px solid #fff;
-    border-radius: 45px;
-    line-height: 88px;
-    font-size: 20px;
+    border-radius: 25px;
+    font-size: 16px;
     color: #fff;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
-    background-repeat: no-repeat;
-    background-position: right 28px center;
+    line-height: 48px;
 }
-.mainslideController {
+.mainHero .mainSlideController {
     position: absolute;
-    bottom: 0;
-    right: 50%;
+    left: 50%;
+    bottom: 80px;
     display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 28px;
-    width: 365px;
-    height: 60px;
-    padding-top: 30px;
-    margin-right: -930px;
+    width: 1440px;
+    margin-left: -720px;
+}
+.mainHero .mainPager {
+    flex: 1;
+    margin-right: 23px;
+}
+.mainHero .mainPager ul {
+    display: flex;
+}
+.mainHero .mainPager li {
+    width: 33.33%;
+    opacity: 0.2;
+}
+.mainHero .mainPager .active {
+    opacity: 0.8;
+}
+.mainHero .mainPager li button {
+    width: 100%;
+    height: 40px;
+}
+.mainHero .mainPager li button span {
+    display: block;
+    width: 100%;
+    height: 2px;
     background-color: #fff;
+    text-indent: -999999px;
 }
-.mainslideController::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -55px;
-    display: block;
-    width: 55px;
-    height: 90px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_03.png);
+.mainHero .btnPrev {
+    width: 40px;
+    margin-right: 2px;
 }
-.mainslideController::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -31px;
-    display: block;
-    width: 26px;
-    height: 31px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_04.png);
+.mainHero .btnNext {
+    width: 40px;
 }
-.mainslideController .pager {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    font-size: 18px;
+.mainHero .btnPrev button,
+.mainHero .btnNext button {
+    width: 40px;
+    height: 40px;
+    text-indent: -999999px;
+    display: inline-block;
+    border-radius: 50%;
 }
-.mainslideController .pager .progress {
-    width: 39px;
-    height: 2px;
-    background-color: #e6e6e6;
+.mainHero .btnPrev button {
+    background-image: url(../img/ico-btnprev-bl.png);
+    background-position: center;
 }
-.mainslideController .pager .progress .active {
-    display: block;
-    width: 13px;
-    height: 2px;
-    background-color: #737373;
-}
-.mainslideController .pager .total {
-    opacity: 0.5;
-}
-.mainslideController .autoplay p button {
-    width: 24px;
-    height: 24px;
-}
-.mainslideController .autoplay .pause button {
-    background-image: url(../img/KakaoTalk_20250707_165055026_01.png);
-}
-.mainslideController .arrowBtn {
-    display: flex;
-    gap: 10px;
-}
-.mainslideController .arrowBtn p button {
-    width: 60px;
-    height: 60px;
-}
-.mainslideController .arrowBtn .prev button {
-    background-image: url(../images/btn_prev_bk.png);
-}
-.mainslideController .arrowBtn .next button {
-    background-image: url(../images/btn_next_bk.png);
+.mainHero .btnNext button {
+    background-image: url(../img/ico-btnnext-bl.png);
+    background-position: center;
 }
 /* 섹션1 */
 .section1 {
-    width: 70%;
-    margin: 0 auto;
+    width: 1440px;
+    margin: 150px auto;
 }
 .section1 .contentsBox {
     display: flex;
@@ -159,6 +118,7 @@ body {
 .section1 .contentsInfo {
     width: 50%;
     padding: 50px 100px;
+    box-sizing: border-box;
 }
 .section1 .contentsInfo > p {
     margin-bottom: 20px;
@@ -166,8 +126,12 @@ body {
 .section1 .contentsImg {
     width: 50%;
 }
+.section1 .contentsImg img {
+    width: 100%;
+    height: auto;
+}
 .section1 .contentsInfo .ramenTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
 }
@@ -180,6 +144,10 @@ body {
 .section1 .subTitle {
     font-size: 27px;
     font-weight: 700;
+    padding-right: 170px;
+}
+.section1 .ramenText{
+    padding-right: 70px;
 }
 .section1 .btnLinks {
     margin-top: 55px;
@@ -191,42 +159,29 @@ body {
 }
 .section1 .btnLinks .btnPopup a {
     display: flex;
+    align-items: center;
 }
 .section1 .btnLinks .btnPopup .btnIcon {
-    width: 28px;
-    height: 28px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: #407ff0;
     position: relative;
 }
 .section1 .btnLinks .btnPopup .btnText {
+    display: inline-block;
+    vertical-align: top;
     margin-left: 10px;
     font-size: 20px;
     font-weight: bold;
-    letter-spacing: 0.1em;
-    color: #407ff0;
+    color: #121212;
     transition: 0.2s linear;
-    position: relative;
-    display: inline-block;
     text-decoration: none;
-    line-height: 1.3;
-}
-.section1 .btnLinks .btnPopup .btnText::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #407ff0;
-    transform: scale(1, 1);
-    transform-origin: right top;
-    transition: transform 0.3s;
+    line-height: 1.8;
 }
 .section1 .btnShop {
     margin-top: 35px;
     width: 250px;
-    height: 60px;
     border-radius: 30px;
     overflow: hidden;
 }
@@ -246,30 +201,42 @@ body {
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
+    background-image: url(../img/ico-arrowright-wh.png);
     position: absolute;
     right: 20px;
     top: 18px;
 }
+.section1 .ramenOver {
+    height: 597px;
+}
 
 /* 섹션2 */
 .section2 {
-    width: 70%;
-    margin: 0 auto;
+    width: 1440px;
+    margin: 150px auto;
 }
+
+.etcTitle {
+    margin-bottom: 30px;
+}
+
 .section2 .feature {
-    padding: 84px 0;
+    padding: 120px 0;
 }
+
 .section2 .etcInner {
     display: flex;
     justify-content: space-between;
     position: relative;
+    width: 1440px;
+    margin: 0 auto;
 }
 
 .section2 .etcLeft {
     width: 50%;
 }
-.section2 .etcInner .leftImg {
+
+/*.section2 .etcInner .topImg {
     position: absolute;
     top: -100px;
     right: 50%;
@@ -277,51 +244,70 @@ body {
     width: 288px;
     height: 262px;
     border-radius: 50%;
-    background-image: url(../img/sect03_oil1.jpg);
-}
-.section2 .etcLeft .cirImg1 {
-    width: 600px;
-    height: 580px;
+    background-image: url('../img/sect03_oil1.jpg');
+    background-size: cover;
+    background-position: center;
+}*/
+
+.section2 .etcLeft img {
+    display: block;
+    width: 630px;
+    height: 600px;
     border-radius: 50%;
-    background-image: url(../img/sect3_oil.jpg);
+    background-size: cover;
+    background-position: center;
 }
+
 .section2 .etcRight {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    margin-bottom: 100px;
+    justify-content: center;
+    margin-left: 50px;
 }
-.section2 .etcRight .etcText .featureNum {
-    font-size: 37.625px;
+
+.section2 .etcRight .etcText .features {
+    font-size: 24px;
     font-weight: 700;
 }
+
+.section2 .etcRight .etcText .featureNum {
+    font-size: 38px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
 .section2 .etcRight .etcText .subTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
+    line-height: 1.3;
+}
+
+.section2 .etcRight .etcText p {
+    font-size: 16px;
+    line-height: 2;
+    color: #333;
+    padding-right: 160px;
+    font-weight: 500;
 }
 /* 섹션3 */
 .section3 {
-    width: 70%;
+    width: 800px;
     margin: 0 auto;
+    padding-bottom: 200px;
 }
 .section3 .boardWrap {
     display: flex;
-    justify-content: space-between;
-    padding: 50px 0;
 }
 .section3 .boardList {
     width: 50%;
-}
-.section3 .boardList .text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 }
 .section3 .boardTitle {
-    font-size: 37.625px;
+    font-size: 38px;
     font-weight: 700;
     color: #407ff0;
 }
@@ -342,11 +328,121 @@ body {
     content: '';
     width: 24px;
     height: 24px;
-    background-image: url(../img/KakaoTalk_20250707_165055026_02.png);
+    background-image: url(../img/ico-arrowright-wh.png);
     position: absolute;
     right: 20px;
     top: 20px;
 }
 .section3 .boardImg {
     width: 50%;
+    height: 200px;
+    overflow: hidden;
+}
+.section3 .boardImg img {
+    margin-top: -50px;
+}
+/* 팝업영역 */
+#ramenPopup {
+    width: 1000px;
+    height: auto;
+    line-height: 1.5;
+    font-size: 20px;
+}
+.tempWrap {
+    background-color: antiquewhite;
+    padding: 70px 50px;
+    position: relative;
+}
+.tempWrap .closeBtn{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #121212;
+    background-image: url(../img/ico-close-wh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#ramenPopup .tempTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+#ramenPopup .tempTitle .tempRamenData{
+    font-size: 45px;
+}
+#ramenPopup .tempText>div:last-child{
+    margin-bottom: 0;
+}
+#ramenPopup .tempText .tempList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+#ramenPopup .tempText .tempList .left {
+    width: 150px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 2;
+    font-weight: 700;
+}
+#ramenPopup .tempText .tempList .right {
+    width: 660px;
+    margin: auto;
+}
+#ramenPopup .tempText .tempList .rightbox {
+    background-color: #333;
+    width: 660px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2.5;
+    color: white;
+}
+#ramenPopup .tempText .tempList .right li {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    text-align: center;
+}
+#ramenPopup .tempText .tempList .right .leftText {
+    margin-right: 10px;
+    width: 60px;
+}
+
+#ramenPopup .tempText .tempList .right .rightText {
+    margin-left: 10px;
+    width: 60px;
+}
+
+#ramenPopup .tempText .tempList .right div {
+    text-align: center;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure {
+    width: 500px;
+    margin: auto 0;
+    position: relative;
+}
+#ramenPopup .tempText .tempList .right .tempLine {
+    height: 2px;
+    background-color: #333;
+    width: 500px;
+    position: absolute;
+    top: 45%;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle {
+    display: flex;
+    justify-content: space-between;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle > div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+}
+#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active {
+    background-color: #407ff0;
 }

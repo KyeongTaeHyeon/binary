@@ -6,12 +6,17 @@
         <link rel="stylesheet" href="../css/reset.css" />
         <link rel="stylesheet" href="../css/common.css" />
         <link rel="stylesheet" href="../css/login.css" />
+        <script
+            src="https://accounts.google.com/gsi/client"
+            async
+            defer
+        ></script>
     </head>
     <body>
         <div id="wrapper">
             <header id="header"></header>
             <main id="main">
-                <div id="loginWrapper">
+                <div id="loginWrapper" class="outline">
                     <h1>로그인</h1>
                     <form id="loginForm">
                         <div class="inputWrapper">
@@ -35,12 +40,34 @@
                             </div>
                         </div>
                         <div class="buttonWrapper">
-                            <button type="submit" id="btnLogin">로그인</button>
-                            <button type="button" id="btnNew">
+                            <button type="submit" id="btnLogin" class="button">
+                                로그인
+                            </button>
+                            <button type="button" id="btnNew" class="button">
                                 <a href="회원가입">회원가입</a>
                             </button>
                         </div>
                     </form>
+
+                    <hr style="width: 100%; margin-top: 20px" />
+                    <h2 style="margin-bottom: 20px; margin-top: 20px">
+                        소셜 로그인
+                    </h2>
+                    <!-- 로그인 폼 아래에 구글 로그인 버튼 추가 -->
+                    <div
+                        id="g_id_onload"
+                        data-client_id="624709066041-aci8f67sfg28nhf0jsjnj9rlpvdccthe.apps.googleusercontent.com"
+                        data-callback="handleCredentialResponse"
+                    ></div>
+                    <div
+                        class="g_id_signin"
+                        data-type="standard"
+                        data-size="large"
+                        data-theme="outline"
+                        data-text="sign_in_with"
+                        data-shape="rectangular"
+                        data-logo_alignment="left"
+                    ></div>
                 </div>
             </main>
             <footer id="footer"></footer>
