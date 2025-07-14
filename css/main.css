@@ -342,23 +342,29 @@ body {
     margin-top: -50px;
 }
 /* 팝업영역 */
-#ramenPopup {
-    width: 1000px;
+.tempWrap {
+    background-color: #f1fcff;
+    padding: 50px 30px;
+    position: relative;
+    width: 900px;
     height: auto;
     line-height: 1.5;
     font-size: 20px;
-}
-.tempWrap {
-    background-color: antiquewhite;
-    padding: 70px 50px;
-    position: relative;
+    /* display: none; */
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+    top: 50%;
+    margin-top: -330px;
+    left: 50%;
+    margin-left: -450px;
 }
 .tempWrap .closeBtn{
     display: block;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #121212;
+    background-color: #5ac3f5;
     background-image: url(../img/ico-close-wh.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -369,7 +375,15 @@ body {
 #ramenPopup .tempTitle {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+}
+#ramenPopup .tempTitle .right img{
+    width: 100px;
+    height: 100px;
+}
+#ramenPopup .tempTitle .tempRamenName{
+    color: #407ff0;
+    font-weight: 700;
 }
 #ramenPopup .tempTitle .tempRamenData{
     font-size: 45px;
@@ -388,13 +402,14 @@ body {
     text-align: center;
     line-height: 2;
     font-weight: 700;
+    color: #407ff0;
 }
 #ramenPopup .tempText .tempList .right {
     width: 660px;
     margin: auto;
 }
 #ramenPopup .tempText .tempList .rightbox {
-    background-color: #333;
+    background-color: #0e0250;
     width: 660px;
     margin: 0 auto;
     text-align: center;
@@ -406,6 +421,7 @@ body {
     justify-content: space-between;
     gap: 5px;
     text-align: center;
+    font-weight: 700;
 }
 #ramenPopup .tempText .tempList .right .leftText {
     margin-right: 10px;
@@ -442,6 +458,7 @@ body {
     border-radius: 50%;
     background-color: white;
     z-index: 1;
+    border: 2px solid black;
 }
 #ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active {
     background-color: #407ff0;

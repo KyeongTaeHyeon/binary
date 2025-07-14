@@ -1,0 +1,50 @@
+[
+    {
+        "id": "ramen01",
+        "class": "Modal1",
+        "soup": "닭, 야채, 해산물",
+        "density": "1",
+        "oily": "1",
+        "thickness": "2"
+    },
+    {
+        "id": "ramen02",
+        "class": "Modal2",
+        "soup": "닭, 해산물",
+        "density": "3",
+        "oily": "1",
+        "thickness": "3"
+    },
+    {
+        "id": "ramen03",
+        "class": "Modal3",
+        "soup": "돼지뼈, 해산물",
+        "density": "4",
+        "oily": "3",
+        "thickness": "4"
+    },
+    {
+        "id": "ramen04",
+        "class": "Modal4",
+        "soup": "닭,야채,해산물",
+        "density": "5",
+        "oily": "3",
+        "thickness": "1"
+    },
+    {
+        "id": "ramen05",
+        "class": "Modal5",
+        "soup": "해산물",
+        "density": "2",
+        "oily": "1",
+        "thickness": "2"
+    },
+    {
+        "id": "ramen06",
+        "class": "Modal6",
+        "soup": "멸치",
+        "density": "4",
+        "oily": "2",
+        "thickness": "4"
+    },
+]
