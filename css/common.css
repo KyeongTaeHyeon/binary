@@ -103,7 +103,10 @@ body {
     display: flex;
 }
 
-#user .active {
+#user .userLoggedOut {
+    display: flex;
+}
+#user .userLoggedIn {
     display: flex;
 }
 
@@ -111,8 +114,8 @@ body {
     display: none;
 }
 
-.loginMypage.active {
-    display: block;
+.hide {
+  display: none !important;
 }
 
 #user a{
