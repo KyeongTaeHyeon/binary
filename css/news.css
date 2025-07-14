@@ -2,12 +2,18 @@
 /* 안전사이즈 */
 #boardcreat {
     width: 90%;
-    max-width: 75vw;
+    max-width: 1440px;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+    padding: 50px 0;
 }
-
+#boardcreat h1{
+    font-size: 40px;
+    margin-bottom: 24px;
+    margin-bottom: 50px;
+    color: #000;
+}
 /* 필터 */
 .filter {
     display: flex;
@@ -21,20 +27,19 @@
     display: inline-block;
     border: 1px solid #dedede;
     border-radius: 8px;
-    background-color: #fff; /* 기본 배경 흰색 */
-    color: #5ac3f5; /* 기본 글자색 파란색 */
-    font-weight: 700;
+    background-color: #fff;
+    color: #555;
     font-size: 16px;
     cursor: pointer;
     padding: 12px 24px;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s; /* 부드러운 전환 */
 }
 
 /* 모든 필터 span의 hover 스타일 (개별적으로 정의되지 않은 경우 적용) */
 .filter span:hover {
-    background-color: #d6eefc; /* hover 시 연한 파랑 */
-    color: #5ac3f5;
-    border-color: #d6eefc;
+    background-color: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
+    font-weight: 700;
 }
 
 /* ------------------------------------------------------------- */
@@ -44,9 +49,10 @@
 /* '전체' 필터 활성 상태 및 hover 상태 */
 .filter a.active span.filter-all,
 .filter span.filter-all:hover {
-    background-color: #f1fcff !important; /* 배경색: 요청하신 밝은 하늘색 */
-    border-color: #f1fcff !important;
-    color: #121212 !important; /* 글자색: 요청하신 기본 파란색 */
+    background-color: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
+    font-weight: 700;
 }
 
 /* '라면 관련 이슈' 필터 활성 상태 및 hover 상태 */
@@ -169,8 +175,6 @@
 }
 
 .page-btn {
-    background: #d6eefc;
-    border: 1px solid #d6eefc;
     color: #5ac3f5;
     font-size: 1.4rem;
     width: 40px;
@@ -196,7 +200,7 @@
 .page-item button {
     background: none;
     border: none;
-    color: #5ac3f5;
+    color: #777;
     font-size: 1.1rem;
     width: 36px;
     height: 36px;

@@ -27,10 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('userRegistForm', JSON.stringify(formData));
 
       console.log('userRegistForm', formData);
-      console.log('폼 데이터가 로컬 스토리지에 저장되었습니다.');
 
       // 폼을 제출하도록 허용
       // 만약 로컬 스토리지를 저장한 후 페이지 새로 고침이 필요하다면 아래 주석을 해제
       // window.location.reload();
+
+      // index.html로 리디렉션
+      e.preventDefault(); 
+      window.location.href = '../login/login.html';
+
     });
 });

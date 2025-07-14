@@ -232,6 +232,10 @@ body {
     margin: 0 auto;
 }
 
+.section2 div:nth-child(even) .etcInner {
+    flex-direction: row-reverse;
+}
+
 .section2 .etcLeft {
     width: 50%;
 }
@@ -254,8 +258,8 @@ body {
     width: 630px;
     height: 600px;
     border-radius: 50%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    border: 1px solid #eee;
 }
 
 .section2 .etcRight {
