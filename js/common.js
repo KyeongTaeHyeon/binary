@@ -1,6 +1,5 @@
 let depthCount = 0;
 
-
 function loadHTML(selector, url) {
   return new Promise((resolve, reject) => {
     fetch(url)
@@ -70,9 +69,8 @@ window.addEventListener('DOMContentLoaded', () => {
   loadHTML('#header', './includes/header.html')
     .then(() => loadScript('../js/header.js'))
     .then(() => {
-      if (typeof initHeader === 'function') {
-        initHeader();
-      }
+      if (typeof initHeader === 'function') initHeader();
+      if (typeof initSearch === 'function') initSearch();
     });
 
   // footer는 별도 처리
