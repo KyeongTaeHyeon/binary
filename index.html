@@ -17,6 +17,7 @@
             <header id="header"></header>
             <!-- 작업영역 -->
             <main id="main">
+                <div id="modal"></div>
                 <div id="container">
                     <!-- 히어로 영역 : 최신 유행 라멘  -->
                     <div class="mainHero">
@@ -636,85 +637,89 @@
         </template>
         <!-- 팝업영역 -->
         <template id="ramenPopup">
-            <div class="tempWrap">
-                <button class="closeBtn"></button>
-                <div class="tempTitle">
-                    <div class="left">
-                        <div class="tempRamenName">돈코츠라멘</div>
-                        <h2 class="tempRamenData">라멘데이터</h2>
-                    </div>
-                    <div class="right"><img src="img/raFeed_Logo-Photoroom.png"></div>
-                </div>
-                <div class="tempText">
-                    <div class="tempList">
-                        <div class="left">스프 베이스</div>
-                        <div class="rightbox">돼지뼈</div>
-                    </div>
-                    <div class="tempList">
-                        <div class="left">스프 농도</div>
+            <div class="modalWrap">
+                <div class="tempWrap">
+                    <button class="closeBtn"></button>
+                    <div class="tempTitle">
+                        <div class="left">
+                            <div class="tempRamenName">돈코츠라멘</div>
+                            <h2 class="tempRamenData">라멘데이터</h2>
+                        </div>
                         <div class="right">
-                            <ul>
-                                <li>
-                                    <div class="leftText">연 함</div>
-                                    <div class="tempMeasure">
-                                        <div class="tempLine">
-                                            <span class="hide">직선</span>
-                                        </div>
-                                        <div class="tempCircle">
-                                            <div></div>
-                                            <div></div>
-                                            <div class="active"></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                    </div>
-                                    <div class="rightText">진 함</div>
-                                </li>
-                            </ul>
+                            <img src="img/raFeed_Logo-Photoroom.png" />
                         </div>
                     </div>
-                    <div class="tempList">
-                        <div class="left">기름진 정도</div>
-                        <div class="right">
-                            <ul>
-                                <li>
-                                    <div class="leftText">담백함</div>
-                                    <div class="tempMeasure">
-                                        <div class="tempLine">
-                                            <span class="hide">직선</span>
-                                        </div>
-                                        <div class="tempCircle">
-                                            <div class="active"></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                    </div>
-                                    <div class="rightText">진 함</div>
-                                </li>
-                            </ul>
+                    <div class="tempText">
+                        <div class="tempList">
+                            <div class="left">스프 베이스</div>
+                            <div class="rightbox">돼지뼈</div>
                         </div>
-                    </div>
-                    <div class="tempList">
-                        <div class="left">면의 굵기</div>
-                        <div class="right">
-                            <ul>
-                                <li>
-                                    <div class="leftText">가는면</div>
-                                    <div class="tempMeasure">
-                                        <div class="tempLine">
-                                            <span class="hide">직선</span>
+                        <div class="tempList">
+                            <div class="left">스프 농도</div>
+                            <div class="right">
+                                <ul>
+                                    <li>
+                                        <div class="leftText">연 함</div>
+                                        <div class="tempMeasure">
+                                            <div class="tempLine">
+                                                <span class="hide">직선</span>
+                                            </div>
+                                            <div class="tempCircle">
+                                                <div></div>
+                                                <div></div>
+                                                <div class="active"></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
                                         </div>
-                                        <div class="tempCircle">
-                                            <div></div>
-                                            <div></div>
-                                            <div class="active"></div>
-                                            <div></div>
-                                            <div></div>
+                                        <div class="rightText">진 함</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tempList">
+                            <div class="left">기름진 정도</div>
+                            <div class="right">
+                                <ul>
+                                    <li>
+                                        <div class="leftText">담백함</div>
+                                        <div class="tempMeasure">
+                                            <div class="tempLine">
+                                                <span class="hide">직선</span>
+                                            </div>
+                                            <div class="tempCircle">
+                                                <div class="active"></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="rightText">굵은면</div>
-                                </li>
-                            </ul>
+                                        <div class="rightText">진 함</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tempList">
+                            <div class="left">면의 굵기</div>
+                            <div class="right">
+                                <ul>
+                                    <li>
+                                        <div class="leftText">가는면</div>
+                                        <div class="tempMeasure">
+                                            <div class="tempLine">
+                                                <span class="hide">직선</span>
+                                            </div>
+                                            <div class="tempCircle">
+                                                <div></div>
+                                                <div></div>
+                                                <div class="active"></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        <div class="rightText">굵은면</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
