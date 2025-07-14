@@ -5,6 +5,7 @@ body {
     color: #121212;
     line-height: 1.6;
     min-width: 1480px;
+    position: relative;
 }
 .hide {
     display: block;
@@ -160,6 +161,7 @@ body {
 .section1 .btnLinks .btnPopup a {
     display: flex;
     align-items: center;
+    width: 150px;
 }
 .section1 .btnLinks .btnPopup .btnIcon {
     width: 8px;
@@ -346,34 +348,32 @@ body {
     margin-top: -50px;
 }
 /* 팝업영역 */
-.moralWrap {
+.tempWrap {
     position: absolute;
-    display: none;
     justify-content: center;
+    display: none;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.tempWrap {
+.realModalWrap {
     background-color: #f1fcff;
-    position: absolute;
+    position: fixed;
     padding: 50px 30px;
-    /* position: relative; */
     width: 900px;
     height: 720px;
     line-height: 1.5;
     font-size: 20px;
-    /* z-index: 1000; */
+    z-index: 1000;
     overflow: auto;
     top: 50%;
-    /* margin-top: -330px; */
-    /* left: 50%; */
-    /* margin-left: -450px; */
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-    transform: translateY(-50%);
+    transform: translateY(-45%);
 }
+
 .tempWrap .closeBtn {
     display: block;
     width: 40px;
@@ -387,31 +387,28 @@ body {
     top: 15px;
     right: 15px;
 }
-#ramenPopup .tempTitle {
+.tempWrap .tempTitle {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
 }
-#ramenPopup .tempTitle .right img {
-    width: 100px;
-    height: 100px;
-}
-#ramenPopup .tempTitle .tempRamenName {
+
+.tempWrap .tempTitle .tempRamenName {
     color: #407ff0;
     font-weight: 700;
 }
-#ramenPopup .tempTitle .tempRamenData {
+.tempWrap .tempTitle .tempRamenData {
     font-size: 45px;
 }
-#ramenPopup .tempText > div:last-child {
+.tempWrap .tempText > div:last-child {
     margin-bottom: 0;
 }
-#ramenPopup .tempText .tempList {
+.tempWrap .tempText .tempList {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
 }
-#ramenPopup .tempText .tempList .left {
+.tempWrap .tempText .tempList .left {
     width: 150px;
     font-size: 24px;
     text-align: center;
@@ -419,11 +416,11 @@ body {
     font-weight: 700;
     color: #407ff0;
 }
-#ramenPopup .tempText .tempList .right {
+.tempWrap .tempText .tempList .right {
     width: 660px;
     margin: auto;
 }
-#ramenPopup .tempText .tempList .rightbox {
+.tempWrap .tempText .tempList .rightbox {
     background-color: #0e0250;
     width: 660px;
     margin: 0 auto;
@@ -431,43 +428,43 @@ body {
     line-height: 2.5;
     color: white;
 }
-#ramenPopup .tempText .tempList .right li {
+.tempWrap .tempText .tempList .right li {
     display: flex;
     justify-content: space-between;
     gap: 5px;
     text-align: center;
     font-weight: 700;
 }
-#ramenPopup .tempText .tempList .right .leftText {
+.tempWrap .tempText .tempList .right .leftText {
     margin-right: 10px;
     width: 60px;
 }
 
-#ramenPopup .tempText .tempList .right .rightText {
+.tempWrap .tempText .tempList .right .rightText {
     margin-left: 10px;
     width: 60px;
 }
 
-#ramenPopup .tempText .tempList .right div {
+.tempWrap .tempText .tempList .right div {
     text-align: center;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure {
+.tempWrap .tempText .tempList .right .tempMeasure {
     width: 500px;
     margin: auto 0;
     position: relative;
 }
-#ramenPopup .tempText .tempList .right .tempLine {
+.tempWrap .tempText .tempList .right .tempLine {
     height: 2px;
     background-color: #333;
     width: 500px;
     position: absolute;
     top: 45%;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle {
     display: flex;
     justify-content: space-between;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle > div {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle > div {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -475,6 +472,6 @@ body {
     z-index: 1;
     border: 2px solid black;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle .active {
     background-color: #407ff0;
 }

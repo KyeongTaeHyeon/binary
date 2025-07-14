@@ -1,17 +1,24 @@
 const modal = document.getElementById("modal");
-const btnOpenModal = document.querySelector(".modal");
+const btnOpenModal = document.querySelectorAll(".modal");
 const modalTemp = document.getElementById("ramenPopup");
-const modalWrap = document.querySelector(".modalWrap");
+const cloneTemp = modalTemp.content.firstElementChild.cloneNode(true);
 
-document.querySelector(".modal").removeAttribute("href");
-
-btnOpenModal.addEventListener("click", () => {
+btnOpenModal.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+    e.preventDefault();
     modal.innerHTML = "";
-    const cloneTemp = modalTemp.content.firstElementChild.cloneNode(true);
+    const modalWrap = cloneTemp.querySelector(".tempWrap");
     modalWrap.style.display = "flex";
     modal.appendChild(cloneTemp);
 });
+})
 
-function renderModal() {
-    
-}
+
+const closeBtn = cloneTemp.querySelector(".closeBtn");
+closeBtn.addEventListener("click",()=>{
+    modal.innerHTML = "";
+})
+
+
+
+

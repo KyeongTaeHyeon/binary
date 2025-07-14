@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RaFeed</title>
-    <!-- 공통사용 -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/common.css" />
-    <!-- 각화면 css 생성하여 사용 -->
-    <link rel="stylesheet" href="css/main.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RaFeed</title>
+        <!-- 공통사용 -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <!-- 각화면 css 생성하여 사용 -->
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
 
     <body>
         <div id="wrapper">
@@ -32,7 +31,7 @@
                                 </div>
                                 <div class="slideText">
                                     <p class="slideTitle">이에케 라멘</p>
-                                    <a href="">라멘 데이터</a>
+                                    <a href="" class="modal">라멘 데이터</a>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +74,7 @@
                                     <div class="btnPopup">
                                         <a
                                             class="modal"
-                                            href=""
+                                            href="#shop2-ramendata"
                                             data-modaal-scope="modaal_1751617594082944676b1db6a38"
                                         >
                                             <div class="btnIcon">
@@ -640,86 +639,94 @@
         <template id="ramenPopup">
             <div class="modalWrap">
                 <div class="tempWrap">
-                    <button class="closeBtn"></button>
-                    <div class="tempTitle">
-                        <div class="left">
-                            <div class="tempRamenName">돈코츠라멘</div>
-                            <h2 class="tempRamenData">라멘데이터</h2>
-                        </div>
-                        <div class="right">
-                            <img src="img/raFeed_Logo-Photoroom.png" />
-                        </div>
-                    </div>
-                    <div class="tempText">
-                        <div class="tempList">
-                            <div class="left">스프 베이스</div>
-                            <div class="rightbox">돼지뼈</div>
-                        </div>
-                        <div class="tempList">
-                            <div class="left">스프 농도</div>
-                            <div class="right">
-                                <ul>
-                                    <li>
-                                        <div class="leftText">연 함</div>
-                                        <div class="tempMeasure">
-                                            <div class="tempLine">
-                                                <span class="hide">직선</span>
-                                            </div>
-                                            <div class="tempCircle">
-                                                <div></div>
-                                                <div></div>
-                                                <div class="active"></div>
-                                                <div></div>
-                                                <div></div>
-                                            </div>
-                                        </div>
-                                        <div class="rightText">진 함</div>
-                                    </li>
-                                </ul>
+                    <div class="realModalWrap">
+                        <button class="closeBtn"></button>
+                        <div class="tempTitle">
+                            <div class="titleText">
+                                <div class="tempRamenName">돈코츠라멘</div>
+                                <h2 class="tempRamenData">라멘데이터</h2>
+                            </div>
+                            <div id="logo">
+                                <a><img src="img/raFeed_Logo-Photoroom.png" /></a>
                             </div>
                         </div>
-                        <div class="tempList">
-                            <div class="left">기름진 정도</div>
-                            <div class="right">
-                                <ul>
-                                    <li>
-                                        <div class="leftText">담백함</div>
-                                        <div class="tempMeasure">
-                                            <div class="tempLine">
-                                                <span class="hide">직선</span>
-                                            </div>
-                                            <div class="tempCircle">
-                                                <div class="active"></div>
-                                                <div></div>
-                                                <div></div>
-                                            </div>
-                                        </div>
-                                        <div class="rightText">진 함</div>
-                                    </li>
-                                </ul>
+                        <div class="tempText">
+                            <div class="tempList">
+                                <div class="left">스프 베이스</div>
+                                <div class="rightbox">돼지뼈</div>
                             </div>
-                        </div>
-                        <div class="tempList">
-                            <div class="left">면의 굵기</div>
-                            <div class="right">
-                                <ul>
-                                    <li>
-                                        <div class="leftText">가는면</div>
-                                        <div class="tempMeasure">
-                                            <div class="tempLine">
-                                                <span class="hide">직선</span>
+                            <div class="tempList">
+                                <div class="left">스프 농도</div>
+                                <div class="right">
+                                    <ul>
+                                        <li>
+                                            <div class="leftText">연 함</div>
+                                            <div class="tempMeasure">
+                                                <div class="tempLine">
+                                                    <span class="hide"
+                                                        >직선</span
+                                                    >
+                                                </div>
+                                                <div class="tempCircle">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div class="active"></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
                                             </div>
-                                            <div class="tempCircle">
-                                                <div></div>
-                                                <div></div>
-                                                <div class="active"></div>
-                                                <div></div>
-                                                <div></div>
+                                            <div class="rightText">진 함</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tempList">
+                                <div class="left">기름진 정도</div>
+                                <div class="right">
+                                    <ul>
+                                        <li>
+                                            <div class="leftText">담백함</div>
+                                            <div class="tempMeasure">
+                                                <div class="tempLine">
+                                                    <span class="hide"
+                                                        >직선</span
+                                                    >
+                                                </div>
+                                                <div class="tempCircle">
+                                                    <div class="active"></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="rightText">굵은면</div>
-                                    </li>
-                                </ul>
+                                            <div class="rightText">진 함</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tempList">
+                                <div class="left">면의 굵기</div>
+                                <div class="right">
+                                    <ul>
+                                        <li>
+                                            <div class="leftText">가는면</div>
+                                            <div class="tempMeasure">
+                                                <div class="tempLine">
+                                                    <span class="hide"
+                                                        >직선</span
+                                                    >
+                                                </div>
+                                                <div class="tempCircle">
+                                                    <div></div>
+                                                    <div></div>
+                                                    <div class="active"></div>
+                                                    <div></div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                            <div class="rightText">굵은면</div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
