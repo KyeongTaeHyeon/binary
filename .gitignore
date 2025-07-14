@@ -30,3 +30,6 @@ yarn-error.log*
 # 기타
 .env
 .txt
+
+ramen_database.json
+ramen_scraper.py
