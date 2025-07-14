@@ -39,34 +39,60 @@
                                     name="address"
                                 />
                             </div>
+                              <div class="form-row">
+                                 <label for="category1">지역</label>
+                                  <select id="category1" name="category1">
+                                 <option value="">선택</option>
+                                </select>
+                             </div>
+
                             <div class="form-row">
-                                <label for="area">지역</label>
-                                <input type="text" id="area" name="area" />
-                            </div>
-                            <div class="form-row">
-                                <label for="category1">분류1</label>
-                                <select id="category1" name="category1">
+                                <label for="category2">카테고리</label>
+                                <select id="category2" name="category2">
                                     <option value="">선택</option>
                                     <option value="miso">미소</option>
                                     <option value="shoyu">쇼유</option>
                                     <option value="shio">시오</option>
-                                    <option value="tonkotsu">돈코츠</option>
+                                    <option value="kuoki">교카이</option>
+                                    <option value="nibosi">니보시</option>
+                                    <option value="pitan">파이탄</option>
+                                    <option value="yasae">야사이</option>
+
                                 </select>
                             </div>
-                            <div class="form-row">
-                                <label for="category2">분류2</label>
-                                <select id="category2" name="category2">
-                                    <option value="">선택</option>
-                                    <option value="thin">얇은 면</option>
-                                    <option value="thick">두꺼운 면</option>
-                                    <option value="curly">꼬불면</option>
-                                </select>
-                            </div>
-                            <div class="form-row">
-                                <label for="category3">분류3</label>
+                             <div class="form-row">
+                                <label for="category3">형태</label>
                                 <select id="category3" name="category3">
-                                    <option value="">(미정)</option>
+                                    <option value="">선택</option>
                                 </select>
+                            </div>
+                               <div class="form-row">
+                              <label for="category4">두께</label>
+                              <select id="category4" name="category4">
+                                <option value="">선택</option>
+                              </select>
+                            </div>
+                              <label for="category5">계열</label>
+                              <select id="category5" name="category5">
+                                <option value="">선택</option>
+                              </select>
+                            </div>
+                              <label for="category6">종류</label>
+                              <select id="category6" name="categor6">
+                                <option value="">선택</option>
+                              </select>
+                            </div>
+                            </div>
+                              <label for="category7">기름기</label>
+                              <select id="category7" name="categor7">
+                                <option value="">선택</option>
+                              </select>
+                            </div>
+                            </div>
+                              <label for="category8">농도</label>
+                              <select id="category8" name="categor8">
+                                <option value="">선택</option>
+                              </select>
                             </div>
                             <div class="form-button">
                                 <button type="submit">신청</button>
@@ -78,10 +104,170 @@
             <!-- footer영역(공통사용) -->
             <footer id="footer"></footer>
         </div>
-
+        
         <!-- 공통사용 -->
         <script src="../js/common.js"></script>
         <!-- 각화면 js생성하여 사용 -->
         <script src="../js/boardList.js"></script>
+         <script>
+        // loadBoardData 함수 정의 (fetch API 사용)
+        async function loadBoardData(filePath) {
+            try {
+                const response = await fetch(filePath); // 파일 경로로 데이터 요청
+                if (!response.ok) { // 응답이 성공적이지 않으면 오류 발생
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json(); // 응답을 JSON 형태로 파싱
+                return data; // 파싱된 데이터 반환
+            } catch (error) {
+                console.error("데이터 로드 중 오류 발생:", error);
+                return []; // 오류 발생 시 빈 배열 반환 또는 적절한 오류 처리
+            }
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            const categorySelect = document.getElementById('category1');
+
+            loadBoardData("../data/region.json")
+                .then(regions => {
+
+                    regions.forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region.id;
+                        option.textContent = region.name;
+                        categorySelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("옵션 생성 중 오류 발생:", error);
+                });
+        });
+         document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category4');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/noodle.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "thinkness") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category3');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/noodle.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "shape") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });
+           document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category5');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/broth.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "style") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });
+           document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category6');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/category.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "name") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });     document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category7');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/broth.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "rich") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });     document.addEventListener('DOMContentLoaded', () => {
+            const category3Select = document.getElementById('category8');
+
+            // loadBoardData 함수를 사용하여 noodle.json 파일 불러오기
+            loadBoardData("../data/broth.json")
+                .then(data => { // 데이터 로드 성공 시 실행
+                    // 불러온 데이터에서 'type'이 "thinkness"인 항목만 필터링하여 옵션 생성
+                    data.forEach(item => {
+                        if (item.type === "richness") {
+                            const option = document.createElement('option');
+                            option.value = item.id; // value는 id로 설정
+                            option.textContent = item.name; // 텍스트는 name으로 설정
+                            category3Select.appendChild(option); // select 박스에 옵션 추가
+                        }
+                    });
+                })
+                .catch(error => { // 데이터 로드 실패 시 실행
+                    console.error("두께 옵션 설정 중 오류 발생:", error);
+                    // 사용자에게 오류 메시지를 표시하는 등의 추가 처리를 할 수 있습니다.
+                });
+        });
+    </script>
+        
     </body>
 </html>
