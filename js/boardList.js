@@ -327,9 +327,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // 필터링된 게시글의 총 개수를 기준으로 페이지네이션 버튼 렌더링
-        renderPaginationButtons(filteredPosts.length);
+       renderPaginationButtons(filteredPosts.length);
     }
-
+ 
     /**
      * 페이지네이션 숫자 버튼을 렌더링하고 이벤트 리스너를 설정하는 함수
      * @param {number} totalItems - 현재 카테고리의 전체 게시글 수
