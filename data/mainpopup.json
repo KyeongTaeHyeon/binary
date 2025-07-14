@@ -1,11 +1,11 @@
 [
   {
-    "id": "ramen01",
+    "id": "G1",
     "class": "Modal1",
     "soup": "닭, 야채, 해산물",
-    "density": "1",
-    "oily": "1",
-    "thickness": "2"
+    "richness": "H1",
+    "rich": "I1",
+    "thickness": "T2"
   },
   {
     "id": "ramen02",
