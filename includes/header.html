@@ -14,12 +14,18 @@
   </div>
   <div class="headerContent">
     <div id="user">
-      <div class="active">
+      <div class="userLoggedOut">
         <p><a href="../login/login.html">로그인</a></p>
         <span>|</span>
         <p><a href="../login/register.html">회원가입</a></p>
       </div>
-      <div class="loginMypage"><a href="">마이페이지</a>&nbsp;</div>
+      <div class="userLoggedIn hide">
+        <p><span id="loginUserName">로그인 유저</span>님</p>
+        <span>|</span>
+        <p><a href="../login/mypage.html">마이 페이지</a></p>
+        <span>|</span>
+        <p><a href="#" id="logoutBtn">로그아웃</a></p>
+      </div>
     </div>
     <div class="searchWrap">
       <input type="text" id="search" placeholder=" Search..." />

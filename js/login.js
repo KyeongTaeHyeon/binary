@@ -12,6 +12,10 @@ function handleCredentialResponse(response) {
   const userName = payload.name; // 사용자의 이름
   const userEmail = payload.email;
 
+  // 테스트용 localStorage에 저장
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('loginUserName', userName);
+
   // 세션 스토리지에 저장
   sessionStorage.setItem('userName', userName);
   sessionStorage.setItem('userEmail', userEmail);
@@ -47,11 +51,15 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     return;
   }
 
+  // 테스트용 로컬스토리지 로그인 상태 저장
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('loginUserName', inputId);
+
   // 로그인 성공
   alert(`${userData.userNickName}님 환영합니다!`);
   localStorage.setItem('isLoggedIn', 'true');
   localStorage.setItem('loginUserName', inputId);
 
   // 예시로 메인 페이지로 이동
-  window.location.href = 'http://127.0.0.1:5501/index.html';
+  window.location.href = '../index.html';
 });
