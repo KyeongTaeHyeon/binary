@@ -33,14 +33,33 @@ let showTabButtons = () => {
     // 버튼별 내용 표현 관련 이벤트 추가
     document.querySelectorAll('.tabBtn').forEach((btn) => {
         btn.addEventListener('click', function () {
+            document.querySelectorAll('.tabContent.active').forEach((c) => {
+                gsap.to(c, {
+                    opacity: 0,
+                    x: -50,
+                    duration: 0.3,
+                    onComplete: () => {
+                        c.classList.remove('active');
+                        c.style.opacity = '';
+                        c.style.transform = '';
+                    },
+                });
+            });
+
+            // 버튼 active 처리
             document
                 .querySelectorAll('.tabBtn')
                 .forEach((b) => b.classList.remove('active'));
-            document
-                .querySelectorAll('.tabContent')
-                .forEach((c) => c.classList.remove('active'));
             this.classList.add('active');
-            document.getElementById(this.dataset.tab).classList.add('active');
+
+            // 새 탭 내용 애니메이션 (등장)
+            const newTab = document.getElementById(this.dataset.tab);
+            newTab.classList.add('active');
+            gsap.fromTo(
+                newTab,
+                { opacity: 0, x: 50 },
+                { opacity: 1, x: 0, duration: 0.4 }
+            );
         });
     });
 };
