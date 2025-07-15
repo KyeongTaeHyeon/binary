@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+#filterWrapper {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 32px;
+    border-bottom: 1px solid #ddd;
+    color: #222;
+    margin-top: 20px;
+}
+
+#filterWrapper .filters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#filterWrapper .filters > div {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#filterWrapper .filters > div .filterTitle {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid #dedede;
+    text-align: right;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#filterWrapper .filters > div .filterList {
+    flex: 1;
+}
+
+#filterWrapper .filters > div .filterList ul {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#filterWrapper .filters > div .filterList ul li {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+#filterWrapper .filters > div .filterList ul li:hover {
+    color: #5ac3f5;
+}
+
+#selectorWrapper {
+    width: 1440px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #222;
+}
+
+#selectorWrapper .selectorContents {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#selectorWrapper .selectorContents li {
+    padding: 5px 32px;
+    border: 1px solid #5ac3f5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#contentWrapper {
+    width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+#contentList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+#contentList .contentItem {
+    width: 330px;
+    margin-bottom: 30px;
+}
+
+#contentList .contentItem .contentImage img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+#contentList .contentItem .contentsInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: #222;
+}
+
+#contentList .contentItem .contentsInfo .contentTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+#contentList .contentItem .contentsInfo .contentCategory {
+    margin-bottom: 20px;
+}
+
+#contentList .contentItem .contentsInfo .contentCategory .categoryList {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+#contentList .contentItem .contentsInfo .contentCategory .categoryList li {
+    padding: 4px 20px;
+    background-color: #e0f0fa;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #176d9f;
+}
+
+#contentList .contentItem .contentsInfo .contentDescription {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 원하는 줄 수 */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 300px; /* 원하는 최대 너비로 조정 */
+}
+
+/* 페이지 네비게이션 디자인 - 색상 구분 및 자연스러운 효과 */
+#contentNav {
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-btn {
+    color: #777;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(90, 195, 245, 0.08);
+}
+
+.pageBtn:hover {
+    background: #5ac3f5;
+    color: #fff;
+    border-color: #5ac3f5;
+}
+
+.pageList {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.page-item button {
+    background: none;
+    border: none;
+    color: #8d9ba1;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 1px 4px rgba(90, 195, 245, 0.06);
+}
+
+.page-item.active button,
+.page-item button:hover {
+    background: #ebf8ff;
+    color: #5ac3f5;
+    font-weight: bold;
+}
