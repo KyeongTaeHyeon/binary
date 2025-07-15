@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".section1").appendChild(clone);
 
                     showModal(ramenData.id);
-
                 }
             });
         })
@@ -132,7 +131,6 @@ function showModal(id) {
     });
 }
 
-
 // function modalData(id){
 //     document.addEventListener("DOMContentLoaded", function () {
 //     LoadData("../data/mainpopup.json")
@@ -181,31 +179,56 @@ function modalData(id) {
                     // const clone = ramenPopupTemplate.content.firstElementChild.cloneNode(true);
 
                     // 팝업 내부에 라멘 데이터를 삽입합니다.
-                    clone.querySelector(".tempRamenName").textContent = ramenDataItem.name;
-                    clone.querySelector(".rightbox").textContent = ramenDataItem.soup;
+                    clone.querySelector(".tempRamenName").textContent =
+                        ramenDataItem.name;
+                    clone.querySelector(".rightbox").textContent =
+                        ramenDataItem.soup;
 
                     // 농도 설정
-                    const richnessIndex = parseInt(ramenDataItem.richness.substring(1)) - 1;
-                    const richnessCircles = clone.querySelectorAll(".tempList:nth-child(2) .tempCircle div");
-                    richnessCircles.forEach(circle => circle.classList.remove("active"));
-                    if (richnessIndex >= 0 && richnessIndex < richnessCircles.length) {
+                    const richnessIndex =
+                        parseInt(ramenDataItem.richness.substring(1)) - 1;
+                    const richnessCircles = clone.querySelectorAll(
+                        ".tempList:nth-child(2) .tempCircle div"
+                    );
+                    richnessCircles.forEach((circle) =>
+                        circle.classList.remove("active")
+                    );
+                    if (
+                        richnessIndex >= 0 &&
+                        richnessIndex < richnessCircles.length
+                    ) {
                         richnessCircles[richnessIndex].classList.add("active");
                     }
 
                     // 기름진 정도 설정
-                    const richIndex = parseInt(ramenDataItem.rich.substring(1)) - 1;
-                    const richCircles = clone.querySelectorAll(".tempList:nth-child(3) .tempCircle div");
-                    richCircles.forEach(circle => circle.classList.remove("active"));
+                    const richIndex =
+                        parseInt(ramenDataItem.rich.substring(1)) - 1;
+                    const richCircles = clone.querySelectorAll(
+                        ".tempList:nth-child(3) .tempCircle div"
+                    );
+                    richCircles.forEach((circle) =>
+                        circle.classList.remove("active")
+                    );
                     if (richIndex >= 0 && richIndex < richCircles.length) {
                         richCircles[richIndex].classList.add("active");
                     }
 
                     // 면의 굵기 설정
-                    const thicknessIndex = parseInt(ramenDataItem.thickness.substring(1)) - 1;
-                    const thicknessCircles = clone.querySelectorAll(".tempList:nth-child(4) .tempCircle div");
-                    thicknessCircles.forEach(circle => circle.classList.remove("active"));
-                    if (thicknessIndex >= 0 && thicknessIndex < thicknessCircles.length) {
-                        thicknessCircles[thicknessIndex].classList.add("active");
+                    const thicknessIndex =
+                        parseInt(ramenDataItem.thickness.substring(1)) - 1;
+                    const thicknessCircles = clone.querySelectorAll(
+                        ".tempList:nth-child(4) .tempCircle div"
+                    );
+                    thicknessCircles.forEach((circle) =>
+                        circle.classList.remove("active")
+                    );
+                    if (
+                        thicknessIndex >= 0 &&
+                        thicknessIndex < thicknessCircles.length
+                    ) {
+                        thicknessCircles[thicknessIndex].classList.add(
+                            "active"
+                        );
                     }
 
                     // document.body.appendChild(clone);
@@ -217,4 +240,25 @@ function modalData(id) {
             });
     });
 }
+// 히어로영역 버튼
+document.addEventListener("DOMContentLoaded", () => {
+    const heroPrev = document.querySelector(".btnPrev");
+    const heroNext = document.querySelector(".btnNext");
+    const slides = document.querySelector(".slideImg");
+    const images = document.querySelectorAll(".slide img");
+    const totalSlides = images.length;
+    let currentIndex = 0;
 
+    heroPrev.addEventListener("click", function () {
+        currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+        updateSlider();
+    });
+    heroNext.addEventListener("click", function () {
+        currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+        updateSlider();
+    });
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+});
