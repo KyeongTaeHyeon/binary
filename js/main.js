@@ -1,45 +1,12 @@
-import { LoadData } from "./utils.js";
+import { LoadData } from './utils.js';
 
 // 섹션1 데이터 뿌리기
+const template1 = document.getElementById('Boxtype01');
+// 섹션2 데이터 뿌리기
+const template2 = document.getElementById('Boxtype02');
 
-// const template1 = document.getElementById("Boxtype01");
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     LoadData("../data/mainsect1.json")
-//         .then((data) => {
-//             // "G1" 데이터만 찾기
-//             const ramenData = data.find((item) => item.id === "G1");
-
-//             if (ramenData) {
-//                 // 템플릿 가져오기
-//                 const clone =
-//                     template1.content.firstElementChild.cloneNode(true);
-
-//                 // 데이터 삽입
-//                 clone.querySelector(".ramenTitle").textContent = ramenData.name;
-//                 clone.querySelector(".subTitle").textContent = ramenData.title;
-//                 clone.querySelector(".ramenText").textContent = ramenData.info;
-//                 clone.querySelector(
-//                     ".price"
-//                 ).textContent = `▲ ${ramenData.name}`;
-//                 clone.querySelector(".shopIcon img").src = ramenData.image;
-//                 clone.querySelector(".shopIcon img").alt = ramenData.name;
-
-//                 // 원하는 위치에 삽입
-//                 document.querySelector(".section1").appendChild(clone);
-
-//                 // 모달 삽입
-//                 showModal();
-//             }
-//         })
-//         .catch((error) => {
-//             console.error("데이터 불러오기 실패:", error);
-//         });
-// });
-const template1 = document.getElementById("Boxtype01");
-
-document.addEventListener("DOMContentLoaded", function () {
-    LoadData("../data/mainsect1.json")
+document.addEventListener('DOMContentLoaded', function () {
+    LoadData('../data/mainsect1.json')
         .then((data) => {
             data.forEach((ramenData, index) => {
                 if (ramenData) {
@@ -47,38 +14,33 @@ document.addEventListener("DOMContentLoaded", function () {
                         template1.content.firstElementChild.cloneNode(true);
 
                     if (index % 2 !== 0) {
-                        clone.classList.add("reverse");
+                        clone.classList.add('reverse');
                     }
 
-                    clone.querySelector(".ramenTitle").textContent =
+                    clone.querySelector('.ramenTitle').textContent =
                         ramenData.name;
-                    clone.querySelector(".subTitle").textContent =
+                    clone.querySelector('.subTitle').textContent =
                         ramenData.title;
-                    clone.querySelector(".ramenText").textContent =
+                    clone.querySelector('.ramenText').textContent =
                         ramenData.info;
                     clone.querySelector(
-                        ".price"
+                        '.price'
                     ).textContent = `▲ ${ramenData.name}`;
-                    clone.querySelector(".shopIcon img").src = ramenData.image;
-                    clone.querySelector(".shopIcon img").alt = ramenData.name;
+                    clone.querySelector('.shopIcon img').src = ramenData.image;
+                    clone.querySelector('.shopIcon img').alt = ramenData.name;
+                    clone
+                        .querySelector('.modal')
+                        .setAttribute('data-id', ramenData.id);
 
-                    document.querySelector(".section1").appendChild(clone);
-
-                    showModal(ramenData.id);
-
+                    document.querySelector('.section1').appendChild(clone);
                 }
             });
         })
         .catch((error) => {
-            console.error("데이터 불러오기 실패:", error);
+            console.error('데이터 불러오기 실패:', error);
         });
-});
 
-// 섹션2 데이터 뿌리기
-const template2 = document.getElementById("Boxtype02");
-
-document.addEventListener("DOMContentLoaded", function () {
-    LoadData("../data/mainsect2.json")
+    LoadData('../data/mainsect2.json')
         .then((data) => {
             // const ramenData = data.find((item) => item.id === "etc1");
             data.forEach((ramenData, index) => {
@@ -88,133 +50,115 @@ document.addEventListener("DOMContentLoaded", function () {
                         template2.content.firstElementChild.cloneNode(true);
 
                     // 데이터 삽입
-                    clone.querySelector(".featureNum").textContent =
+                    clone.querySelector('.featureNum').textContent =
                         ramenData.num;
-                    clone.querySelector(".subTitle").textContent =
+                    clone.querySelector('.subTitle').textContent =
                         ramenData.title;
-                    clone.querySelector(".etcInfo").textContent =
+                    clone.querySelector('.etcInfo').textContent =
                         ramenData.info;
-                    clone.querySelector(".etcLeft img").src = ramenData.image;
-                    clone.querySelector(".etcLeft img").alt = ramenData.title;
+                    clone.querySelector('.etcLeft img').src = ramenData.image;
+                    clone.querySelector('.etcLeft img').alt = ramenData.title;
 
                     // 원하는 위치에 삽입
-                    document.querySelector(".section2").appendChild(clone);
+                    document.querySelector('.section2').appendChild(clone);
                 }
             });
         })
         .catch((error) => {
-            console.error("데이터 불러오기 실패:", error);
+            console.error('데이터 불러오기 실패:', error);
         });
 });
 
-// 모달영역 함수
-function showModal(id) {
-    const modal = document.getElementById("modal");
-    const btnOpenModal = document.querySelectorAll(".modal");
-    const modalTemp = document.getElementById("ramenPopup");
+document.querySelector('.section1').addEventListener('click', function (e) {
+    const btn = e.target.closest('.modal');
+    if (!btn) return;
+
+    e.preventDefault();
+    const id = btn.getAttribute('data-id');
+    const modal = document.getElementById('modal');
+    const modalTemp = document.getElementById('ramenPopup');
+    modal.innerHTML = '';
     const cloneTemp = modalTemp.content.firstElementChild.cloneNode(true);
+    const modalWrap = cloneTemp.querySelector('.tempWrap');
+    modalData(id, cloneTemp); // cloneTemp를 전달해서 팝업에 데이터 삽입
+    modalWrap.style.display = 'flex';
+    modal.appendChild(cloneTemp);
 
-    btnOpenModal.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.innerHTML = "";
-            const modalWrap = cloneTemp.querySelector(".tempWrap");
-            // 모달데이터 함수
-            modalData(id);
-            modalWrap.style.display = "flex";
-            modal.appendChild(cloneTemp);
-        });
+    const closeBtn = cloneTemp.querySelector('.closeBtn');
+    closeBtn.addEventListener('click', () => {
+        modal.innerHTML = '';
     });
-
-    const closeBtn = cloneTemp.querySelector(".closeBtn");
-    closeBtn.addEventListener("click", () => {
-        modal.innerHTML = "";
-    });
-}
-
-
-// function modalData(id){
-//     document.addEventListener("DOMContentLoaded", function () {
-//     LoadData("../data/mainpopup.json")
-//         .then((data) => {
-//             // const ramenData = data.find((item) => item.id === "etc1");
-//             data.find((ramenData, index) => {
-//                 if (ramenData) {
-//                     // 템플릿 가져오기
-//                     // const clone =
-//                     //     template2.content.firstElementChild.cloneNode(true);
-
-//                     // 데이터 삽입
-//                     clone.querySelector(".featureNum").textContent =
-//                         ramenData.num;
-//                     clone.querySelector(".subTitle").textContent =
-//                         ramenData.title;
-//                     clone.querySelector(".etcInfo").textContent =
-//                         ramenData.info;
-//                     clone.querySelector(".etcLeft img").src = ramenData.image;
-//                     clone.querySelector(".etcLeft img").alt = ramenData.title;
-
-//                     // 원하는 위치에 삽입
-//                     document.querySelector(".section2").appendChild(clone);
-//                 }
-//             });
-//         })
-//         .catch((error) => {
-//             console.error("데이터 불러오기 실패:", error);
-//         });
-// });
-// }
+});
 
 // 모달데이터 뿌리기
-function modalData(id) {
-    document.addEventListener("DOMContentLoaded", function () {
-        LoadData("../data/mainpopup.json")
-            .then((data) => {
-                // const modalTemp = document.getElementById("ramenPopup");
-                if (!modalTemp) {
-                    console.error("Error: 'ramenPopup' template not found.");
-                    return;
+function modalData(id, cloneTemp) {
+    Promise.all([
+        LoadData('../data/mainpopup.json'),
+        LoadData('../data/broth.json'),
+        LoadData('../data/noodle.json'),
+    ])
+        .then(([popData, brothData, noodleData]) => {
+            let dataList = popData.find(
+                (item) => String(item.id) === String(id)
+            );
+            if (!dataList) {
+                return;
+            }
+
+            // 팝업 내부에 라멘 데이터를 삽입합니다.
+            cloneTemp.querySelector('.tempRamenName').textContent =
+                dataList.name;
+            cloneTemp.querySelector(
+                '.tempText .tempList .rightbox'
+            ).textContent = dataList.soup;
+            // 스프 농도
+            const richnessList = cloneTemp.querySelector(
+                '.tempText .richness .tempCircle'
+            );
+            richnessList.innerHTML = '';
+            let richnessData = brothData.filter(
+                (item) => item.type === 'richness'
+            );
+            richnessData.forEach((item) => {
+                const richnessDiv = document.createElement('div'); // 수정!
+                richnessDiv.dataset.id = item.id;
+                if (item.id === dataList.richness) {
+                    richnessDiv.classList.add('active');
                 }
-
-                // 각 라멘 데이터에 대해 팝업을 생성합니다.
-                data.find((ramenDataItem) => {
-                    // const clone = ramenPopupTemplate.content.firstElementChild.cloneNode(true);
-
-                    // 팝업 내부에 라멘 데이터를 삽입합니다.
-                    clone.querySelector(".tempRamenName").textContent = ramenDataItem.name;
-                    clone.querySelector(".rightbox").textContent = ramenDataItem.soup;
-
-                    // 농도 설정
-                    const richnessIndex = parseInt(ramenDataItem.richness.substring(1)) - 1;
-                    const richnessCircles = clone.querySelectorAll(".tempList:nth-child(2) .tempCircle div");
-                    richnessCircles.forEach(circle => circle.classList.remove("active"));
-                    if (richnessIndex >= 0 && richnessIndex < richnessCircles.length) {
-                        richnessCircles[richnessIndex].classList.add("active");
-                    }
-
-                    // 기름진 정도 설정
-                    const richIndex = parseInt(ramenDataItem.rich.substring(1)) - 1;
-                    const richCircles = clone.querySelectorAll(".tempList:nth-child(3) .tempCircle div");
-                    richCircles.forEach(circle => circle.classList.remove("active"));
-                    if (richIndex >= 0 && richIndex < richCircles.length) {
-                        richCircles[richIndex].classList.add("active");
-                    }
-
-                    // 면의 굵기 설정
-                    const thicknessIndex = parseInt(ramenDataItem.thickness.substring(1)) - 1;
-                    const thicknessCircles = clone.querySelectorAll(".tempList:nth-child(4) .tempCircle div");
-                    thicknessCircles.forEach(circle => circle.classList.remove("active"));
-                    if (thicknessIndex >= 0 && thicknessIndex < thicknessCircles.length) {
-                        thicknessCircles[thicknessIndex].classList.add("active");
-                    }
-
-                    // document.body.appendChild(clone);
-                });
-            })
-            .catch((error) => {
-                // 데이터 로딩 중 오류가 발생하면 콘솔에 에러 메시지를 출력합니다.
-                console.error("데이터 불러오기 실패:", error);
+                richnessList.appendChild(richnessDiv); // 부모에 추가
             });
-    });
+            // 기름진 정도
+            const richList = cloneTemp.querySelector(
+                '.tempText .rich .tempCircle'
+            );
+            richList.innerHTML = '';
+            let richData = brothData.filter((item) => item.type === 'rich');
+            richData.forEach((item) => {
+                const richDiv = document.createElement('div'); // 수정!
+                richDiv.dataset.id = item.id;
+                if (item.id === dataList.rich) {
+                    richDiv.classList.add('active');
+                }
+                richList.appendChild(richDiv); // 부모에 추가
+            });
+            // 면의 굵기
+            const thicknessList = cloneTemp.querySelector(
+                '.tempText .thickness .tempCircle'
+            );
+            thicknessList.innerHTML = '';
+            let thicknessData = noodleData.filter(
+                (item) => item.type === 'thickness'
+            );
+            thicknessData.forEach((item) => {
+                const thicknessDiv = document.createElement('div'); // 수정!
+                thicknessDiv.dataset.id = item.id;
+                if (item.id === dataList.thickness) {
+                    thicknessDiv.classList.add('active');
+                }
+                thicknessList.appendChild(thicknessDiv); // 부모에 추가
+            });
+        })
+        .catch((error) => {
+            console.error('데이터 불러오기 실패:', error);
+        });
 }
-
