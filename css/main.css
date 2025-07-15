@@ -110,6 +110,9 @@ body {
     width: 1440px;
     margin: 150px auto;
 }
+.section1 div:nth-child(even) .contentsBox {
+    flex-direction: row-reverse;
+}
 .section1 .contentsBox {
     display: flex;
     justify-content: space-between;
@@ -290,7 +293,7 @@ body {
     line-height: 1.3;
 }
 
-.section2 .etcRight .etcText p {
+.section2 .etcRight .etcText .etcInfo {
     font-size: 16px;
     line-height: 2;
     color: #333;
