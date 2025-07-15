@@ -16,7 +16,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-
 #main h2 {
   margin-bottom: 32px;
   text-align: center;
@@ -56,11 +55,11 @@ body {
   line-height: 48px;
 }
 
-#managerLeft ul li a{
+#managerLeft ul li a {
   color: #555;
 }
 
-#managerLeft ul .on a{
+#managerLeft ul .on a {
   color: #2fb2ee;
   font-weight: 600;
 }
@@ -122,12 +121,12 @@ body {
   color: #555;
 }
 
-#managerSearchDate input:first-child{
+#managerSearchDate input:first-child {
   border-right: 0;
   border-radius: 4px 0 0 4px;
 }
 
-#managerSearchDate input:nth-child(2){
+#managerSearchDate input:nth-child(2) {
   border-radius: 0;
 }
 
@@ -145,7 +144,7 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
-#managerSearchDate button{
+#managerSearchDate button {
   width: 60px;
 }
 
@@ -218,6 +217,13 @@ body {
 .page-item.active button,
 .page-item button:hover {
   background: #d6eefc;
+  color: #5ac3f5;
+  font-weight: bold;
+}
+
+.page-item.active button,
+.page-item button:hover {
+  background: #ebf8ff;
   color: #5ac3f5;
   font-weight: bold;
 }
