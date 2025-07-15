@@ -217,3 +217,39 @@ function modalData(id, cloneTemp) {
             console.error('데이터 불러오기 실패:', error);
         });
 }
+// 히어로 버튼
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.slideImg');
+    const prevButton = document.querySelector('.btnPrev');
+    const nextButton = document.querySelector('.btnNext');
+    const images = document.querySelectorAll('.slideImg img');
+    const totalSlides = images.length;
+    let currentIndex = 0;
+
+    // 이전 버튼 클릭 시
+    prevButton.addEventListener('click', () => {
+        currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+        updateSlider();
+    });
+
+    // 다음 버튼 클릭 시
+    nextButton.addEventListener('click', () => {
+        currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+        updateSlider();
+    });
+
+    // 슬라이더의 CSS transform 속성을 업데이트하여 이미지를 이동시키는 함수
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+        // 바 영역
+        const ulEl = document.querySelector('.pagerUl');
+        const liEl = ulEl.querySelectorAll('li');
+        liEl.forEach((li, idx) => {
+            li.classList.remove('active');
+            if (currentIndex === idx) {
+                li.classList.add('active');
+            }
+        });
+    }
+});
