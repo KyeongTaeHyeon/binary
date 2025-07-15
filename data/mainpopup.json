@@ -1,50 +1,50 @@
 [
   {
     "id": "G1",
-    "class": "Modal1",
+    "name": "시오라멘",
     "soup": "닭, 야채, 해산물",
     "richness": "H1",
     "rich": "I1",
     "thickness": "T2"
   },
   {
-    "id": "ramen02",
-    "class": "Modal2",
+    "id": "G2",
+    "name": "쇼유라멘",
     "soup": "닭, 해산물",
-    "density": "3",
-    "oily": "1",
-    "thickness": "3"
+    "richness": "H3",
+    "rich": "I1",
+    "thickness": "T3"
   },
   {
-    "id": "ramen03",
-    "class": "Modal3",
+    "id": "G3",
+    "name": "미소라멘",
     "soup": "돼지뼈, 해산물",
-    "density": "4",
-    "oily": "3",
-    "thickness": "4"
+    "richness": "H4",
+    "rich": "I3",
+    "thickness": "T4"
   },
   {
-    "id": "ramen04",
-    "class": "Modal4",
+    "id": "G4",
+    "name": "돈코츠라멘",
     "soup": "닭,야채,해산물",
-    "density": "5",
-    "oily": "3",
-    "thickness": "1"
+    "richness": "H5",
+    "rich": "I3",
+    "thickness": "T1"
   },
   {
-    "id": "ramen05",
-    "class": "Modal5",
+    "id": "G5",
+    "name": "교카이라멘",
     "soup": "해산물",
-    "density": "2",
-    "oily": "1",
-    "thickness": "2"
+    "richness": "H2",
+    "rich": "I1",
+    "thickness": "T2"
   },
   {
-    "id": "ramen06",
-    "class": "Modal6",
+    "id": "G6",
+    "name": "니보시라멘",
     "soup": "멸치",
-    "density": "4",
-    "oily": "2",
-    "thickness": "4"
+    "richness": "H4",
+    "rich": "I2",
+    "thickness": "T4"
   }
 ]

@@ -110,7 +110,7 @@ body {
     width: 1440px;
     margin: 150px auto;
 }
-.section1 div:nth-child(even) .contentsBox {
+.section1 .reverse {
     flex-direction: row-reverse;
 }
 .section1 .contentsBox {
