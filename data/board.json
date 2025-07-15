@@ -1,367 +1,317 @@
 [
-    {
-        "type": "B0001",
-        "id": "89",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0002",
-        "id": "90",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0003",
-        "id": "91",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0004",
-        "id": "92",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0005",
-        "id": "93",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0006",
-        "id": "94",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0007",
-        "id": "95",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0008",
-        "id": "96",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0009",
-        "id": "97",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0010",
-        "id": "98",
-        "title": "식당 인증 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0011",
-        "id": "99",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0012",
-        "id": "100",
-        "title": "식당 인증",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0013",
-        "id": "101",
-        "title": "식당 인증 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0014",
-        "id": "102",
-        "title": "식당 인증 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "B0015",
-        "id": "103",
-        "title": "식당 인증 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "식당 인증"
-    },
-    {
-        "type": "A0001",
-        "id": "1",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0002",
-        "id": "2",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0003",
-        "id": "3",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0004",
-        "id": "4",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0005",
-        "id": "5",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0006",
-        "id": "6",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0007",
-        "id": "7",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0008",
-        "id": "8",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0009",
-        "id": "9",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0010",
-        "id": "10",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0011",
-        "id": "11",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0012",
-        "id": "12",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0013",
-        "id": "13",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0014",
-        "id": "14",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0015",
-        "id": "15",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0016",
-        "id": "16",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A00017",
-        "id": "17",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A00018",
-        "id": "18",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A00019",
-        "id": "19",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    },
-    {
-        "type": "A0020",
-        "id": "20",
-        "title": "자유게시판 ",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
-    ,
-    {
-        "type": "C0001",
-        "id": "1",
-        "title": "식당 신청",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
-    ,
-    {
-        "type": "C0002",
-        "id": "2",
-        "title": "식당 신청",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
-    ,
-    {
-        "type": "C0003",
-        "id": "3",
-        "title": "식당 신청",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
-    ,
-    {
-        "type": "C0004",
-        "id": "4",
-        "title": "식당 신청",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
-    ,
-    {
-        "type": "C0005",
-        "id": "5",
-        "title": "식당 신청",
-        "user": "teamBinary",
-        "creatAt": "등록",
-        "editDate": "수정",
-        "contents": "자유게시판"
-    }
+  {
+    "type": "B0001",
+    "id": "89",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0002",
+    "id": "90",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0003",
+    "id": "91",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0004",
+    "id": "92",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0005",
+    "id": "93",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0006",
+    "id": "94",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0007",
+    "id": "95",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0008",
+    "id": "96",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0009",
+    "id": "97",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0010",
+    "id": "98",
+    "title": "식당 인증 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0011",
+    "id": "99",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0012",
+    "id": "100",
+    "title": "식당 인증",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0013",
+    "id": "101",
+    "title": "식당 인증 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0014",
+    "id": "102",
+    "title": "식당 인증 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "B0015",
+    "id": "103",
+    "title": "식당 인증 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "식당 인증"
+  },
+  {
+    "type": "A0001",
+    "id": "1",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0002",
+    "id": "2",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0003",
+    "id": "3",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0004",
+    "id": "4",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0005",
+    "id": "5",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0006",
+    "id": "6",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0007",
+    "id": "7",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0008",
+    "id": "8",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0009",
+    "id": "9",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0010",
+    "id": "10",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0011",
+    "id": "11",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0012",
+    "id": "12",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0013",
+    "id": "13",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0014",
+    "id": "14",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0015",
+    "id": "15",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0016",
+    "id": "16",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A00017",
+    "id": "17",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A00018",
+    "id": "18",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A00019",
+    "id": "19",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  },
+  {
+    "type": "A0020",
+    "id": "20",
+    "title": "자유게시판 ",
+    "user": "teamBinary",
+    "creatAt": "등록",
+    "editDate": "수정",
+    "contents": "자유게시판"
+  }
 ]
