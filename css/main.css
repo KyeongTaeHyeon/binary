@@ -5,6 +5,7 @@ body {
     color: #121212;
     line-height: 1.6;
     min-width: 1480px;
+    position: relative;
 }
 .hide {
     display: block;
@@ -107,7 +108,10 @@ body {
 /* 섹션1 */
 .section1 {
     width: 1440px;
-    margin: 0 auto;
+    margin: 150px auto;
+}
+.section1 div:nth-child(even) .contentsBox {
+    flex-direction: row-reverse;
 }
 .section1 .contentsBox {
     display: flex;
@@ -144,6 +148,10 @@ body {
 .section1 .subTitle {
     font-size: 27px;
     font-weight: 700;
+    padding-right: 170px;
+}
+.section1 .ramenText {
+    padding-right: 70px;
 }
 .section1 .btnLinks {
     margin-top: 55px;
@@ -156,6 +164,7 @@ body {
 .section1 .btnLinks .btnPopup a {
     display: flex;
     align-items: center;
+    width: 150px;
 }
 .section1 .btnLinks .btnPopup .btnIcon {
     width: 8px;
@@ -194,7 +203,7 @@ body {
     padding-right: 20px;
 }
 .section1 .btnShop a::after {
-    content: '';
+    content: "";
     width: 24px;
     height: 24px;
     background-image: url(../img/ico-arrowright-wh.png);
@@ -209,7 +218,7 @@ body {
 /* 섹션2 */
 .section2 {
     width: 1440px;
-    margin: 0 auto;
+    margin: 150px auto;
 }
 
 .etcTitle {
@@ -217,7 +226,7 @@ body {
 }
 
 .section2 .feature {
-    padding: 150px 0;
+    padding: 120px 0;
 }
 
 .section2 .etcInner {
@@ -228,11 +237,15 @@ body {
     margin: 0 auto;
 }
 
+.section2 div:nth-child(even) .etcInner {
+    flex-direction: row-reverse;
+}
+
 .section2 .etcLeft {
     width: 50%;
 }
 
-.section2 .etcInner .topImg {
+/*.section2 .etcInner .topImg {
     position: absolute;
     top: -100px;
     right: 50%;
@@ -243,23 +256,23 @@ body {
     background-image: url('../img/sect03_oil1.jpg');
     background-size: cover;
     background-position: center;
-}
+}*/
 
-.section2 .etcLeft .cirImg1 {
-    width: 680px;
-    height: 620px;
+.section2 .etcLeft img {
+    display: block;
+    width: 630px;
+    height: 600px;
     border-radius: 50%;
-    background-image: url('../img/sect3_oil.jpg');
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    border: 1px solid #eee;
 }
 
 .section2 .etcRight {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    margin-bottom: 50px;
+    justify-content: center;
+    margin-left: 50px;
 }
 
 .section2 .etcRight .etcText .features {
@@ -280,11 +293,12 @@ body {
     line-height: 1.3;
 }
 
-.section2 .etcRight .etcText p {
+.section2 .etcRight .etcText .etcInfo {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 2;
     color: #333;
-    margin-top: 20px;
+    padding-right: 160px;
+    font-weight: 500;
 }
 /* 섹션3 */
 .section3 {
@@ -320,7 +334,7 @@ body {
     text-decoration: none;
 }
 .section3 .boardBtn a::after {
-    content: '';
+    content: "";
     width: 24px;
     height: 24px;
     background-image: url(../img/ico-arrowright-wh.png);
@@ -337,87 +351,130 @@ body {
     margin-top: -50px;
 }
 /* 팝업영역 */
-#ramenPopup {
-    width: 720px;
+.tempWrap {
+    position: absolute;
+    justify-content: center;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.realModalWrap {
+    background-color: #f1fcff;
+    position: fixed;
+    padding: 50px 30px;
+    width: 900px;
     height: 720px;
     line-height: 1.5;
     font-size: 20px;
-}
-.tempWrap {
-    background-color: antiquewhite;
-    padding: 20px;
-    width: 100%;
-}
-#ramenPopup .tempTitle {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-}
-#ramenPopup .tempText {
-    width: 100%;
+    z-index: 1000;
+    overflow: auto;
+    top: 50%;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    transform: translateY(-45%);
 }
 
-#ramenPopup .tempText .tempList {
+.tempWrap .closeBtn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #5ac3f5;
+    background-image: url(../img/ico-close-wh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.tempWrap .tempTitle {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
 
-#ramenPopup .tempText .tempList .left {
-    width: 20%;
-    margin: 0 auto;
+.tempWrap .tempTitle .tempRamenName {
+    color: #407ff0;
+    font-weight: 700;
 }
-#ramenPopup .tempText .tempList .right {
-    width: 70%;
-    margin: 0 auto;
+.tempWrap .tempTitle .tempRamenData {
+    font-size: 45px;
 }
-#ramenPopup .tempText .tempList .rightbox {
-    background-color: #333;
-    width: 70%;
-    margin: 0 auto;
+.tempWrap .tempText > div:last-child {
+    margin-bottom: 0;
+}
+.tempWrap .tempText .tempList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.tempWrap .tempText .tempList .left {
+    width: 150px;
+    font-size: 24px;
     text-align: center;
     line-height: 2;
+    font-weight: 700;
+    color: #407ff0;
+}
+.tempWrap .tempText .tempList .right {
+    width: 660px;
+    margin: auto;
+}
+.tempWrap .tempText .tempList .rightbox {
+    background-color: #0e0250;
+    width: 660px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2.5;
     color: white;
 }
-#ramenPopup .tempText .tempList .right li {
+.tempWrap .tempText .tempList .right li {
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    text-align: center;
+    font-weight: 700;
 }
-#ramenPopup .tempText .tempList .right .leftText {
+.tempWrap .tempText .tempList .right .leftText {
     margin-right: 10px;
+    width: 60px;
 }
 
-#ramenPopup .tempText .tempList .right .rightText {
+.tempWrap .tempText .tempList .right .rightText {
     margin-left: 10px;
+    width: 60px;
 }
 
-#ramenPopup .tempText .tempList .right div {
+.tempWrap .tempText .tempList .right div {
     text-align: center;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure {
-    width: 70%;
+.tempWrap .tempText .tempList .right .tempMeasure {
+    width: 500px;
     margin: auto 0;
     position: relative;
 }
-#ramenPopup .tempText .tempList .right .tempLine {
+.tempWrap .tempText .tempList .right .tempLine {
     height: 2px;
     background-color: #333;
-    width: 100%;
+    width: 500px;
     position: absolute;
     top: 45%;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle {
     display: flex;
     justify-content: space-between;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle > div {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle > div {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: white;
     z-index: 1;
+    border: 2px solid black;
 }
-#ramenPopup .tempText .tempList .right .tempMeasure .tempCircle .active {
+.tempWrap .tempText .tempList .right .tempMeasure .tempCircle .active {
     background-color: #407ff0;
 }
