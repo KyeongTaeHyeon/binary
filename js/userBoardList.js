@@ -80,7 +80,7 @@ function renderPostsToTable(postsToDisplay) {
             <td>${displayId}</td> <td>${boardName}</td>
             <td>${post.title}</td>
             <td>${post.time}</td>
-            <td>${post.user}</td>
+        
         `;
         userTableBody.appendChild(row);
     });
