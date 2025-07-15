@@ -33,3 +33,5 @@ yarn-error.log*
 
 ramen_database.json
 ramen_scraper.py
+dedup_and_reindex.js
+ramen_database_deduped.json

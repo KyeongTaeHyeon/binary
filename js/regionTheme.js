@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setLists(categoryLists);
 
         thicknessLists.push(
-            ...noodleData.filter((item) => item.type === 'thinkness')
+            ...noodleData.filter((item) => item.type === 'thickness')
         );
         setLists(thicknessLists);
 
@@ -90,7 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const brothMapByName = {};
         brothData.forEach((broth) => {
-            brothMapByName[broth.name] = broth.id;
+            // '돈코츠/쇼유'처럼 여러 명칭이 있을 경우 분리해서 각각 매핑
+            broth.name.split('/').forEach((name) => {
+                brothMapByName[name.trim()] = broth.id;
+            });
         });
 
         // shopData에 id값 자동 추가
@@ -104,42 +107,55 @@ document.addEventListener('DOMContentLoaded', () => {
             // 두께(thickness)
             if (
                 !item.thicknessID &&
-                item.thinkness &&
-                noodleMapByName[item.thinkness]
+                item.thickness &&
+                noodleMapByName[item.thickness]
             ) {
-                item.thicknessID = noodleMapByName[item.thinkness];
+                item.thicknessID = noodleMapByName[item.thickness];
             }
             // 모양(shape)
             if (
                 !item.shapeID &&
-                item['shape(tag)'] &&
-                noodleMapByName[item['shape(tag)']]
+                item['shape'] &&
+                noodleMapByName[item['shape']]
             ) {
-                item.shapeID = noodleMapByName[item['shape(tag)']];
+                item.shapeID = noodleMapByName[item['shape']];
             }
-            // 육수종류(category)
-            if (
-                !item.categoryID &&
-                item.category &&
-                brothMapByName[item.category]
-            ) {
-                item.categoryID = brothMapByName[item.category];
+
+            // 카테고리 (여러 값 처리)
+            if (item.category) {
+                item.categoryID = item.category
+                    .split('/')
+                    .map((cat) => brothMapByName[cat.trim()])
+                    .filter((id) => !!id);
+            } else {
+                item.categoryID = [];
             }
-            // 육수타입(type)
-            if (!item.typeID && item.type && brothMapByName[item.type]) {
-                item.typeID = brothMapByName[item.type];
+            // 타입 (여러 값 처리)
+            if (item.type) {
+                item.typeID = item.type
+                    .split('/')
+                    .map((type) => brothMapByName[type.trim()])
+                    .filter((id) => !!id);
+            } else {
+                item.typeID = [];
             }
-            // 진함/담백함(rich)
-            if (!item.richID && item.rich && brothMapByName[item.rich]) {
-                item.richID = brothMapByName[item.rich];
+            // 진함/담백함 (여러 값 처리)
+            if (item.rich) {
+                item.richID = item.rich
+                    .split('/')
+                    .map((rich) => brothMapByName[rich.trim()])
+                    .filter((id) => !!id);
+            } else {
+                item.richID = [];
             }
-            // 진함정도(richness)
-            if (
-                !item.richnessID &&
-                item.richness &&
-                brothMapByName[item.richness]
-            ) {
-                item.richnessID = brothMapByName[item.richness];
+            // 진함정도 (여러 값 처리)
+            if (item.richness) {
+                item.richnessID = item.richness
+                    .split('/')
+                    .map((richness) => brothMapByName[richness.trim()])
+                    .filter((id) => !!id);
+            } else {
+                item.richnessID = [];
             }
         });
         shopList.push(...shopData);
@@ -195,6 +211,7 @@ let filterClick = (e) => {
         if (filterState[group]) {
             filterState[group].push(value);
         }
+        currentPage = 1;
 
         // 선택된 항목 UI 추가
         const selectLi = document.createElement('li');
@@ -208,6 +225,7 @@ let filterClick = (e) => {
             if (filterState[group]) {
                 const idx = filterState[group].indexOf(value);
                 if (idx > -1) filterState[group].splice(idx, 1);
+                currentPage = 1;
             }
             renderContent(); // 필터링 결과 갱신
         });
@@ -378,10 +396,10 @@ let renderContent = () => {
             categoryList.appendChild(li);
         }
         // 두께
-        if (item.thinkness) {
+        if (item.thickness) {
             const li = document.createElement('li');
-            li.innerHTML = item.thinkness;
-            li.dataset.value = item.thinknessID;
+            li.innerHTML = item.thickness;
+            li.dataset.value = item.thicknessID;
             categoryList.appendChild(li);
         }
         // 형태
@@ -396,41 +414,43 @@ let renderContent = () => {
         }
         // 카테고리
         if (item.category) {
+            // console.log(item.category);
+            // console.log(item.categoryID);
             let categoryDataList = item.category.split('/');
-            categoryDataList.forEach((category) => {
+            categoryDataList.forEach((category, idx) => {
                 const li = document.createElement('li');
                 li.innerHTML = category.trim();
-                li.dataset.value = category.categoryID;
+                li.dataset.value = item.categoryID[idx] || '';
                 categoryList.appendChild(li);
             });
         }
         // 계열
         if (item.type) {
             let typeDataList = item.type.split('/');
-            typeDataList.forEach((type) => {
+            typeDataList.forEach((type, idx) => {
                 const li = document.createElement('li');
                 li.innerHTML = type.trim();
-                li.dataset.value = type.typeID;
+                li.dataset.value = item.typeID[idx] || '';
                 categoryList.appendChild(li);
             });
         }
         // 기름기
         if (item.rich) {
             let richDataList = item.rich.split('/');
-            richDataList.forEach((rich) => {
+            richDataList.forEach((rich, idx) => {
                 const li = document.createElement('li');
                 li.innerHTML = rich.trim();
-                li.dataset.value = rich.richID;
+                li.dataset.value = item.richID[idx] || '';
                 categoryList.appendChild(li);
             });
         }
         // 농도
         if (item.richness) {
             let richnessDataList = item.richness.split('/');
-            richnessDataList.forEach((richness) => {
+            richnessDataList.forEach((richness, idx) => {
                 const li = document.createElement('li');
                 li.innerHTML = richness.trim();
-                li.dataset.value = richness.richnessID;
+                li.dataset.value = item.richnessID[idx];
                 categoryList.appendChild(li);
             });
         }
@@ -462,7 +482,7 @@ function getFilteredList(data) {
         }
         if (
             filterState.thickness.length > 0 &&
-            !filterState.thickness.includes(item.thinknessID)
+            !filterState.thickness.includes(item.thicknessID)
         ) {
             return false;
         }
@@ -474,25 +494,37 @@ function getFilteredList(data) {
         }
         if (
             filterState.category.length > 0 &&
-            !filterState.category.includes(item.categoryID)
+            (!Array.isArray(item.categoryID)
+                ? !filterState.category.includes(item.categoryID)
+                : !item.categoryID.some((id) =>
+                      filterState.category.includes(id)
+                  ))
         ) {
             return false;
         }
         if (
             filterState.type.length > 0 &&
-            !filterState.type.includes(item.typeID)
+            (!Array.isArray(item.typeID)
+                ? !filterState.type.includes(item.typeID)
+                : !item.typeID.some((id) => filterState.type.includes(id)))
         ) {
             return false;
         }
         if (
             filterState.rich.length > 0 &&
-            !filterState.rich.includes(item.richID)
+            (!Array.isArray(item.richID)
+                ? !filterState.rich.includes(item.richID)
+                : !item.richID.some((id) => filterState.rich.includes(id)))
         ) {
             return false;
         }
         if (
             filterState.richness.length > 0 &&
-            !filterState.richness.includes(item.richnessID)
+            (!Array.isArray(item.richnessID)
+                ? !filterState.richness.includes(item.richnessID)
+                : !item.richnessID.some((id) =>
+                      filterState.richness.includes(id)
+                  ))
         ) {
             return false;
         }
