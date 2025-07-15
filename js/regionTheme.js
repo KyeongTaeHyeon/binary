@@ -13,7 +13,7 @@ const shopList = [];
 let currentPage = 1;
 const itemsPerPage = 8;
 let pagedData = [];
-let regionViewCount = 10;
+let regionViewCount = 9;
 
 // valueList를 아래처럼 그룹별로 분리해서 관리
 const filterState = {
@@ -228,8 +228,26 @@ let filterClick = (e) => {
         const group = e.target.dataset.title;
         const value = e.target.dataset.value;
 
-        // 이미 선택된 값이면 중복 추가 방지
+        // 이미 선택된 값이면 선택 해제
         if (filterState[group] && filterState[group].includes(value)) {
+            // filterState에서 제거
+            filterState[group] = filterState[group].filter((v) => v !== value);
+
+            // selectorContents에서 해당 li 제거
+            const selectedLis = selectWrapper.querySelectorAll(
+                '.selectorContents li'
+            );
+            selectedLis.forEach((li) => {
+                if (li.dataset.value === value && li.dataset.title === group) {
+                    li.remove();
+                }
+            });
+
+            // 원본 필터 리스트에서 selected 클래스 제거
+            e.target.classList.remove('selected');
+
+            currentPage = 1;
+            renderContent();
             return;
         }
 
@@ -241,9 +259,21 @@ let filterClick = (e) => {
 
         // 선택된 항목 UI 추가
         const selectLi = document.createElement('li');
-        selectLi.innerHTML = e.target.innerHTML;
+        selectLi.innerHTML = `${e.target.innerHTML}<span class="removeBtn" style="display:none;">×</span>`;
         selectLi.dataset.value = value;
         selectLi.dataset.title = group;
+
+        e.target.classList.add('selected');
+
+        // selectorContents에 추가
+        selectWrapper.querySelector('.selectorContents').appendChild(selectLi);
+
+        // GSAP로 자연스럽게 등장 애니메이션
+        gsap.fromTo(
+            selectLi,
+            { opacity: 0, y: 20, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }
+        );
 
         // 삭제 이벤트: filterState에서도 제거
         selectLi.addEventListener('click', function () {
@@ -253,7 +283,20 @@ let filterClick = (e) => {
                 if (idx > -1) filterState[group].splice(idx, 1);
                 currentPage = 1;
             }
+            const filterList =
+                filterWrapper.querySelectorAll('.filterContents li');
+            filterList.forEach((li) => {
+                if (li.dataset.value === value && li.dataset.title === group) {
+                    li.classList.remove('selected');
+                }
+            });
             renderContent(); // 필터링 결과 갱신
+        });
+        selectLi.addEventListener('mouseenter', function () {
+            this.querySelector('.removeBtn').style.display = 'inline';
+        });
+        selectLi.addEventListener('mouseleave', function () {
+            this.querySelector('.removeBtn').style.display = 'none';
         });
 
         selectWrapper.querySelector('.selectorContents').appendChild(selectLi);
@@ -516,6 +559,19 @@ let renderContent = () => {
         }
 
         contentList.appendChild(contentItem);
+
+        gsap.fromTo(
+            contentList.children,
+            { opacity: 0, y: 30, scale: 0.96 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.5,
+                ease: 'power2.out',
+                stagger: 0.07,
+            }
+        );
     });
 
     renderPaginationButtons(filteredList.length);

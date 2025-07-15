@@ -51,7 +51,6 @@
 }
 
 #filterWrapper .filters > div .filterList ul li {
-    background-color: #ffffff;
     cursor: pointer;
 }
 
@@ -75,6 +74,15 @@
 }
 .filterList .filterContents li:hover {
     background: #f0f0f0;
+    border-radius: 20px;
+}
+.filterList .filterContents li.selected,
+.filterList .filterContents li.selected:hover {
+    background: #f1fcff;
+    color: #222;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #selectorWrapper {
@@ -96,6 +104,17 @@
     border: 1px solid #5ac3f5;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.selectorContents .removeBtn {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    transition: color 0.2s;
+}
+.selectorContents .removeBtn:hover {
+    color: #e74c3c;
 }
 
 #contentWrapper {
