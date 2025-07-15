@@ -392,6 +392,10 @@ let renderContent = () => {
     const endIdx = startIdx + itemsPerPage;
     const pageItems = filteredList.slice(startIdx, endIdx);
 
+    const likedShopIds = JSON.parse(
+        localStorage.getItem('likedShopIds') || '[]'
+    );
+
     pageItems.forEach((item) => {
         const contentItem =
             contentItemTemplate.content.firstElementChild.cloneNode(true);
@@ -485,6 +489,31 @@ let renderContent = () => {
             '.contentDescription'
         );
         contentDescription.innerHTML = item.content || '';
+
+        const contentLike = contentItem.querySelector('.contentLike');
+        if (contentLike) {
+            if (likedShopIds.includes(String(item.id))) {
+                contentLike.classList.add('liked');
+            } else {
+                contentLike.classList.remove('liked');
+            }
+
+            // 클릭 이벤트
+            contentLike.onclick = function () {
+                let liked = JSON.parse(
+                    localStorage.getItem('likedShopIds') || '[]'
+                );
+                const itemId = String(item.id);
+                if (liked.includes(itemId)) {
+                    liked = liked.filter((id) => id !== itemId);
+                    contentLike.classList.remove('liked');
+                } else {
+                    liked.push(itemId);
+                    contentLike.classList.add('liked');
+                }
+                localStorage.setItem('likedShopIds', JSON.stringify(liked));
+            };
+        }
 
         contentList.appendChild(contentItem);
     });

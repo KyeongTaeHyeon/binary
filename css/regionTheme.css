@@ -111,6 +111,7 @@
 }
 
 #contentList .contentItem {
+    position: relative;
     width: 330px;
     margin-bottom: 30px;
 }
@@ -132,7 +133,8 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-right: 52px;
 }
 
 #contentList .contentItem .contentsInfo .contentCategory {
@@ -253,4 +255,21 @@
 }
 .regionMoreBtn:hover {
     background: #e0e0e0;
+}
+
+.contentLike {
+    position: absolute;
+    top: 280px;
+    right: 0;
+    z-index: 100;
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    background-image: url('../img/ico-heart-gr.png');
+}
+
+.contentLike.liked {
+    background-image: url('../img/ico-heart-red.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
