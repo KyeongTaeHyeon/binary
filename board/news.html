@@ -20,10 +20,16 @@
                 <div id="boardcreat">
                     <h1 id="news">뉴스</h1>
                     <div class="filter">
-                        <a href="" class="active"><span class="filter-all">전체</span></a>
-                         <a href=""><span class="filter-issue">라면 관련 이슈</span></a> 
-                         <a href=""><span class="filter-years">올해의 라멘</span></a> 
-                        </div>
+                        <a href="" class="active">
+                            <span class="filter-all">전체</span>
+                        </a>
+                        <a href="">
+                            <span class="filter-issue">라면 관련 이슈</span>
+                        </a>
+                        <a href="">
+                            <span class="filter-years">올해의 라멘</span>
+                        </a>
+                    </div>
                     <!-- 게시글 리스트 -->
                     <div id="postNumber"></div>
 
@@ -36,20 +42,7 @@
                             >
                                 &lt;
                             </button>
-                            <ul class="page-list">
-                                <li class="page-item active">
-                                    <button>1</button>
-                                </li>
-                                <li class="page-item"><button>2</button></li>
-                                <li class="page-item"><button>3</button></li>
-                                <li class="page-item"><button>4</button></li>
-                                <li class="page-item"><button>5</button></li>
-                                <li class="page-item"><button>6</button></li>
-                                <li class="page-item"><button>7</button></li>
-                                <li class="page-item"><button>8</button></li>
-                                <li class="page-item"><button>9</button></li>
-                                <li class="page-item"><button>10</button></li>
-                            </ul>
+                            <ul class="page-list"></ul>
                             <button
                                 class="page-btn next"
                                 aria-label="다음 페이지"
@@ -74,7 +67,7 @@
         <!-- 공통사용 -->
         <script src="../js/common.js"></script>
         <!-- 각화면 js생성하여 사용 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script type="module" src="../js/news.js"></script>
-       
     </body>
 </html>

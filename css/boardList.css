@@ -8,7 +8,6 @@
     background-color: #d6eefc;
     margin-bottom: 50px;
     margin-top: 50px;
-    
 }
 /* h역역 */
 
@@ -20,7 +19,6 @@
     border-radius: 45px;
     margin-bottom: 50px;
     margin-top: 50px;
-    
 }
 /* 필터 */
 .filter {
@@ -48,7 +46,7 @@
     border-color: #5ac3f5;
     font-weight: 700;
 }
-.title{
+.title {
     font-size: 20px;
     margin-bottom: 24px;
     min-width: 600px;
@@ -128,7 +126,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-
 }
 
 .page-btn {
@@ -240,7 +237,6 @@
     padding: 12px 16px;
     border: 1px solid #dedede;
     border-radius: 8px;
-
 }
 
 /* 댓글 입력 필드 (commentText input) */
@@ -275,7 +271,8 @@
 }
 
 /* 대댓글 영역 (선택적) */
-.replyItem, .commentTop {
+.replyItem,
+.commentTop {
     padding-left: 24px;
     margin-top: 8px;
     font-size: 14px;
@@ -338,7 +335,7 @@
 }
 /*댓글 답글 영역*/
 
-.commentList{
+.commentList {
     border-top: 1px solid #999;
     margin-top: 5px;
 }
