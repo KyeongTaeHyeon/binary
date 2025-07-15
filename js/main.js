@@ -4,6 +4,8 @@ import { LoadData } from './utils.js';
 const template1 = document.getElementById('Boxtype01');
 // 섹션2 데이터 뿌리기
 const template2 = document.getElementById('Boxtype02');
+// GSAP ScrollTrigger 등록
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
     LoadData('../data/mainsect1.json')
@@ -35,6 +37,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('.section1').appendChild(clone);
                 }
             });
+
+            // section1의 각 라멘 박스에 애니메이션 적용
+            document
+                .querySelectorAll('.section1 .contentsBox')
+                .forEach((box, idx) => {
+                    gsap.from(box, {
+                        opacity: 0,
+                        y: 80,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: box,
+                            start: 'top 80%',
+                            end: 'bottom 40%',
+                            toggleActions: 'play reverse play reverse',
+                            // markers: true
+                        },
+                    });
+                });
         })
         .catch((error) => {
             console.error('데이터 불러오기 실패:', error);
@@ -63,6 +84,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('.section2').appendChild(clone);
                 }
             });
+
+            document
+                .querySelectorAll('.section2 .feature')
+                .forEach((box, idx) => {
+                    gsap.from(box, {
+                        scale: 0.8,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: box,
+                            start: 'top 85%',
+                            end: 'bottom 40%',
+                            toggleActions: 'play reverse play reverse', // ← 이 부분!
+                            // markers: true
+                        },
+                    });
+                });
         })
         .catch((error) => {
             console.error('데이터 불러오기 실패:', error);
@@ -81,12 +120,28 @@ document.querySelector('.section1').addEventListener('click', function (e) {
     const cloneTemp = modalTemp.content.firstElementChild.cloneNode(true);
     const modalWrap = cloneTemp.querySelector('.tempWrap');
     modalData(id, cloneTemp); // cloneTemp를 전달해서 팝업에 데이터 삽입
-    modalWrap.style.display = 'flex';
+    modal.style.zIndex = '9999';
+    modalWrap.style.display = 'flex'; // 또는 block
     modal.appendChild(cloneTemp);
+
+    gsap.fromTo(
+        cloneTemp.querySelector('.tempWrap'),
+        { scale: 0.7, opacity: 0, rotation: 8 },
+        { scale: 1, opacity: 1, rotation: 0, duration: 0.5, ease: 'power2.out' }
+    );
 
     const closeBtn = cloneTemp.querySelector('.closeBtn');
     closeBtn.addEventListener('click', () => {
         modal.innerHTML = '';
+        modal.style.zIndex = '-1';
+        // gsap.to(cloneTemp.querySelector('.modalWrap'), {
+        //     opacity: 0,
+        //     y: -100,
+        //     duration: 0.4,
+        //     onComplete: () => {
+        //         modal.innerHTML = '';
+        //     },
+        // });
     });
 });
 
