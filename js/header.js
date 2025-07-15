@@ -29,3 +29,24 @@ function initHeader() {
     if (loggedInEl) loggedInEl.classList.add('hide');
   }
 }
+
+// header의 search 관련 이벤트
+function initSearch() {
+  const searchInput = document.getElementById('search');
+  const searchButton = document.getElementById('search-button');
+
+  const goToSearchPage = () => {
+    window.location.href = '../search/search.html';
+  };
+
+  if (searchInput) {
+    searchInput.addEventListener('click', goToSearchPage);
+  }
+
+  if (searchButton) {
+    searchButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToSearchPage();
+    });
+  }
+}
