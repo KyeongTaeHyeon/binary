@@ -13,6 +13,7 @@ const shopList = [];
 let currentPage = 1;
 const itemsPerPage = 8;
 let pagedData = [];
+let regionViewCount = 10;
 
 // valueList를 아래처럼 그룹별로 분리해서 관리
 const filterState = {
@@ -175,7 +176,7 @@ let setLists = (lists) => {
 
     const filterContents = document.createElement('ul');
     filterContents.classList.add('filterContents');
-    lists.forEach((list) => {
+    lists.forEach((list, idx) => {
         if (list.title.includes('/')) {
             filterTitle.innerHTML =
                 list.title.split('/')[1].toString().trim() || '';
@@ -187,10 +188,35 @@ let setLists = (lists) => {
         filterLI.innerHTML = list.name;
         filterLI.dataset.value = list.id;
         filterLI.dataset.title = list.type || '';
+        if (lists === regionLists && idx > regionViewCount) {
+            filterLI.style.display = 'none';
+        }
         filterContents.appendChild(filterLI);
     });
     filterDiv.appendChild(filterTitle);
     filterList.appendChild(filterContents);
+
+    if (lists === regionLists) {
+        // ... 버튼 생성
+        const moreBtn = document.createElement('button');
+        moreBtn.className = 'regionMoreBtn';
+        moreBtn.type = 'button';
+        moreBtn.style.width = '50px';
+        moreBtn.innerText = '...';
+
+        let expanded = false;
+        moreBtn.addEventListener('click', function () {
+            expanded = !expanded;
+            filterContents.querySelectorAll('li').forEach((li, idx) => {
+                if (idx > regionViewCount)
+                    li.style.display = expanded ? '' : 'none';
+            });
+            moreBtn.innerText = expanded ? '접기 ▲' : '...';
+        });
+
+        filterList.appendChild(moreBtn);
+    }
+
     filterDiv.appendChild(filterList);
     filter.appendChild(filterDiv);
 
