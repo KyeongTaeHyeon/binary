@@ -24,11 +24,12 @@ body {
 }
 .mainHero .slideImg {
     display: flex; 
-    transition: transform 2s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 .mainHero .slideImg img {
     width: 100%;
-     object-fit: cover;
+    height: auto;
+    object-fit: cover;
 }
 .mainHero .slideText {
     position: absolute;

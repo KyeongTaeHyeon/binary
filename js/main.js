@@ -1,12 +1,12 @@
-import { LoadData } from './utils.js';
+import { LoadData } from "./utils.js";
 
 // 섹션1 데이터 뿌리기
-const template1 = document.getElementById('Boxtype01');
+const template1 = document.getElementById("Boxtype01");
 // 섹션2 데이터 뿌리기
-const template2 = document.getElementById('Boxtype02');
+const template2 = document.getElementById("Boxtype02");
 
-document.addEventListener('DOMContentLoaded', function () {
-    LoadData('../data/mainsect1.json')
+document.addEventListener("DOMContentLoaded", function () {
+    LoadData("../data/mainsect1.json")
         .then((data) => {
             data.forEach((ramenData, index) => {
                 if (ramenData) {
@@ -14,33 +14,33 @@ document.addEventListener('DOMContentLoaded', function () {
                         template1.content.firstElementChild.cloneNode(true);
 
                     if (index % 2 !== 0) {
-                        clone.classList.add('reverse');
+                        clone.classList.add("reverse");
                     }
 
-                    clone.querySelector('.ramenTitle').textContent =
+                    clone.querySelector(".ramenTitle").textContent =
                         ramenData.name;
-                    clone.querySelector('.subTitle').textContent =
+                    clone.querySelector(".subTitle").textContent =
                         ramenData.title;
-                    clone.querySelector('.ramenText').textContent =
+                    clone.querySelector(".ramenText").textContent =
                         ramenData.info;
                     clone.querySelector(
-                        '.price'
+                        ".price"
                     ).textContent = `▲ ${ramenData.name}`;
-                    clone.querySelector('.shopIcon img').src = ramenData.image;
-                    clone.querySelector('.shopIcon img').alt = ramenData.name;
+                    clone.querySelector(".shopIcon img").src = ramenData.image;
+                    clone.querySelector(".shopIcon img").alt = ramenData.name;
                     clone
-                        .querySelector('.modal')
-                        .setAttribute('data-id', ramenData.id);
+                        .querySelector(".modal")
+                        .setAttribute("data-id", ramenData.id);
 
-                    document.querySelector('.section1').appendChild(clone);
+                    document.querySelector(".section1").appendChild(clone);
                 }
             });
         })
         .catch((error) => {
-            console.error('데이터 불러오기 실패:', error);
+            console.error("데이터 불러오기 실패:", error);
         });
 
-    LoadData('../data/mainsect2.json')
+    LoadData("../data/mainsect2.json")
         .then((data) => {
             // const ramenData = data.find((item) => item.id === "etc1");
             data.forEach((ramenData, index) => {
@@ -50,52 +50,52 @@ document.addEventListener('DOMContentLoaded', function () {
                         template2.content.firstElementChild.cloneNode(true);
 
                     // 데이터 삽입
-                    clone.querySelector('.featureNum').textContent =
+                    clone.querySelector(".featureNum").textContent =
                         ramenData.num;
-                    clone.querySelector('.subTitle').textContent =
+                    clone.querySelector(".subTitle").textContent =
                         ramenData.title;
-                    clone.querySelector('.etcInfo').textContent =
+                    clone.querySelector(".etcInfo").textContent =
                         ramenData.info;
-                    clone.querySelector('.etcLeft img').src = ramenData.image;
-                    clone.querySelector('.etcLeft img').alt = ramenData.title;
+                    clone.querySelector(".etcLeft img").src = ramenData.image;
+                    clone.querySelector(".etcLeft img").alt = ramenData.title;
 
                     // 원하는 위치에 삽입
-                    document.querySelector('.section2').appendChild(clone);
+                    document.querySelector(".section2").appendChild(clone);
                 }
             });
         })
         .catch((error) => {
-            console.error('데이터 불러오기 실패:', error);
+            console.error("데이터 불러오기 실패:", error);
         });
 });
 
-document.querySelector('.section1').addEventListener('click', function (e) {
-    const btn = e.target.closest('.modal');
+document.querySelector(".section1").addEventListener("click", function (e) {
+    const btn = e.target.closest(".modal");
     if (!btn) return;
 
     e.preventDefault();
-    const id = btn.getAttribute('data-id');
-    const modal = document.getElementById('modal');
-    const modalTemp = document.getElementById('ramenPopup');
-    modal.innerHTML = '';
+    const id = btn.getAttribute("data-id");
+    const modal = document.getElementById("modal");
+    const modalTemp = document.getElementById("ramenPopup");
+    modal.innerHTML = "";
     const cloneTemp = modalTemp.content.firstElementChild.cloneNode(true);
-    const modalWrap = cloneTemp.querySelector('.tempWrap');
+    const modalWrap = cloneTemp.querySelector(".tempWrap");
     modalData(id, cloneTemp); // cloneTemp를 전달해서 팝업에 데이터 삽입
-    modalWrap.style.display = 'flex';
+    modalWrap.style.display = "flex";
     modal.appendChild(cloneTemp);
 
-    const closeBtn = cloneTemp.querySelector('.closeBtn');
-    closeBtn.addEventListener('click', () => {
-        modal.innerHTML = '';
+    const closeBtn = cloneTemp.querySelector(".closeBtn");
+    closeBtn.addEventListener("click", () => {
+        modal.innerHTML = "";
     });
 });
 
 // 모달데이터 뿌리기
 function modalData(id, cloneTemp) {
     Promise.all([
-        LoadData('../data/mainpopup.json'),
-        LoadData('../data/broth.json'),
-        LoadData('../data/noodle.json'),
+        LoadData("../data/mainpopup.json"),
+        LoadData("../data/broth.json"),
+        LoadData("../data/noodle.json"),
     ])
         .then(([popData, brothData, noodleData]) => {
             let dataList = popData.find(
@@ -106,59 +106,95 @@ function modalData(id, cloneTemp) {
             }
 
             // 팝업 내부에 라멘 데이터를 삽입합니다.
-            cloneTemp.querySelector('.tempRamenName').textContent =
+            cloneTemp.querySelector(".tempRamenName").textContent =
                 dataList.name;
             cloneTemp.querySelector(
-                '.tempText .tempList .rightbox'
+                ".tempText .tempList .rightbox"
             ).textContent = dataList.soup;
             // 스프 농도
             const richnessList = cloneTemp.querySelector(
-                '.tempText .richness .tempCircle'
+                ".tempText .richness .tempCircle"
             );
-            richnessList.innerHTML = '';
+            richnessList.innerHTML = "";
             let richnessData = brothData.filter(
-                (item) => item.type === 'richness'
+                (item) => item.type === "richness"
             );
             richnessData.forEach((item) => {
-                const richnessDiv = document.createElement('div'); // 수정!
+                const richnessDiv = document.createElement("div"); // 수정!
                 richnessDiv.dataset.id = item.id;
                 if (item.id === dataList.richness) {
-                    richnessDiv.classList.add('active');
+                    richnessDiv.classList.add("active");
                 }
                 richnessList.appendChild(richnessDiv); // 부모에 추가
             });
             // 기름진 정도
             const richList = cloneTemp.querySelector(
-                '.tempText .rich .tempCircle'
+                ".tempText .rich .tempCircle"
             );
-            richList.innerHTML = '';
-            let richData = brothData.filter((item) => item.type === 'rich');
+            richList.innerHTML = "";
+            let richData = brothData.filter((item) => item.type === "rich");
             richData.forEach((item) => {
-                const richDiv = document.createElement('div'); // 수정!
+                const richDiv = document.createElement("div"); // 수정!
                 richDiv.dataset.id = item.id;
                 if (item.id === dataList.rich) {
-                    richDiv.classList.add('active');
+                    richDiv.classList.add("active");
                 }
                 richList.appendChild(richDiv); // 부모에 추가
             });
             // 면의 굵기
             const thicknessList = cloneTemp.querySelector(
-                '.tempText .thickness .tempCircle'
+                ".tempText .thickness .tempCircle"
             );
-            thicknessList.innerHTML = '';
+            thicknessList.innerHTML = "";
             let thicknessData = noodleData.filter(
-                (item) => item.type === 'thickness'
+                (item) => item.type === "thickness"
             );
             thicknessData.forEach((item) => {
-                const thicknessDiv = document.createElement('div'); // 수정!
+                const thicknessDiv = document.createElement("div"); // 수정!
                 thicknessDiv.dataset.id = item.id;
                 if (item.id === dataList.thickness) {
-                    thicknessDiv.classList.add('active');
+                    thicknessDiv.classList.add("active");
                 }
                 thicknessList.appendChild(thicknessDiv); // 부모에 추가
             });
         })
         .catch((error) => {
-            console.error('데이터 불러오기 실패:', error);
+            console.error("데이터 불러오기 실패:", error);
         });
 }
+// 히어로 버튼
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector(".slideImg");
+    const prevButton = document.querySelector(".btnPrev");
+    const nextButton = document.querySelector(".btnNext");
+    const images = document.querySelectorAll(".slideImg img");
+    const totalSlides = images.length;
+    let currentIndex = 0;
+
+    // 이전 버튼 클릭 시
+    prevButton.addEventListener("click", () => {
+        currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+        updateSlider();
+    });
+
+    // 다음 버튼 클릭 시
+    nextButton.addEventListener("click", () => {
+        currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+        updateSlider();
+    });
+
+    // 슬라이더의 CSS transform 속성을 업데이트하여 이미지를 이동시키는 함수
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+        // 바 영역 
+        const ulEl = document.querySelector(".pagerUl");
+        const liEl = ulEl.querySelectorAll('li');
+        liEl.forEach((li, idx) => {
+            li.classList.remove("active");
+            if (currentIndex === idx) {
+                li.classList.add("active");
+            }
+        });
+    }
+});
