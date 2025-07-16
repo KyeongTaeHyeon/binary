@@ -7,6 +7,10 @@
         <!-- 공통사용 -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/common.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
         <!-- 각화면 css 생성하여 사용 -->
         <link rel="stylesheet" href="css/main.css" />
     </head>
@@ -21,7 +25,49 @@
                 <div id="container">
                     <!-- 히어로 영역 : 최신 유행 라멘  -->
                     <div class="mainHero">
-                        <div class="mainSlides">
+                        <div class="swiper mainSlides">
+                            <div class="swiper-wrapper" id="heroSlideList">
+                                <!-- <div class="swiper-slide">
+                                    <div>
+                                        <img
+                                            src="img/heroieke1920x1080.jpg"
+                                            alt="이에케라멘"
+                                        />
+                                    </div>
+                                    <div class="slideText">
+                                        <div class="slideTitle">
+                                            이에케 라멘
+                                        </div>
+                                        <div href="" class="modal">
+                                            라멘 데이터
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="img/herochangke.jpg"
+                                        alt="창케라멘"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="img/herojiro1920x1080.jpeg"
+                                        alt="지로케라멘"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="img/herochuka.jpeg"
+                                        alt="츄카소바"
+                                    />
+                                </div> -->
+                            </div>
+                            <!-- 페이지네이션/네비게이션 버튼 추가 가능 -->
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <!-- <div class="mainSlides">
                             <div class="slide">
                                 <div class="slideImg">
                                     <img
@@ -49,24 +95,11 @@
                         </div>
                         <div class="mainSlideController">
                             <div class="mainPager">
-                                <ul class="pagerUl">
-                                    <!-- <li class="active">
-                                        <button><span>1</span></button>
-                                    </li>
-                                    <li>
-                                        <button><span>2</span></button>
-                                    </li>
-                                    <li>
-                                        <button><span>3</span></button>
-                                    </li>
-                                    <li>
-                                        <button><span>4</span></button>
-                                    </li> -->
-                                </ul>
+                                <ul class="pagerUl"></ul>
                             </div>
                             <p class="btnPrev"><button>이전으로</button></p>
                             <p class="btnNext"><button>다음으로</button></p>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- 라멘이미지영역(정보탭 : 육수) -->
                     <section class="section1"></section>
@@ -97,6 +130,15 @@
             <footer id="footer"></footer>
         </div>
         <!-- 화면 표현 영역 -->
+        <template id="heroSlideContent">
+            <div>
+                <img src="img/heroieke1920x1080.jpg" alt="이에케라멘" />
+            </div>
+            <div class="slideText">
+                <div class="slideTitle">이에케 라멘</div>
+                <div class="modal">라멘 데이터</div>
+            </div>
+        </template>
         <template id="Boxtype01">
             <div class="contentsBox 01">
                 <div class="contentsInfo">
@@ -256,6 +298,7 @@
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script type="module" src="js/main.js"></script>
     </body>
 </html>

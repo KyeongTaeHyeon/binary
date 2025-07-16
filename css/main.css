@@ -1,10 +1,17 @@
 @charset "UTF-8";
+
+#wrapper {
+    padding-top: 60px;
+    width: 100%; /* 추가 */
+    min-width: 0; /* 추가 */
+}
+
 body {
     font-size: 16px;
     font-weight: 500;
     color: #121212;
     line-height: 1.6;
-    min-width: 1480px;
+    min-width: 1440px;
     position: relative;
 }
 .hide {
@@ -16,6 +23,72 @@ body {
     position: relative;
     padding-top: 20px;
 }
+
+.mainHero .swiper-slide img {
+    width: 100%;
+    max-height: 1080px; /* 이미지 높이 제한 */
+    object-fit: cover;
+}
+
+/* Swiper 네비게이션 버튼 커스텀 */
+.swiper-button-prev,
+.swiper-button-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    color: #407ff0;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    z-index: 10;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: #407ff0;
+    color: #fff;
+}
+
+.swiper-button-prev {
+    left: 24px;
+}
+.swiper-button-next {
+    right: 24px;
+}
+
+/* Swiper 기본 아이콘 숨기고 커스텀 아이콘 사용 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 28px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.swiper-button-prev::after {
+    content: '←';
+}
+.swiper-button-next::after {
+    content: '→';
+}
+
+#heroSlideList .slideText .heroData {
+    display: inline-block;
+    padding: 0 40px;
+    background-color: #0e0250;
+    border: 1px solid #0e0250;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 48px;
+    cursor: pointer;
+}
+
 .mainHero .slide {
     position: relative;
     overflow: hidden;
@@ -38,7 +111,7 @@ body {
     margin-left: -720px;
 }
 .mainHero .slideText .slideTitle {
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 50px;
     font-size: 48px;
     font-weight: 700;

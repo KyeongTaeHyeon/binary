@@ -125,6 +125,6 @@ function hideGoogleTranslateText() {
 
 document.addEventListener('change', (e) => {
     if (e.target.classList.contains('goog-te-combo')) {
-        setTimeout(hideGoogleTranslateText, 100);
+        setTimeout(hideGoogleTranslateText, 1000);
     }
 });
