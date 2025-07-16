@@ -9,7 +9,7 @@ body {
 #wrapper {
     width: 100%;
     min-width: 1480px;
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
 .outline {
@@ -52,24 +52,24 @@ body {
     display: inline-block;
 }
 
-.navMenu{
+.navMenu {
     display: flex;
     gap: 100px;
 }
 
-.navMenu li a{
+.navMenu li a {
     font-size: 18px;
     font-weight: 600;
     color: #121212;
 }
 
-.navMenu li a:hover{
+.navMenu li a:hover {
     font-size: 18px;
     font-weight: 600;
     color: #5ac3f5;
 }
 
-.headerContent{
+.headerContent {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -82,7 +82,7 @@ body {
     justify-content: space-between;
 }
 
-.searchWrap input{
+.searchWrap input {
     height: 36px;
     padding: 0 12px;
     background-color: #fff;
@@ -101,6 +101,7 @@ body {
 
 #user {
     display: flex;
+    align-items: center;
 }
 
 #user .userLoggedOut {
@@ -115,20 +116,36 @@ body {
 }
 
 .hide {
-  display: none !important;
+    display: none !important;
 }
 
-#user a{
+#user a {
     font-size: 14px;
     color: #6a7375;
 }
 
-#user span{
+#user span {
     display: inline-block;
     vertical-align: top;
     color: #afbabd;
     font-size: 10px;
     margin: 5px 10px 0 10px;
+}
+
+#google_translate_element {
+    margin-left: 10px;
+}
+.skiptranslate > span {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-size: 13px !important;
+    font-family: 'SCoreDream', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif !important;
+}
+
+.goog-te-combo {
+    margin: 0 !important;
 }
 
 /* header end */
