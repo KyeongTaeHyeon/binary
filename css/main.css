@@ -245,7 +245,7 @@ body {
 .section1 .btnLinks .btnPopup a {
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 200px;
 }
 .section1 .btnLinks .btnPopup .btnIcon {
     width: 8px;

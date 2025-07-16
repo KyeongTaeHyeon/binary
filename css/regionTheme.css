@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#main {
+    margin-top: 40px;
+}
+
 #filterWrapper {
     width: 1440px;
     margin: 0 auto;
