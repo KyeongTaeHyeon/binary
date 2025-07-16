@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regionTheme</title>
+    <!-- 공통사용 -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- 각화면 css 생성하여 사용 -->
+    <link rel="stylesheet" href="../css/regionTheme.css" />
+    <link rel="stylesheet" href="../css/managerRegisterThema.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- header(공통사용) -->
+      <header id="header"></header>
+      <!-- 작업영역 -->
+      <main id="main">
+        <div id="filterWrapper" class="outline">
+          <div class="filters"></div>
+        </div>
+        <div id="selectorWrapper">
+          <ul class="selectorContents"></ul>
+        </div>
+        <div id="contentWrapper" class="outline">
+          <select name="cate1" id="cate1">
+            <option value="legion">지역</option>
+            <option value="type">종류</option>
+            <option value="noodle">면</option>
+            <option value="broth">육수</option>
+          </select>
+          <select name="cate2" id="cate2"></select>
+          <div id="cate3">
+            <input type="text" id="cate3Value" />
+            <button>등록하기</button>
+          </div>
+        </div>
+      </main>
+      <!-- footer영역(공통사용) -->
+      <footer id="footer"></footer>
+    </div>
+
+    <template id="contentItemTemplate">
+      <div class="contentItem">
+        <a href="">
+          <div class="contentImage">
+            <img src="" alt="" />
+          </div>
+          <div class="contentsInfo">
+            <div class="contentTitle"></div>
+            <div class="contentCategory">
+              <ul class="categoryList"></ul>
+            </div>
+            <div class="contentDescription"></div>
+          </div>
+        </a>
+        <div class="contentLike"></div>
+      </div>
+    </template>
+
+    <!-- 공통사용 -->
+    <script src="../js/common.js"></script>
+    <!-- 각화면 js생성하여 사용 -->
+    <script type="module" src="../js/managerRegisterThema.js"></script>
+  </body>
+</html>

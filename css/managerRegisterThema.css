@@ -1,0 +1,25 @@
+#contentWrapper {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+#cate3 input {
+  height: 100%;
+  width: 15vw;
+}
+#cate3 button {
+  height: 100%;
+  width: 80px;
+  background-color: #5ac3f5;
+  color: aliceblue;
+}
+#cate3 {
+  height: 36px;
+  background-color: #fff;
+  border: 1px solid #5ac3f5;
+}
+
+select {
+  width: 20vw;
+}
