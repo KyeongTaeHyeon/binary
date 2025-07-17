@@ -126,6 +126,7 @@ document.querySelector('.section1').addEventListener('click', function (e) {
 });
 
 function modalUp(id) {
+    document.body.style.overflow = 'hidden';
     const modal = document.getElementById('modal');
     const modalTemp = document.getElementById('ramenPopup');
     modal.innerHTML = '';
@@ -153,6 +154,7 @@ function modalUp(id) {
     closeBtn.addEventListener('click', () => {
         modal.innerHTML = '';
         modal.style.zIndex = '-1';
+        document.body.style.overflow = '';
         if (mainSwiper && mainSwiper.autoplay) {
             mainSwiper.autoplay.start();
         }
