@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 start: 'top 85%',
                                 end: 'bottom 40%',
                                 toggleActions: 'reverse play reverse play',
+                                once: true, // 한 번만 실행
                             },
                         }
                     );
@@ -106,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 start: 'top 85%',
                                 end: 'bottom 40%',
                                 toggleActions: 'reverse play reverse play',
+                                once: true, // 한 번만 실행
                             },
                         }
                     );
