@@ -443,43 +443,44 @@ let renderContent = () => {
         const contentItem =
             contentItemTemplate.content.firstElementChild.cloneNode(true);
 
-        const contentlink = contentItem.querySelector('a');
-        contentlink.href = item.siteURL || '';
-        contentlink.target = '_blank';
+        const contentlink = contentItem.querySelector("a");
+        // 리스트에서 상세 페이지로 연결되도록 변경
+        contentlink.href = `regionTheme2.html?shopId=${item.id}`;
+        contentlink.target = "_self"; // 현재 탭에서 열기 (선택사항)
 
-        const contentImage = contentItem.querySelector('.contentImage img');
-        contentImage.src = item.imageURL || '';
+        const contentImage = contentItem.querySelector(".contentImage img");
+        contentImage.src = item.imageURL || "";
 
-        const contentTitle = contentItem.querySelector('.contentTitle');
-        contentTitle.innerHTML = item.name || '';
+        const contentTitle = contentItem.querySelector(".contentTitle");
+        contentTitle.innerHTML = item.name || "";
 
-        const categoryList = contentItem.querySelector('.categoryList');
+        const categoryList = contentItem.querySelector(".categoryList");
         // 지역
         if (item.region) {
-            const li = document.createElement('li');
+            const li = document.createElement("li");
             li.innerHTML = item.region;
             li.dataset.value = item.regionID;
             categoryList.appendChild(li);
         }
         // 종류
         if (item.kind) {
-            const li = document.createElement('li');
+            const li = document.createElement("li");
             li.innerHTML = item.kind;
             li.dataset.value = item.kindID;
             categoryList.appendChild(li);
         }
         // 두께
         if (item.thickness) {
-            const li = document.createElement('li');
+            const li = document.createElement("li");
             li.innerHTML = item.thickness;
             li.dataset.value = item.thicknessID;
             categoryList.appendChild(li);
         }
         // 형태
         if (item.shape) {
-            let shapeDataList = item.shape.split('/');
+            let shapeDataList = item.shape.split("/");
             shapeDataList.forEach((shape) => {
-                const li = document.createElement('li');
+                const li = document.createElement("li");
                 li.innerHTML = shape.trim();
                 li.dataset.value = shape.shapeID;
                 categoryList.appendChild(li);
@@ -489,39 +490,39 @@ let renderContent = () => {
         if (item.category) {
             // console.log(item.category);
             // console.log(item.categoryID);
-            let categoryDataList = item.category.split('/');
+            let categoryDataList = item.category.split("/");
             categoryDataList.forEach((category, idx) => {
-                const li = document.createElement('li');
+                const li = document.createElement("li");
                 li.innerHTML = category.trim();
-                li.dataset.value = item.categoryID[idx] || '';
+                li.dataset.value = item.categoryID[idx] || "";
                 categoryList.appendChild(li);
             });
         }
         // 계열
         if (item.type) {
-            let typeDataList = item.type.split('/');
+            let typeDataList = item.type.split("/");
             typeDataList.forEach((type, idx) => {
-                const li = document.createElement('li');
+                const li = document.createElement("li");
                 li.innerHTML = type.trim();
-                li.dataset.value = item.typeID[idx] || '';
+                li.dataset.value = item.typeID[idx] || "";
                 categoryList.appendChild(li);
             });
         }
         // 기름기
         if (item.rich) {
-            let richDataList = item.rich.split('/');
+            let richDataList = item.rich.split("/");
             richDataList.forEach((rich, idx) => {
-                const li = document.createElement('li');
+                const li = document.createElement("li");
                 li.innerHTML = rich.trim();
-                li.dataset.value = item.richID[idx] || '';
+                li.dataset.value = item.richID[idx] || "";
                 categoryList.appendChild(li);
             });
         }
         // 농도
         if (item.richness) {
-            let richnessDataList = item.richness.split('/');
+            let richnessDataList = item.richness.split("/");
             richnessDataList.forEach((richness, idx) => {
-                const li = document.createElement('li');
+                const li = document.createElement("li");
                 li.innerHTML = richness.trim();
                 li.dataset.value = item.richnessID[idx];
                 categoryList.appendChild(li);
@@ -529,32 +530,32 @@ let renderContent = () => {
         }
 
         const contentDescription = contentItem.querySelector(
-            '.contentDescription'
+            ".contentDescription"
         );
-        contentDescription.innerHTML = item.content || '';
+        contentDescription.innerHTML = item.content || "";
 
-        const contentLike = contentItem.querySelector('.contentLike');
+        const contentLike = contentItem.querySelector(".contentLike");
         if (contentLike) {
             if (likedShopIds.includes(String(item.id))) {
-                contentLike.classList.add('liked');
+                contentLike.classList.add("liked");
             } else {
-                contentLike.classList.remove('liked');
+                contentLike.classList.remove("liked");
             }
 
             // 클릭 이벤트
             contentLike.onclick = function () {
                 let liked = JSON.parse(
-                    localStorage.getItem('likedShopIds') || '[]'
+                    localStorage.getItem("likedShopIds") || "[]"
                 );
                 const itemId = String(item.id);
                 if (liked.includes(itemId)) {
                     liked = liked.filter((id) => id !== itemId);
-                    contentLike.classList.remove('liked');
+                    contentLike.classList.remove("liked");
                 } else {
                     liked.push(itemId);
-                    contentLike.classList.add('liked');
+                    contentLike.classList.add("liked");
                 }
-                localStorage.setItem('likedShopIds', JSON.stringify(liked));
+                localStorage.setItem("likedShopIds", JSON.stringify(liked));
             };
         }
 
@@ -568,7 +569,7 @@ let renderContent = () => {
                 y: 0,
                 scale: 1,
                 duration: 0.5,
-                ease: 'power2.out',
+                ease: "power2.out",
                 stagger: 0.07,
             }
         );
