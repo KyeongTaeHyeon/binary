@@ -4,29 +4,51 @@
     margin-top: 40px;
 }
 
+.filterOutline {
+    box-shadow: #dedede 0px 0px 5px 0px;
+    color: #000;
+    border-radius: 10px;
+}
+
 #filterWrapper {
     width: 1440px;
     margin: 0 auto;
-    padding: 32px;
-    border-bottom: 1px solid #ddd;
+    padding: 16px;
     color: #222;
-    margin-top: 20px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #filterWrapper .filters {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
-#filterWrapper .filters > div {
+#filterWrapper .filters > div,
+#filterWrapper .filters .filterGroupWrap > div {
     display: flex;
     align-items: stretch;
     justify-content: center;
 }
 
-#filterWrapper .filters > div .filterTitle {
+#filterWrapper .filters .filterSection {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#filterWrapper .filters .filterHeaderTitle {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 5px;
+}
+
+#filterWrapper .filters > div .filterTitle,
+#filterWrapper .filters .filterGroupWrap > div .filterTitle {
     width: 100px;
     font-size: 16px;
     font-weight: 700;
@@ -40,12 +62,14 @@
     justify-content: center;
 }
 
-#filterWrapper .filters > div .filterList {
+#filterWrapper .filters > div .filterList,
+#filterWrapper .filters .filterGroupWrap > div .filterList {
     display: flex;
     flex: 1;
 }
 
-#filterWrapper .filters > div .filterList ul {
+#filterWrapper .filters > div .filterList ul,
+#filterWrapper .filters .filterGroupWrap > div .filterList ul {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
@@ -54,11 +78,13 @@
     list-style: none;
 }
 
-#filterWrapper .filters > div .filterList ul li {
+#filterWrapper .filters > div .filterList ul li,
+#filterWrapper .filters .filterGroupWrap > div .filterList ul li {
     cursor: pointer;
 }
 
-#filterWrapper .filters > div .filterList ul li:hover {
+#filterWrapper .filters > div .filterList ul li:hover,
+#filterWrapper .filters .filterGroupWrap > div .filterList ul li:hover {
     color: #5ac3f5;
 }
 
@@ -95,8 +121,21 @@
     padding-top: 40px;
     padding-bottom: 40px;
     color: #222;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
 }
 
+#selectorWrapper .clearAllBtn {
+    color: white;
+    font-weight: 700;
+    border: 1px solid #dedede;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5ac3f5;
+    min-width: 100px;
+}
 #selectorWrapper .selectorContents {
     display: flex;
     gap: 10px;
@@ -104,9 +143,9 @@
 }
 
 #selectorWrapper .selectorContents li {
-    padding: 5px 32px;
+    padding: 5px 16px;
     border: 1px solid #5ac3f5;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -272,7 +311,7 @@
     padding: 8px;
     width: 100%;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     text-align: center;
     transition: background 0.2s;
 }

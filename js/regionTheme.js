@@ -14,6 +14,8 @@ let currentPage = 1;
 const itemsPerPage = 8;
 let pagedData = [];
 let regionViewCount = 9;
+let isHeader = false;
+let headerTitle = '';
 
 // valueList를 아래처럼 그룹별로 분리해서 관리
 const filterState = {
@@ -53,26 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
         thicknessLists.push(
             ...noodleData.filter((item) => item.type === 'thickness')
         );
-        setLists(thicknessLists);
+        setLists(thicknessLists, 'noodle');
 
         noodleTypes.push(...noodleData.filter((item) => item.type === 'shape'));
-        setLists(noodleTypes);
+        setLists(noodleTypes, 'noodle');
 
         brothCategories.push(
             ...brothData.filter((item) => item.type === 'category')
         );
-        setLists(brothCategories);
+        setLists(brothCategories, 'broth');
 
         brothStyles.push(...brothData.filter((item) => item.type === 'style'));
-        setLists(brothStyles);
+        setLists(brothStyles, 'broth');
 
         brothRichs.push(...brothData.filter((item) => item.type === 'rich'));
-        setLists(brothRichs);
+        setLists(brothRichs, 'broth');
 
         brothRichness.push(
             ...brothData.filter((item) => item.type === 'richness')
         );
-        setLists(brothRichness);
+        setLists(brothRichness, 'broth');
 
         const regionMapByName = {};
         regionData.forEach((region) => {
@@ -89,19 +91,37 @@ document.addEventListener('DOMContentLoaded', () => {
             noodleMapByName[noodle.name] = noodle.id;
         });
 
-        const brothMapByName = {};
+        const brothNameCategory = {};
+        const brothNameType = {};
+        const brothNameRich = {};
+        const brothNameRichness = {};
         brothData.forEach((broth) => {
-            // '돈코츠/쇼유'처럼 여러 명칭이 있을 경우 분리해서 각각 매핑
-            broth.name.split('/').forEach((name) => {
-                brothMapByName[name.trim()] = broth.id;
-            });
+            if (broth.type === 'category') {
+                broth.name.split('/').forEach((name) => {
+                    brothNameCategory[name.trim()] = broth.id;
+                });
+            } else if (broth.type === 'style') {
+                broth.name.split('/').forEach((name) => {
+                    brothNameType[name.trim()] = broth.id;
+                });
+            } else if (broth.type === 'rich') {
+                broth.name.split('/').forEach((name) => {
+                    brothNameRich[name.trim()] = broth.id;
+                });
+            } else if (broth.type === 'richness') {
+                broth.name.split('/').forEach((name) => {
+                    brothNameRichness[name.trim()] = broth.id;
+                });
+            }
         });
 
         // shopData에 id값 자동 추가
         shopData.forEach((item) => {
+            // 지역(region)
             if (!item.regionID && item.region && regionMapByName[item.region]) {
                 item.regionID = regionMapByName[item.region];
             }
+            // 종류(kind)
             if (!item.kindID && item.kind && kindMapByName[item.kind]) {
                 item.kindID = kindMapByName[item.kind];
             }
@@ -126,10 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.category) {
                 item.categoryID = item.category
                     .split('/')
-                    .map((cat) => brothMapByName[cat.trim()])
+                    .map((cat) => brothNameCategory[cat.trim()])
                     .filter((id) => !!id);
             } else {
                 item.categoryID = [];
+            }
+            // 계열
+            if (
+                !item.styleID &&
+                item['style'] &&
+                brothNameType[item['style']]
+            ) {
+                item.styleID = brothNameType[item['style']];
             }
             // 타입 (여러 값 처리)
             if (item.type) {
@@ -144,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.rich) {
                 item.richID = item.rich
                     .split('/')
-                    .map((rich) => brothMapByName[rich.trim()])
+                    .map((rich) => brothNameRich[rich.trim()])
                     .filter((id) => !!id);
             } else {
                 item.richID = [];
@@ -153,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.richness) {
                 item.richnessID = item.richness
                     .split('/')
-                    .map((richness) => brothMapByName[richness.trim()])
+                    .map((richness) => brothNameRichness[richness.trim()])
                     .filter((id) => !!id);
             } else {
                 item.richnessID = [];
@@ -164,18 +192,145 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-let setLists = (lists) => {
+let setLists = (lists, groupType) => {
     const filter = filterWrapper.querySelector('.filters');
-    const filterDiv = document.createElement('div');
 
+    // 면/육수 그룹일 때 기존 sectionDiv/groupWrap 재사용
+    let sectionDiv, groupWrap;
+    if (groupType === 'noodle' || groupType === 'broth') {
+        sectionDiv = filter.querySelector(
+            `.filterSection[data-type="${groupType}"]`
+        );
+        if (!sectionDiv) {
+            sectionDiv = document.createElement('div');
+            sectionDiv.className = 'filterSection filterOutline';
+            sectionDiv.dataset.type = groupType;
+
+            const sectionTitle = document.createElement('div');
+            sectionTitle.className = 'filterHeaderTitle';
+            sectionTitle.textContent =
+                groupType === 'noodle' ? '면  ▼' : '육수  ▼';
+            sectionDiv.appendChild(sectionTitle);
+
+            groupWrap = document.createElement('div');
+            groupWrap.className = 'filterGroupWrap';
+            sectionDiv.appendChild(groupWrap);
+
+            filter.appendChild(sectionDiv);
+        } else {
+            groupWrap = sectionDiv.querySelector('.filterGroupWrap');
+        }
+
+        const sectionTitle = sectionDiv.querySelector('.filterHeaderTitle');
+        // 여기서 groupWrap을 다시 선언하지 마세요!
+        if (sectionTitle && groupWrap && !sectionTitle.dataset.toggleAdded) {
+            sectionTitle.style.cursor = 'pointer';
+            sectionTitle.addEventListener('click', () => {
+                if (groupWrap.style.display === 'none') {
+                    sectionTitle.innerHTML = sectionTitle.innerHTML.replace(
+                        '▲',
+                        '▼'
+                    );
+                    groupWrap.style.display = '';
+                } else {
+                    sectionTitle.innerHTML = sectionTitle.innerHTML.replace(
+                        '▼',
+                        '▲'
+                    );
+                    groupWrap.style.display = 'none';
+                }
+            });
+            sectionTitle.dataset.toggleAdded = 'true'; // 중복 방지
+        }
+    }
+
+    const filterDiv = document.createElement('div');
+    if (groupType != 'noodle' && groupType != 'broth') {
+        filterDiv.classList.add('filterOutline');
+    }
     const filterTitle = document.createElement('div');
     filterTitle.classList.add('filterTitle');
-
     const filterList = document.createElement('div');
     filterList.classList.add('filterList');
-
     const filterContents = document.createElement('ul');
     filterContents.classList.add('filterContents');
+
+    const allLi = document.createElement('li');
+    allLi.classList.add('filterAll');
+    allLi.innerHTML = '전체';
+    allLi.dataset.title = lists.length > 0 ? lists[0].type : '';
+    allLi.dataset.value = 'all';
+
+    allLi.addEventListener('click', function (e) {
+        const group = allLi.dataset.title;
+        if (!group) return;
+
+        // filterState에 모든 값 추가
+        filterState[group] = lists.map((list) => list.id);
+
+        // UI에 모든 li에 selected 클래스 추가
+        filterContents.querySelectorAll('li').forEach((li) => {
+            if (li !== allLi) li.classList.add('selected');
+            else li.classList.remove('selected');
+        });
+
+        // selectorContents에는 lists의 값만 추가 (전체는 추가하지 않음)
+        lists.forEach((list) => {
+            const selectLi = document.createElement('li');
+            selectLi.innerHTML = `${list.name}<span class="removeBtn" style="display:none;">×</span>`;
+            selectLi.dataset.value = list.id;
+            selectLi.dataset.title = list.type;
+
+            selectWrapper
+                .querySelector('.selectorContents')
+                .appendChild(selectLi);
+
+            gsap.fromTo(
+                selectLi,
+                { opacity: 0, y: 20, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                }
+            );
+
+            // 삭제 이벤트: selectLi의 dataset을 사용
+            selectLi.addEventListener('click', function () {
+                this.remove();
+                const value = this.dataset.value;
+                const group = this.dataset.title;
+                if (filterState[group]) {
+                    const idx = filterState[group].indexOf(value);
+                    if (idx > -1) filterState[group].splice(idx, 1);
+                    currentPage = 1;
+                }
+                const filterList =
+                    filterWrapper.querySelectorAll('.filterContents li');
+                filterList.forEach((li) => {
+                    if (
+                        li.dataset.value === value &&
+                        li.dataset.title === group
+                    ) {
+                        li.classList.remove('selected');
+                    }
+                });
+                renderContent();
+            });
+
+            selectLi.addEventListener('mouseenter', function () {
+                this.querySelector('.removeBtn').style.display = 'inline';
+            });
+            selectLi.addEventListener('mouseleave', function () {
+                this.querySelector('.removeBtn').style.display = 'none';
+            });
+        });
+    });
+
+    filterContents.appendChild(allLi); // "전체" li를 맨 앞에 추가
+
     lists.forEach((list, idx) => {
         if (list.title.includes('/')) {
             filterTitle.innerHTML =
@@ -193,8 +348,17 @@ let setLists = (lists) => {
         }
         filterContents.appendChild(filterLI);
     });
+
     filterDiv.appendChild(filterTitle);
     filterList.appendChild(filterContents);
+    filterDiv.appendChild(filterList);
+
+    // 면/육수 그룹이면 groupWrap에, 아니면 filter에 바로 추가
+    if (groupType === 'noodle' || groupType === 'broth') {
+        groupWrap.appendChild(filterDiv);
+    } else {
+        filter.appendChild(filterDiv);
+    }
 
     if (lists === regionLists) {
         // ... 버튼 생성
@@ -217,11 +381,39 @@ let setLists = (lists) => {
         filterList.appendChild(moreBtn);
     }
 
-    filterDiv.appendChild(filterList);
-    filter.appendChild(filterDiv);
-
     filter.addEventListener('click', filterClick);
+
+    const selectorContents = selectWrapper.querySelector('.selectorContents');
+    let clearAllBtn = document.querySelector('.clearAllBtn');
+    if (!clearAllBtn) {
+        clearAllBtn = document.createElement('button');
+        clearAllBtn.className = 'clearAllBtn';
+        clearAllBtn.innerText = '전체삭제';
+        clearAllBtn.style.display = 'none'; // 버튼 생성 시 바로 숨김!
+        clearAllBtn.onclick = function () {
+            selectorContents.innerHTML = '';
+            Object.keys(filterState).forEach((key) => (filterState[key] = []));
+            const filterSelected = filterWrapper.querySelectorAll(
+                '.filterContents li.selected'
+            );
+            filterSelected.forEach((li) => li.classList.remove('selected'));
+            currentPage = 1;
+            renderContent();
+            updateClearAllBtnVisibility();
+        };
+        selectorContents.parentNode.insertBefore(clearAllBtn, selectorContents);
+        updateClearAllBtnVisibility();
+    }
+    window.clearAllBtn = clearAllBtn;
 };
+
+function updateClearAllBtnVisibility() {
+    if (window.clearAllBtn) {
+        // selectorContents에 li가 하나라도 있으면 버튼 표시
+        const hasLi = !!selectWrapper.querySelector('.selectorContents li');
+        window.clearAllBtn.style.display = hasLi ? '' : 'none';
+    }
+}
 
 let filterClick = (e) => {
     if (e.target.tagName === 'LI') {
@@ -237,71 +429,90 @@ let filterClick = (e) => {
             const selectedLis = selectWrapper.querySelectorAll(
                 '.selectorContents li'
             );
+
             selectedLis.forEach((li) => {
                 if (li.dataset.value === value && li.dataset.title === group) {
+                    console.log(1);
                     li.remove();
+                    console.log(2);
                 }
             });
 
             // 원본 필터 리스트에서 selected 클래스 제거
+            console.log(e.target);
             e.target.classList.remove('selected');
+            console.log(e.target);
 
             currentPage = 1;
             renderContent();
-            return;
+            updateClearAllBtnVisibility();
+            // return;  ❌ 이 줄을 삭제하세요!
         }
 
-        // filterState에 값 추가
-        if (filterState[group]) {
+        // 선택 추가 로직 (이미 선택된 값이 아니면 실행)
+        else if (
+            filterState[group] &&
+            !filterState[group].includes(value) &&
+            value !== 'all'
+        ) {
             filterState[group].push(value);
-        }
-        currentPage = 1;
+            currentPage = 1;
 
-        // 선택된 항목 UI 추가
-        const selectLi = document.createElement('li');
-        selectLi.innerHTML = `${e.target.innerHTML}<span class="removeBtn" style="display:none;">×</span>`;
-        selectLi.dataset.value = value;
-        selectLi.dataset.title = group;
+            // 선택된 항목 UI 추가
+            const selectLi = document.createElement('li');
+            selectLi.innerHTML = `${e.target.innerHTML}<span class="removeBtn" style="display:none;">×</span>`;
+            selectLi.dataset.value = e.target.dataset.value;
+            selectLi.dataset.title = e.target.dataset.title;
 
-        e.target.classList.add('selected');
+            e.target.classList.add('selected');
 
-        // selectorContents에 추가
-        selectWrapper.querySelector('.selectorContents').appendChild(selectLi);
-
-        // GSAP로 자연스럽게 등장 애니메이션
-        gsap.fromTo(
-            selectLi,
-            { opacity: 0, y: 20, scale: 0.95 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }
-        );
-
-        // 삭제 이벤트: filterState에서도 제거
-        selectLi.addEventListener('click', function () {
-            this.remove();
-            if (filterState[group]) {
-                const idx = filterState[group].indexOf(value);
-                if (idx > -1) filterState[group].splice(idx, 1);
-                currentPage = 1;
-            }
-            const filterList =
-                filterWrapper.querySelectorAll('.filterContents li');
-            filterList.forEach((li) => {
-                if (li.dataset.value === value && li.dataset.title === group) {
-                    li.classList.remove('selected');
+            gsap.fromTo(
+                selectLi,
+                { opacity: 0, y: 20, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'power2.out',
                 }
+            );
+
+            selectLi.addEventListener('click', function () {
+                this.remove();
+                const value = this.dataset.value;
+                const group = this.dataset.title;
+                if (filterState[group]) {
+                    const idx = filterState[group].indexOf(value);
+                    if (idx > -1) filterState[group].splice(idx, 1);
+                    currentPage = 1;
+                }
+                const filterList =
+                    filterWrapper.querySelectorAll('.filterContents li');
+                filterList.forEach((li) => {
+                    if (
+                        li.dataset.value === value &&
+                        li.dataset.title === group
+                    ) {
+                        li.classList.remove('selected');
+                    }
+                });
+                renderContent();
+                updateClearAllBtnVisibility();
             });
-            renderContent(); // 필터링 결과 갱신
-        });
-        selectLi.addEventListener('mouseenter', function () {
-            this.querySelector('.removeBtn').style.display = 'inline';
-        });
-        selectLi.addEventListener('mouseleave', function () {
-            this.querySelector('.removeBtn').style.display = 'none';
-        });
+            selectLi.addEventListener('mouseenter', function () {
+                this.querySelector('.removeBtn').style.display = 'inline';
+            });
+            selectLi.addEventListener('mouseleave', function () {
+                this.querySelector('.removeBtn').style.display = 'none';
+            });
 
-        selectWrapper.querySelector('.selectorContents').appendChild(selectLi);
+            selectWrapper
+                .querySelector('.selectorContents')
+                .appendChild(selectLi);
+            updateClearAllBtnVisibility();
+        }
 
-        // 필터링 결과 갱신
         renderContent();
     }
 };
@@ -576,6 +787,8 @@ let renderContent = () => {
     });
 
     renderPaginationButtons(filteredList.length);
+
+    updateClearAllBtnVisibility();
 };
 
 function getFilteredList(data) {
