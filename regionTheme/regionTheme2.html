@@ -9,27 +9,30 @@
         <link rel="stylesheet" href="../css/regionTheme2.css" />
     </head>
     <body>
-      <main class="shop-detail-main-wrapper">
-    <div class="shop-detail-card">
-        <h1 id="shopName"></h1> <div class="detail-tags-section" id="detailTagsSection">
-            </div>
+        <main class="shop-detail-main-wrapper">
+            <div class="shop-detail-card">
+                <h1 id="shopName"></h1>
+                <div class="detail-tags-section" id="detailTagsSection"></div>
 
-        <div class="detail-content-area">
-            <div class="detail-image-box">
-                <img id="shopImage" src="" alt="라멘 가게 이미지">
+                <div class="detail-content-area">
+                    <div class="detail-image-box">
+                        <img id="shopImage" src="" alt="라멘 가게 이미지" />
+                    </div>
+                    <div class="detail-info-text">
+                        <p>
+                            <strong>지역:</strong> <span id="shopRegion"></span>
+                        </p>
+                        <p>
+                            <strong>상세주소:</strong>
+                            <span id="shopAddress"></span>
+                        </p>
+                        <p class="content-label"><strong>내용:</strong></p>
+                        <p id="shopContent"></p>
+                    </div>
+                </div>
             </div>
-            <div class="detail-info-text">
-                <p><strong>지역:</strong> <span id="shopRegion"></span></p>
-                <p><strong>상세주소:</strong> <span id="shopAddress"></span></p>
-                <p class="content-label"><strong>내용:</strong></p>
-                <p id="shopContent"></p>
-            </div>
-        </div>
-    </div>
-</main>
-            <footer id="footer"></footer>
-        </div>
-
+        </main>
+        <footer id="footer"></footer>
 
         <script src="../js/common.js"></script>
         <script type="text/javascript">
